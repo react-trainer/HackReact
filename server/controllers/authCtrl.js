@@ -25,7 +25,12 @@ module.exports = app => {
     const db = app.get("db");
     db.get_user_by_authid(profile.id).then(user => {
       if (!user[0]) {
-        db.add_user_by_authid(profile.id)
+        db.add_user_by_authid([
+          profile.id,
+          profile.name.givenName,
+          profile.name.familyName,
+          profile._json.email
+        ])
           .then(response => {
             console.log(response);
             return done(null, response[0]);
