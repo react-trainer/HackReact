@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+import {Provider} from 'redux';
+import store from './ducks/store';
 
 import "./App.css";
+
 
 class App extends Component {
   redirect = () => {
@@ -8,9 +11,12 @@ class App extends Component {
   };
   render() {
     return (
+      <Provider store={store}>
+
       <div className="App">
         <button onClick={() => this.redirect()}>Go!</button>
       </div>
+      </Provider>
     );
   }
 }
