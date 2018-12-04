@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import lessonsSubRoutes from "../../routes/lessonsSubRoutes";
+import dashRoutes from "../../routes/dashRoutes";
 
-class LessonsDisplayed extends Component {
+class Dashboard extends Component {
   constructor() {
     super();
     this.state = { redirect: false };
@@ -21,8 +21,8 @@ class LessonsDisplayed extends Component {
     const { redirect } = this.state;
     return (
       <div>
-        {lessonsSubRoutes}
-        {redirect ? <Redirect to="/dashboard/lessons/all" /> : null}
+        {dashRoutes}
+        {redirect ? <Redirect to="/dashboard/recent" /> : null}
       </div>
     );
   }
@@ -30,4 +30,4 @@ class LessonsDisplayed extends Component {
 
 const mapStateToProps = state => state;
 
-export default connect(mapStateToProps)(LessonsDisplayed);
+export default connect(mapStateToProps)(Dashboard);
