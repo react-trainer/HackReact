@@ -12,19 +12,27 @@ import dashRoutes from "../../routes/dashRoutes";
 class Dashboard extends Component {
   constructor() {
     super();
-    this.state = { redirect: false };
+    this.state = { toRecent: false, toLessons: false };
   }
   setRedirect = () => {
     this.setState({
-      redirect: true
+      toRecent: true,
+      toLessons: false
     });
   };
 
   componentDidMount() {
-    this.setRedirect();
+    this.toLessons();
+  }
+
+  toLessons() {
+    this.setState({
+      toLessons: true,
+      toRecent: false
+    });
   }
   render() {
-    const { redirect } = this.state;
+    const { toLessons, toRecent } = this.state;
     return (
       <OuterContainer
         backgroundColor="black"
@@ -34,12 +42,16 @@ class Dashboard extends Component {
         <Nav />
         <TabContainer>
           <Tab margin="6% 0 0 0"> Recent </Tab>
-          <Tab margin="6% 0 0 0"> Lesson </Tab>
+          <Tab margin="6% 0 0 0" onCLick={() => this.toLessons()}>
+            {" "}
+            Lesson{" "}
+          </Tab>
           <Tab margin="6% 0 0 0"> Drills </Tab>
         </TabContainer>
 
         {dashRoutes}
-        {redirect ? <Redirect to="/dashboard/recent" /> : null}
+        {toRecent ? <Redirect to="/dashboard/recent" /> : null}
+        {toLessons ? <Redirect to="/dashboard/lessons" /> : null}
       </OuterContainer>
     );
   }
