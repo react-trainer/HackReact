@@ -84,7 +84,7 @@ export const Card = styled.div`
   color: ${props => props.color || "rgb(170, 170, 170)"};
   display: flex;
   justify-content: ${props => props.justifyContent || "center"};
-  align-items: ${props => props.alignItems || "center"};
+  align-items: ${props => props.alignItems || "flex-end"};
   border-radius: ${props => props.borderRadius || "3%"};
   border: ${props => props.border || "1px solid rgb(0, 0, 0)"};
   box-shadow: ${props =>
@@ -92,4 +92,15 @@ export const Card = styled.div`
   margin: ${props => props.margin || "25px"};
   overflow: hidden;
   background-size: ${props => props.backgroundSize || "cover"};
+`;
+
+export const LessonOverlay = styled.div`
+  width: 100%;
+  border-radius: 3%;
+  height: 50%;
+  background-color: rgba(37, 37, 37, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
