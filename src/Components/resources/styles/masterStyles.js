@@ -20,6 +20,7 @@ export const MainContainer = styled.div`
   display: flex;
   flex-direction: ${props => props.flexDirection || "row"};
   flex-wrap: wrap;
+  overflow: hidden;
 `;
 
 export const Button = styled.button`
@@ -45,6 +46,7 @@ export const Button = styled.button`
   box-shadow: ${props => props.boxShadow || "0px -3px 20px -6px inset #a7f5f1"};
   transition: ${props => props.transition || "0.5s"};
   outline: none;
+  overflow: hidden;
   cursor: pointer;
 
   :hover {
@@ -58,13 +60,21 @@ export const Tab = styled(Button)`
   border-radius: ${props => props.borderRadius || "0.25rem"};
   border-color: ${props => props.borderColor || "rgba(255,255,255,0.4)"};
   background-image: ${props => props.backgroundImage || null};
+  overflow: hidden;
   outline: none;
+`;
+export const TabContainer = styled.div`
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: ${props => props.padding || "0 0 1% 0"};
+  margin: ${props => props.margin || "0"};
 `;
 export const Card = styled.div`
   height: ${props => props.height || "41vh"};
   width: ${props => props.width || "20vw"};
-  background-color: ${props => props.backgroundColor || "rgb(34, 34, 34)"};
   background-image: ${props => props.backgroundImage || null};
+  background-color: ${props => props.backgroundColor || "rgb(34, 34, 34)"};
   color: ${props => props.color || "rgb(170, 170, 170)"};
   display: flex;
   justify-content: ${props => props.justifyContent || "center"};
@@ -74,4 +84,6 @@ export const Card = styled.div`
   box-shadow: ${props =>
     props.boxShadow || "0px 4px 6px -3px inset rgb(0,216,255)"};
   margin: ${props => props.margin || "25px"};
+  overflow: hidden;
+  background-size: ${props => props.backgroundSize || "cover"};
 `;

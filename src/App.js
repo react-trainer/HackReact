@@ -6,16 +6,10 @@ import routes from "./routes/routes";
 import "./App.css";
 
 class App extends Component {
-  redirect = () => {
-    window.location.href = `${process.env.REACT_APP_SERVER}/login`;
-  };
   render() {
     return (
       <Provider store={store}>
-        <Router>
-          {routes}
-          {/* <button onClick={() => this.redirect()}>Go!</button> */}
-        </Router>
+        <Router>{routes}</Router>
       </Provider>
     );
   }
