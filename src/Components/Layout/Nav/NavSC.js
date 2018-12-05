@@ -51,18 +51,23 @@ export const MenuInner = styled.div`
 export const MenuButtons = styled.div`
   position: fixed;
   height: 100%;
-  width: 100%;
+  width: 40%;
   transform: ${props =>
-    props.showMenu ? "translateX(120px)" : "translateY(1000px)"};
-  top: -25%;
+    props.showMenu ? "translateX(100px)" : "translateY(1000px)"};
+  top: -14%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: white;
-  font-size: ${props => (props.showMenu ? "30px" : "1px")};
+  font-size: ${props => (props.showMenu ? "40px" : "1px")};
   overflow: hidden;
   transition: ${props => (props.showMenu ? "0.7s" : "0s")};
-  transition-delay: ${props => (props.showMenu ? "1s" : "0s")};
+  transition-delay: ${props => (props.showMenu ? "0.6s" : "0s")};
+
+  a {
+    margin-bottom: 2%;
+    letter-spacing: 5px;
+  }
 `;
 export const MenuToggle = styled.button`
   position: absolute;
