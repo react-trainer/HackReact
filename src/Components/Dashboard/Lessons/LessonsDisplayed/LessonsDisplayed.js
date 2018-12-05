@@ -1,29 +1,38 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import lessonsSubRoutes from "../../routes/lessonsSubRoutes";
+
+import { Card, MainContainer } from "../../../resources/styles/masterStyles";
 
 class LessonsDisplayed extends Component {
   constructor() {
     super();
-    this.state = { redirect: false };
   }
-  setRedirect = () => {
-    this.setState({
-      redirect: true
-    });
-  };
 
-  componentDidMount() {
-    this.setRedirect();
-  }
   render() {
-    const { redirect } = this.state;
     return (
-      <div>
-        {lessonsSubRoutes}
-        {redirect ? <Redirect to="/dashboard/lessons/all" /> : null}
-      </div>
+      <MainContainer>
+        <Card
+          backgroundImage="url(https://www.gizmo-experience.com/wp-content/uploads/2018/10/gizmo-homepage-mobile-fallback-1.jpg)"
+          alignItems="flex-end"
+        >
+          <div
+            style={{
+              width: "100%",
+              borderRadius: "3%",
+              height: "50%",
+              backgroundColor: "rgba(37,37,37,0.7)"
+            }}
+          >
+            Lesson 1
+          </div>
+        </Card>
+        <Card> Lesson 2 </Card>
+        <Card> Lesson 3 </Card>
+        <Card> Lesson 4 </Card>
+        <Card> Lesson 5 </Card>
+        <Card> Lesson 6 </Card>
+      </MainContainer>
     );
   }
 }
