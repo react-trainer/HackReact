@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const OuterContainer = styled.div`
-  position: fixed;
-  height: 100vh;
+  /* position: fixed;
+  height: 100vh; */
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -16,6 +16,7 @@ export const OuterContainer = styled.div`
 `;
 
 export const MainContainer = styled.div`
+  height: ${props => props.height || null};
   width: ${props => props.width || "70vw"};
   display: flex;
   flex-direction: ${props => props.flexDirection || "row"};
@@ -69,6 +70,11 @@ export const TabContainer = styled.div`
   flex-direction: row;
   padding: ${props => props.padding || "0 0 1% 0"};
   margin: ${props => props.margin || "0"};
+
+  a {
+    display: flex;
+    align-items: flex-end;
+  }
 `;
 export const Card = styled.div`
   height: ${props => props.height || "41vh"};
