@@ -13,7 +13,7 @@ module.exports = app => {
         clientID: CLIENT_ID,
         clientSecret: CLIENT_SECRET,
         callbackURL: "/login",
-        scope: "openid"
+        scope: "openid email profile"
       },
       (accessToken, refreshToken, extraParams, profile, done) =>
         done(null, profile)
@@ -24,6 +24,7 @@ module.exports = app => {
     console.log(profile);
     const db = app.get("db");
     db.get_user_by_authid(profile.id).then(user => {
+      console.log(user);
       if (!user[0]) {
         db.add_user_by_authid([
           profile.id,
@@ -32,7 +33,7 @@ module.exports = app => {
           profile._json.email
         ])
           .then(response => {
-            console.log(response);
+            console.log("response" + response);
             return done(null, response[0]);
           })
           .catch(err => console.log(err));
