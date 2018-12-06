@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import {
@@ -17,9 +17,11 @@ class LessonsDisplayed extends Component {
   render() {
     return (
       <MainContainer>
-        <Card backgroundImage="url(https://images.unsplash.com/photo-1536619493521-1ba5d2c25532?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
-          <LessonOverlay>Lesson 1</LessonOverlay>
-        </Card>
+        <Link to="/lesson1">
+          <Card backgroundImage="url(https://images.unsplash.com/photo-1536619493521-1ba5d2c25532?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
+            <LessonOverlay>Lesson 1</LessonOverlay>
+          </Card>
+        </Link>
         <Card backgroundImage="url(https://images.unsplash.com/photo-1541591681685-0246308f076b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
           <LessonOverlay>Lesson 2</LessonOverlay>
         </Card>
