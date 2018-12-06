@@ -20,13 +20,13 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-y: scroll;
 `;
 
 export const Editor = styled.div`
   height: 97vh;
   width: 63vw;
   margin-top: 2vh;
+  margin-left: 1vw;
 `;
 
 export const Overlay = styled.div`
