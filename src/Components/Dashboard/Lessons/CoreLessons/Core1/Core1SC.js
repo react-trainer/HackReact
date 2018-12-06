@@ -78,3 +78,18 @@ export const Dialog = styled.div`
   letter-spacing: 1.5px;
   z-index: 10001;
 `;
+
+export const Title = styled.div`
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 34vw;
+  background-color: rgb(37, 37, 37);
+`;
+
+export const Instructions = styled.div`
+  padding-top: 10vh;
+  margin-bottom: 8vh;
+`;
+
+export const Finished = styled.button``;
