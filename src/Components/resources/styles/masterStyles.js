@@ -1,17 +1,16 @@
 import styled from "styled-components";
 
 export const OuterContainer = styled.div`
-  /* position: fixed;
-  height: 100vh; */
+  /* position: fixed;*/
+  height: ${props =>props.height || null};
   width: 100vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: ${props=> props.flexDirection || 'column'};
   align-items: ${props => props.alignItems || "center"};
   justify-content: ${props => props.justifyContent || "center"};
   background-image: ${props => props.backgroundImage || null};
   background-color: ${props => props.backgroundColor || "white"};
   font-family: ${props => props.fontFamily || "'Signika', sans-serif"};
-  overflow: scroll;
   overflow-x: hidden;
 `;
 
@@ -22,6 +21,7 @@ export const MainContainer = styled.div`
   flex-direction: ${props => props.flexDirection || "row"};
   flex-wrap: wrap;
   overflow: hidden;
+  margin:${props => props.margin || "null"};
 `;
 
 export const Button = styled.button`
@@ -90,8 +90,9 @@ export const Card = styled.div`
   box-shadow: ${props =>
     props.boxShadow || "0px 4px 6px -3px inset rgb(0,216,255)"};
   margin: ${props => props.margin || "25px"};
-  overflow: hidden;
+  overflow: ${props => props.overflow ||"hidden"};
   background-size: ${props => props.backgroundSize || "cover"};
+  object-fit: ${props =>props.objectFit || "contain"};
 `;
 
 export const LessonOverlay = styled.div`
