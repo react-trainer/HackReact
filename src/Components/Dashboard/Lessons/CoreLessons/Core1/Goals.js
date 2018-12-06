@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Overlay, ModalContent, Dialog } from "./Core1SC";
 
 class Goals extends Component {
   constructor() {
@@ -57,25 +58,22 @@ class Goals extends Component {
 
     return (
       <div>
-        <div className="modal-overlay-div" />
-        <div
-          className="modal-content-div"
-          onClick={this.onOverlayClick.bind(this)}
-        >
-          <div className="modal-dialog-div" onClick={this.onDialogClick}>
-            <h1>
-              Lesson {this.props.number}: {this.props.title}
-            </h1>
-            <br />
-            <h2>What You Will Learn:</h2>
-            <br />
-            {goalsDisplay}
-            <h2>Click anywhere to start!</h2>
-            <br />
-            <br />
-            <button>Back To Lessons</button>
-          </div>
-        </div>
+        <Overlay />
+        <ModalContent onClick={this.onOverlayClick.bind(this)} />
+
+        <Dialog onClick={this.onDialogClick}>
+          <h1>
+            Lesson {this.props.number}: {this.props.title}
+          </h1>
+          <br />
+          <h2>What You Will Learn:</h2>
+          <br />
+          {goalsDisplay}
+          <h2>Click anywhere to start!</h2>
+          <br />
+          <br />
+          <button>Back To Lessons</button>
+        </Dialog>
       </div>
     );
   }
