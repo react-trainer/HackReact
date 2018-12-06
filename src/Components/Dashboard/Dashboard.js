@@ -28,6 +28,7 @@ class Dashboard extends Component {
     const { toRecent } = this.state;
     return (
       <OuterContainer
+        height="auto"
         backgroundColor="black"
         justifyContent="none"
         backgroundImage="linear-gradient(0deg, rgb(0,216,255)-158%, rgb(38, 38, 38)48%)"

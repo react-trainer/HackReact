@@ -13,6 +13,7 @@ export const NavContainer = styled.div`
     rgb(38, 38, 38) 106%
   );
   transition: 0.5s;
+  overflow: hidden;
 `;
 
 export const MenuContainer = styled.div`
