@@ -57,6 +57,7 @@ class LessonsDisplayed extends Component {
         </Card>
 
         <Card backgroundImage="url(https://images.unsplash.com/photo-1523807010671-a587c2fba288?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)" />
+        <Card backgroundImage="url(https://images.unsplash.com/photo-1513020783145-a4d0ac835406?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)" />
       </MainContainer>
     );
   }
