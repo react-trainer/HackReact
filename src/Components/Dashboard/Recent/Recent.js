@@ -7,7 +7,7 @@ class Recent extends Component {
     this.state = {};
   }
   render() {
-    return <div>Render</div>;
+    return <MainContainer height="100vh">Recent</MainContainer>;
   }
 }
 export default Recent;

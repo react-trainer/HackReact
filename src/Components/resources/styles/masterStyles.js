@@ -1,26 +1,27 @@
 import styled from "styled-components";
 
 export const OuterContainer = styled.div`
-  position: fixed;
-  height: 100vh;
+  /* position: fixed;*/
+  height: ${props =>props.height || null};
   width: 100vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: ${props=> props.flexDirection || 'column'};
   align-items: ${props => props.alignItems || "center"};
   justify-content: ${props => props.justifyContent || "center"};
   background-image: ${props => props.backgroundImage || null};
   background-color: ${props => props.backgroundColor || "white"};
   font-family: ${props => props.fontFamily || "'Signika', sans-serif"};
-  overflow: scroll;
   overflow-x: hidden;
 `;
 
 export const MainContainer = styled.div`
+  height: ${props => props.height || null};
   width: ${props => props.width || "70vw"};
   display: flex;
   flex-direction: ${props => props.flexDirection || "row"};
   flex-wrap: wrap;
   overflow: hidden;
+  margin:${props => props.margin || "null"};
 `;
 
 export const Button = styled.button`
@@ -69,6 +70,11 @@ export const TabContainer = styled.div`
   flex-direction: row;
   padding: ${props => props.padding || "0 0 1% 0"};
   margin: ${props => props.margin || "0"};
+
+  a {
+    display: flex;
+    align-items: flex-end;
+  }
 `;
 export const Card = styled.div`
   height: ${props => props.height || "41vh"};
@@ -78,12 +84,24 @@ export const Card = styled.div`
   color: ${props => props.color || "rgb(170, 170, 170)"};
   display: flex;
   justify-content: ${props => props.justifyContent || "center"};
-  align-items: ${props => props.alignItems || "center"};
+  align-items: ${props => props.alignItems || "flex-end"};
   border-radius: ${props => props.borderRadius || "3%"};
   border: ${props => props.border || "1px solid rgb(0, 0, 0)"};
   box-shadow: ${props =>
     props.boxShadow || "0px 4px 6px -3px inset rgb(0,216,255)"};
   margin: ${props => props.margin || "25px"};
-  overflow: hidden;
+  overflow: ${props => props.overflow ||"hidden"};
   background-size: ${props => props.backgroundSize || "cover"};
+  object-fit: ${props =>props.objectFit || "contain"};
+`;
+
+export const LessonOverlay = styled.div`
+  width: 100%;
+  border-radius: 3%;
+  height: 50%;
+  background-color: rgba(37, 37, 37, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;

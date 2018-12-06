@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import {
   OuterContainer,
@@ -12,46 +12,43 @@ import dashRoutes from "../../routes/dashRoutes";
 class Dashboard extends Component {
   constructor() {
     super();
-    this.state = { toRecent: false, toLessons: false };
+    this.state = { toRecent: false };
   }
-  setRedirect = () => {
+  toRecent = () => {
     this.setState({
-      toRecent: true,
-      toLessons: false
+      toRecent: true
     });
   };
 
   componentDidMount() {
-    this.toLessons();
+    this.toRecent();
   }
 
-  toLessons() {
-    this.setState({
-      toLessons: true,
-      toRecent: false
-    });
-  }
   render() {
-    const { toLessons, toRecent } = this.state;
+    const { toRecent } = this.state;
     return (
       <OuterContainer
+        height="auto"
         backgroundColor="black"
         justifyContent="none"
         backgroundImage="linear-gradient(0deg, rgb(0,216,255)-158%, rgb(38, 38, 38)48%)"
       >
         <Nav />
-        <TabContainer>
-          <Tab margin="6% 0 0 0"> Recent </Tab>
-          <Tab margin="6% 0 0 0" onCLick={() => this.toLessons()}>
-            {" "}
-            Lesson{" "}
-          </Tab>
-          <Tab margin="6% 0 0 0"> Drills </Tab>
+        <TabContainer margin="3% 0 1% 0">
+          <Link to="/dashboard/recent">
+            <Tab margin="6% 0 0 0"> Recent </Tab>
+          </Link>
+          <Link to="/dashboard/lessons">
+            <Tab margin="6% 0 0 0" onCLick={() => this.toLessons()}>
+              Lesson
+            </Tab>
+          </Link>
+          <Link to="/dashboard/drills">
+            <Tab margin="6% 0 0 0"> Drills </Tab>
+          </Link>
         </TabContainer>
-
         {dashRoutes}
         {toRecent ? <Redirect to="/dashboard/recent" /> : null}
-        {toLessons ? <Redirect to="/dashboard/lessons" /> : null}
       </OuterContainer>
     );
   }
