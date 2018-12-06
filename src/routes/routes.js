@@ -5,6 +5,11 @@ import About from "../components/Layout/About/About";
 import Core1 from "../components/Dashboard/Lessons/CoreLessons/Core1/Core1";
 import Sandbox from "../components/Dashboard/Drills/Sandbox/Sandbox";
 import Dashboard from "../components/Dashboard/Dashboard";
+import Profile from "../components/User/Profile/Profile";
+import Forum from "../components/User/Forum/Forum";
+
+
+
 
 export default (
   <Switch>
@@ -13,5 +18,7 @@ export default (
     <Route path="/about" component={About} />
     <Route path="/lesson1" component={Core1} />
     <Route path="/sandbox" component={Sandbox} />
+    <Route path="/profile" component={Profile} />
+    <Route path="/forum" component={Forum} />
   </Switch>
 );

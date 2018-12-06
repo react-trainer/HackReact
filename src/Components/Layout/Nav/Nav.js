@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-// import navRoutes from "../../routes/navRoutes";
+
 import {
   NavContainer,
   MenuButtons,
@@ -36,8 +36,11 @@ class Nav extends Component {
         <MenuContainer showMenu={showMenu}>
           <MenuInner showMenu={showMenu}>
             <MenuButtons showMenu={showMenu}>
-              <Link to="">
-                <h1>Profile</h1>
+              <Link to="/dashboard/recent">
+                <h1>Home</h1>
+              </Link>
+              <Link to="/profile">
+                <h2>Profile</h2>
               </Link>
               <Link to="">
                 <h2>Forum</h2>
@@ -46,7 +49,7 @@ class Nav extends Component {
                 <h3>Sandbox</h3>
               </Link>
               <Link to="">
-                <h4>React Docs</h4>
+                <h5>React Docs</h5>
               </Link>
               <Link to="">
                 <h5>About</h5>
