@@ -57,11 +57,27 @@ export const WrenchIcon = styled.img`
   right: 4%;
   height: auto;
   width: 9%;
+  overflow: hidden;
 `;
 export const ArrowIcon = styled.img`
   position: absolute;
-  top: ${props => props.top || "0"};
-  left: ${props => props.left || "0"};
+  top: ${props => props.top || "75%"};
+  left: ${props => props.left || "35%"};
   height: auto;
   width: ${props => props.width || "2%"};
+  overflow: hidden;
+  cursor: pointer;
+`;
+
+export const MenuContainers = styled.div`
+  height: 20vh;
+  width: 20vw;
+  border: 1px solid black;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: ${props => props.top || "20%"};
+  transition: 0.2s;
 `;
