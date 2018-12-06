@@ -20,22 +20,29 @@ class Landing extends Component {
     this.state = {
       menuContainers: ["Test 1", "Test 2", "Test 3", "Test 4", "Test 5"],
       count: 0,
-      topPosition: 25
+      topPosition: 0
     };
   }
   nextQuestion() {
     const { count, topPosition } = this.state;
-    this.setState({
-      count: count + 1,
-      topPosition: topPosition + 5
-    });
+    if (count >= 5) {
+      this.setState({
+        count: 0,
+        topPosition: 0
+      });
+    } else {
+      this.setState({
+        count: count + 1,
+        topPosition: topPosition + 5
+      });
+    }
   }
   previousQuestion() {
     const { count, topPosition } = this.state;
     if (count <= 0) {
       this.setState({
         count: 4,
-        topPosition: 50
+        topPosition: 25
       });
     } else {
       this.setState({
@@ -57,7 +64,7 @@ class Landing extends Component {
           </MenuContainers>
         );
       } else if (count >= 5) {
-        this.setState({ count: 0 });
+        this.setState({ count: 0, topPosition: 25 });
       }
     });
     return (
