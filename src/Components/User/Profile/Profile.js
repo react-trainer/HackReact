@@ -17,7 +17,7 @@ import Nav from "../../Layout/Nav/Nav"
   }
 
     render(){
-      console.log(this.props.user)
+      console.log(this.props.state.user.user)
         return (
 
           <OuterContainer 
