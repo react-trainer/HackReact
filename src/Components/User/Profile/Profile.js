@@ -5,12 +5,19 @@ import {
     Button,
     Card
   } from "../../resources/styles/masterStyles";
+  import {connect} from "react-redux";
+import {getUser} from '../../../ducks/userReducer';
 
 import Nav from "../../Layout/Nav/Nav"
 
  class Profile extends Component {
 
+  componentDidMount(){
+    this.props.getUser() 
+  }
+
     render(){
+      console.log(this.props.user)
         return (
 
           <OuterContainer 
@@ -42,5 +49,12 @@ import Nav from "../../Layout/Nav/Nav"
         )
     }
 }
+function mapStatetoProps(state){
+  return {state};
+}
 
-export default Profile;
+export default connect(
+  mapStatetoProps, 
+  { getUser }
+  )(Profile);
+  
