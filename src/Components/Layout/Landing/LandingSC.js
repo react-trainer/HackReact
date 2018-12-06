@@ -45,7 +45,7 @@ export const BottomRight = styled(UpperRight)`
   }
 `;
 export const Title = styled.h1`
-  font-size: ${props => props.fontSize || "40px"};
+  font-size: ${props => props.fontSize || "35px"};
   color: ${props => props.color || "white"};
   letter-spacing: 1px;
   text-transform: ${props => props.textTransform || null};

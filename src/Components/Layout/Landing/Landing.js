@@ -19,7 +19,16 @@ class Landing extends Component {
   render() {
     return (
       <OuterContainer flexDirection="row">
-        <LeftContainer />
+        <LeftContainer>
+          <img
+            src="https://www.effectlab.gr/assets/stylesheets/css/img/icon-slider-arrow-left.svg"
+            alt="previous button"
+          />
+          <img
+            src="https://www.effectlab.gr/assets/stylesheets/css/img/icon-slider-arrow-right.svg"
+            alt="next button"
+          />
+        </LeftContainer>
         <RightContainer>
           <UpperRight>
             {" "}
@@ -33,7 +42,7 @@ class Landing extends Component {
             </p>
             <Button
               boxShadow="0 0 0 0"
-              borderSize="2px"
+              borderSize="1px"
               borderColor="rgb(37, 37, 37)"
               color="rgb(37, 37, 37)"
               onClick={() => this.redirect()}
