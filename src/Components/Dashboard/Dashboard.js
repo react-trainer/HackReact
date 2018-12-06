@@ -14,18 +14,9 @@ class Dashboard extends Component {
     super();
     this.state = { toRecent: false };
   }
-  toRecent = () => {
-    this.setState({
-      toRecent: true
-    });
-  };
-
-  componentDidMount() {
-    this.toRecent();
-  }
 
   render() {
-    const { toRecent } = this.state;
+    
     return (
       <OuterContainer
         height="auto"
@@ -39,7 +30,7 @@ class Dashboard extends Component {
             <Tab margin="6% 0 0 0"> Recent </Tab>
           </Link>
           <Link to="/dashboard/lessons">
-            <Tab margin="6% 0 0 0" onCLick={() => this.toLessons()}>
+            <Tab margin="6% 0 0 0" >
               Lesson
             </Tab>
           </Link>
@@ -48,7 +39,6 @@ class Dashboard extends Component {
           </Link>
         </TabContainer>
         {dashRoutes}
-        {toRecent ? <Redirect to="/dashboard/recent" /> : null}
       </OuterContainer>
     );
   }

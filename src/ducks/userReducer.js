@@ -14,6 +14,7 @@ export const getUser = () => {
   return {
     type: GET_USER,
     payload: axios.get("/api/user")
+    
   };
 };
 
@@ -25,7 +26,8 @@ export default function userReducer(state = initialState, action) {
       return {
         ...state
       };
-    case `${GET_USER}_FULFILLED`:
+    case GET_USER + "_FULFILLED":
+    console.log(action.payload)
       return {
         ...state,
         user: action.payload.data

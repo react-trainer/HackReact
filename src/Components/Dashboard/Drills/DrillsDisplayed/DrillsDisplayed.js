@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { MainContainer } from "../../../resources/styles/masterStyles";
 
-class Recent extends Component {
+class DrillsDisplayed extends Component {
   constructor() {
     super();
     this.state = {};
@@ -10,4 +10,4 @@ class Recent extends Component {
     return <MainContainer height="100vh">Drills</MainContainer>;
   }
 }
-export default Recent;
+export default DrillsDisplayed;
