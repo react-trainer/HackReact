@@ -21,15 +21,41 @@ class Landing extends Component {
       <OuterContainer flexDirection="row">
         <LeftContainer />
         <RightContainer>
-          <UpperRight />
-          <BottomRight>
-            <Title>Lesson 1</Title>
+          <UpperRight>
+            {" "}
+            <Title color="rgb(37, 37, 37)" textTransform="uppercase">
+              Log in || Sign up!
+            </Title>
             <p>
-              Ready to tackle the fundamentals of React? Take the first lesson
-              of our course here. No need to sign up!
+              {" "}
+              Become a user for free! Absolutely no payment information needed.
+              Just sign up!
             </p>
-            <Button borderRadius="2px" onClick={() => this.redirect()}>
-              Click me!
+            <Button
+              boxShadow="0 0 0 0"
+              borderSize="2px"
+              borderColor="rgb(37, 37, 37)"
+              color="rgb(37, 37, 37)"
+              onClick={() => this.redirect()}
+            >
+              Login/SignUp
+            </Button>
+          </UpperRight>
+          <BottomRight>
+            <Title textTransform="uppercase">Lesson 1</Title>
+            <p>
+              Ready to tackle the fundamentals of React?
+              <br />
+              Take the first lesson of our course here.
+              <br />
+              No need to sign up!
+            </p>
+            <Button
+              boxShadow="0 0 0 0"
+              borderSize="2px"
+              onClick={() => this.redirect()}
+            >
+              VIEW
             </Button>
           </BottomRight>
         </RightContainer>
