@@ -5,8 +5,12 @@ import {
   RightContainer,
   BottomRight,
   UpperRight,
-  Title
+  Title,
+  WrenchIcon
 } from "./LandingSC";
+import PreviousButton from "./pictures/arrow-left.svg";
+import NextButton from "./pictures/arrow-right.svg";
+import Wrench from "./pictures/wrench.svg";
 
 class Landing extends Component {
   constructor() {
@@ -20,14 +24,8 @@ class Landing extends Component {
     return (
       <OuterContainer flexDirection="row">
         <LeftContainer>
-          <img
-            src="https://www.effectlab.gr/assets/stylesheets/css/img/icon-slider-arrow-left.svg"
-            alt="previous button"
-          />
-          <img
-            src="https://www.effectlab.gr/assets/stylesheets/css/img/icon-slider-arrow-right.svg"
-            alt="next button"
-          />
+          <img src={PreviousButton} alt="previous button" />
+          <img src={NextButton} alt="next button" />
         </LeftContainer>
         <RightContainer>
           <UpperRight>
@@ -49,6 +47,7 @@ class Landing extends Component {
             >
               Login/SignUp
             </Button>
+            <WrenchIcon src={Wrench} alt="previous button" />
           </UpperRight>
           <BottomRight>
             <Title textTransform="uppercase">Lesson 1</Title>

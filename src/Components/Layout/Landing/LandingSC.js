@@ -50,3 +50,18 @@ export const Title = styled.h1`
   letter-spacing: 1px;
   text-transform: ${props => props.textTransform || null};
 `;
+
+export const WrenchIcon = styled.img`
+  position: absolute;
+  top: 28%;
+  right: 4%;
+  height: auto;
+  width: 9%;
+`;
+export const ArrowIcon = styled.img`
+  position: absolute;
+  top: ${props => props.top || "0"};
+  left: ${props => props.left || "0"};
+  height: auto;
+  width: ${props => props.width || "2%"};
+`;

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="41px" height="21px" viewBox="0 0 41 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="tail-triangle-right" stroke="#5A5A5A" fill="#E5E5E5">
+            <path d="M0.5,10.5 L26.5,10.5" id="Shape"></path>
+            <polygon id="Shape" points="26.5 20.5 26.5 0.5 40.5 10.5"></polygon>
+        </g>
+    </g>
+</svg>
