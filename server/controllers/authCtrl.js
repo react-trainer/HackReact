@@ -48,7 +48,7 @@ module.exports = app => {
   app.get(
     "/login",
     passport.authenticate("auth0", {
-      successRedirect: `${process.env.REACT_APP_CLIENT}/dashboard`,
+      successRedirect: `${process.env.REACT_APP_CLIENT}/dashboard/recent`,
       failureRedirect: "/"
       // failureFlash: true
     })

@@ -3,13 +3,16 @@ const lessonCtrl = require("./controllers/lessonCtrl");
 const commentCtrl = require("./controllers/commentCtrl");
 const ratingCtrl = require("./controllers/ratingCtrl");
 
+const {getUser} = require('./controllers/userCtrl');
 
 module.exports = app => {
 
     //user
-    app.post('/api/user')
+    // app.post('/api/user', userCtrl.getUser)
     app.post('/api/user/favorites')
-    app.get('/api/user')
+
+    app.get('/api/user',  getUser)
+
     app.get('/api/user/all')
     app.get('/api/completed/:user_id')
     app.put('/api/user/:user_id')
