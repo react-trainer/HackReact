@@ -1,4 +1,12 @@
 import React, { Component } from "react";
+import { OuterContainer, Button } from "../../resources/styles/masterStyles";
+import {
+  LeftContainer,
+  RightContainer,
+  BottomRight,
+  UpperRight,
+  Title
+} from "./LandingSC";
 
 class Landing extends Component {
   constructor() {
@@ -10,9 +18,22 @@ class Landing extends Component {
   };
   render() {
     return (
-      <div>
-        <button onClick={() => this.redirect()}>Go!</button>
-      </div>
+      <OuterContainer flexDirection="row">
+        <LeftContainer />
+        <RightContainer>
+          <UpperRight />
+          <BottomRight>
+            <Title>Lesson 1</Title>
+            <p>
+              Ready to tackle the fundamentals of React? Take the first lesson
+              of our course here. No need to sign up!
+            </p>
+            <Button borderRadius="2px" onClick={() => this.redirect()}>
+              Click me!
+            </Button>
+          </BottomRight>
+        </RightContainer>
+      </OuterContainer>
     );
   }
 }
