@@ -5,24 +5,86 @@ import {
   RightContainer,
   BottomRight,
   UpperRight,
-  Title
+  Title,
+  WrenchIcon,
+  ArrowIcon,
+  MenuContainers
 } from "./LandingSC";
+import PreviousButton from "./pictures/arrow-left.svg";
+import NextButton from "./pictures/arrow-right.svg";
+import Wrench from "./pictures/wrench.svg";
 
 class Landing extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      menuContainers: ["Test 1", "Test 2", "Test 3", "Test 4", "Test 5"],
+      count: 0,
+      topPosition: 0
+    };
+  }
+  nextQuestion() {
+    const { count, topPosition } = this.state;
+    if (count >= 5) {
+      this.setState({
+        count: 0,
+        topPosition: 0
+      });
+    } else {
+      this.setState({
+        count: count + 1,
+        topPosition: topPosition + 5
+      });
+    }
+  }
+  previousQuestion() {
+    const { count, topPosition } = this.state;
+    if (count <= 0) {
+      this.setState({
+        count: 4,
+        topPosition: 25
+      });
+    } else {
+      this.setState({
+        count: count - 1,
+        topPosition: topPosition - 5
+      });
+    }
   }
   redirect = () => {
     window.location.href = `${process.env.REACT_APP_SERVER}/login`;
   };
   render() {
+    const { menuContainers, count, topPosition } = this.state;
+    const displayMenus = menuContainers.map((value, index) => {
+      if (count === index) {
+        return (
+          <MenuContainers top={`${topPosition}%`} key={index}>
+            {value}
+          </MenuContainers>
+        );
+      } else if (count >= 5) {
+        this.setState({ count: 0, topPosition: 25 });
+      }
+    });
     return (
       <OuterContainer flexDirection="row">
-        <LeftContainer />
+        <LeftContainer>
+          {displayMenus}
+          <ArrowIcon
+            left="26%"
+            src={PreviousButton}
+            alt="previous button"
+            onClick={() => this.previousQuestion()}
+          />
+          <ArrowIcon
+            src={NextButton}
+            alt="next button"
+            onClick={() => this.nextQuestion()}
+          />
+        </LeftContainer>
         <RightContainer>
           <UpperRight>
-            {" "}
             <Title color="rgb(37, 37, 37)" textTransform="uppercase">
               Log in || Sign up!
             </Title>
@@ -33,13 +95,14 @@ class Landing extends Component {
             </p>
             <Button
               boxShadow="0 0 0 0"
-              borderSize="2px"
+              borderSize="1px"
               borderColor="rgb(37, 37, 37)"
               color="rgb(37, 37, 37)"
               onClick={() => this.redirect()}
             >
               Login/SignUp
             </Button>
+            <WrenchIcon src={Wrench} alt="previous button" />
           </UpperRight>
           <BottomRight>
             <Title textTransform="uppercase">Lesson 1</Title>

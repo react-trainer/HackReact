@@ -45,8 +45,39 @@ export const BottomRight = styled(UpperRight)`
   }
 `;
 export const Title = styled.h1`
-  font-size: ${props => props.fontSize || "40px"};
+  font-size: ${props => props.fontSize || "35px"};
   color: ${props => props.color || "white"};
   letter-spacing: 1px;
   text-transform: ${props => props.textTransform || null};
+`;
+
+export const WrenchIcon = styled.img`
+  position: absolute;
+  top: 28%;
+  right: 4%;
+  height: auto;
+  width: 9%;
+  overflow: hidden;
+`;
+export const ArrowIcon = styled.img`
+  position: absolute;
+  top: ${props => props.top || "75%"};
+  left: ${props => props.left || "35%"};
+  height: auto;
+  width: ${props => props.width || "2%"};
+  overflow: hidden;
+  cursor: pointer;
+`;
+
+export const MenuContainers = styled.div`
+  height: 20vh;
+  width: 20vw;
+  border: 1px solid black;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: ${props => props.top || "20%"};
+  transition: 0.2s;
 `;
