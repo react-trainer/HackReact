@@ -38,7 +38,7 @@ export const Overlay = styled.div`
   height: 100%;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: rgba(0, 0, 0, 0.8);
 `;
 
 export const ModalContent = styled.div`
@@ -93,3 +93,20 @@ export const Instructions = styled.div`
 `;
 
 export const Finished = styled.button``;
+
+export const QuizDialog = styled.div`
+  position: fixed;
+  top: 10%;
+  left: 29%;
+  outline: 0;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  max-width: auto;
+  cursor: default;
+  border-radius: 4px;
+  font-size: 1.1em;
+  letter-spacing: 1.5px;
+  z-index: 10001;
+`;

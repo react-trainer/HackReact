@@ -13,7 +13,7 @@ class LessonsDisplayed extends Component {
     super();
     this.state = {};
   }
-
+  
   render() {
     return (
       <MainContainer>
