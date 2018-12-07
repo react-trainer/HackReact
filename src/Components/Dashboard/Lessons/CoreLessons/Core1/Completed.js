@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Overlay, ModalContent, QuizDialog } from "./Core1SC";
 import { Button } from "../../../../resources/styles/masterStyles";
+import Quiz from "./Quiz";
 
 class Completed extends Component {
   constructor() {
@@ -57,7 +58,7 @@ class Completed extends Component {
           <br />
           <h2>Ready to put your knowledge to the test?</h2>
           <br />
-          <h2>*Quiz *</h2>
+          <Quiz />
           <br />
           <br />
           <Button>Next Question</Button>

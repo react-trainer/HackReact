@@ -97,7 +97,7 @@ export const Finished = styled.button``;
 export const QuizDialog = styled.div`
   position: fixed;
   top: 10%;
-  left: 29%;
+  left: 20%;
   outline: 0;
   width: auto;
   display: inline-block;
@@ -109,4 +109,12 @@ export const QuizDialog = styled.div`
   font-size: 1.1em;
   letter-spacing: 1.5px;
   z-index: 10001;
+`;
+
+export const Answer = styled.div`
+  transition: 0.1s;
+  border-radius: 9999em;
+  :hover {
+    background-color: #00a6cc;
+  }
 `;
