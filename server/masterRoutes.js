@@ -5,6 +5,12 @@ const ratingCtrl = require("./controllers/ratingCtrl");
 
 const {getUser} = require('./controllers/userCtrl');
 
+const express = require("express");
+// const router = express.Router();
+// const upload = require('../services/multer');
+
+// const singleUpload = upload.single('image')
+
 module.exports = app => {
 
     //user
@@ -12,6 +18,14 @@ module.exports = app => {
     app.post('/api/user/favorites')
 
     app.get('/api/user',  getUser)
+    // app.post('/api/user/image', function(req,res){
+    //     singleUpload(req,res,function(err, some){
+    //         if(err){
+    //             return res.status(422).send({errors: [{title: 'Image Upload Error', detail: err.message}]})
+    //         }
+    //         return res.json({'imageUrl': req.file.location});
+    //     })
+    // })
 
     app.get('/api/user/all')
     app.get('/api/completed/:user_id')
