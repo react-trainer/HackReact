@@ -76,7 +76,7 @@ export const Dialog = styled.div`
   border-radius: 4px;
   font-size: 1.1em;
   letter-spacing: 1.5px;
-  z-index: 10001;
+  z-index: 10000;
 `;
 
 export const Title = styled.div`
@@ -117,4 +117,9 @@ export const Answer = styled.div`
   :hover {
     background-color: #00a6cc;
   }
+`;
+
+export const Swal1 = styled.div`
+  position: fixed;
+  z-index: 10002;
 `;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Answer } from "./Core1SC";
+import { Answer, Swal1 } from "./Core1SC";
+import swal from "sweetalert";
 
 class Quiz extends Component {
   constructor() {
@@ -17,12 +18,17 @@ class Quiz extends Component {
           answers: ["3", "5", "Jerry", "4"]
         }
       ],
-      answers: []
+      answers: [], 
+      
     };
   }
 
   checkAnswer = (value, correct) => {
-    return value === correct ? alert("Got it!") : alert("Nope");
+    return value === correct ? (
+      <Swal1>{swal({ text: "Got it!", icon: "success", className: "" })}</Swal1>
+    ) : (
+      <Swal1> {swal({ text: "Nope!", icon: "error" })}</Swal1>
+    );
   };
 
   render() {
