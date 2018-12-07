@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+import { getUser } from "../../../../ducks/userReducer";
+import { connect } from "react-redux";
+import "./Sandbox.css";
 
 import { IframeContainer, ContainerDiv } from "./SandboxSC";
 
@@ -8,11 +11,32 @@ class Sandbox extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.getUser();
+  }
+
+  linkToggle() {
+    return this.props.state.user.loggedIn
+      ? (window.location.href = `${
+          process.env.REACT_APP_CLIENT
+        }/dashboard/recent`)
+      : (window.location.href = `${process.env.REACT_APP_CLIENT}/`);
+  }
+
   render() {
+    console.log(this.props);
+    let linkToggle = this.props.state.user.loggedIn ? (
+      <button onClick={() => this.linkToggle()}>Dashboard</button>
+    ) : (
+      <button onClick={() => this.linkToggle()}>Back</button>
+    );
     return (
       <ContainerDiv>
         <div className="wrap-collapsible">
-          <button id="leaveSandbox">Home</button>
+          {/* <button id="leaveSandbox" onClick={() => this.linkToggle()}> */}
+          {linkToggle}
+          {/* Home{" "} */}
+          {/* </button> */}
           <input id="collapsible" className="toggle" type="checkbox" />
           <label for="collapsible" class="lbl-toggle">
             More Info
@@ -44,4 +68,11 @@ class Sandbox extends Component {
   }
 }
 
-export default Sandbox;
+function mapStatetoProps(state) {
+  return { state };
+}
+
+export default connect(
+  mapStatetoProps,
+  { getUser }
+)(Sandbox);

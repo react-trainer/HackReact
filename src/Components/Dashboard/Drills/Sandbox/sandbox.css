@@ -3,7 +3,7 @@
    License: none (public domain)
 */
 
-html,
+/* html,
 body,
 div,
 span,
@@ -92,7 +92,7 @@ video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article,
+/*article,
 aside,
 details,
 figcaption,
@@ -126,7 +126,7 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
+} */
 
 @import url("https://fonts.googleapis.com/css?family=Share+Tech");
 @import url("https://fonts.googleapis.com/css?family=Share+Tech|Share+Tech+Mono");

@@ -6,7 +6,8 @@ const GET_USER = "GET_USER";
 //initial state
 
 const initialState = {
-  user: []
+  user: [],
+  loggedIn: false
 };
 
 //action creators
@@ -14,7 +15,6 @@ export const getUser = () => {
   return {
     type: GET_USER,
     payload: axios.get("/api/user")
-    
   };
 };
 
@@ -24,17 +24,20 @@ export default function userReducer(state = initialState, action) {
   switch (action.type) {
     case `${GET_USER}_PENDING`:
       return {
-        ...state
+        ...state,
+        loggedIn: false
       };
     case GET_USER + "_FULFILLED":
-    console.log(action.payload)
+      console.log(action.payload);
       return {
         ...state,
+        loggedIn: true,
         user: action.payload.data
       };
     case `${GET_USER}_REJECTED`:
       return {
-        ...state
+        ...state,
+        loggedIn: false
       };
     default:
       return state;
