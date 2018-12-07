@@ -50,6 +50,8 @@ class Landing extends Component {
             <a
               style={{ color: "black" }}
               href="https://reactjs.org/docs/getting-started.html"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               React Docs
             </a>
@@ -63,6 +65,7 @@ class Landing extends Component {
         },
         {
           title: "Sign Up",
+          title2: "For Free",
           sub: "Ready to learn more about React? Sign up and learn more!",
           button: "Sign Up"
         }

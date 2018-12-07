@@ -53,6 +53,7 @@ export const Title = styled.h1`
   font-family: ${props => props.fontFamily || null};
   font-weight: ${props => props.fontWeight || "bold"};
   margin: ${props => props.margin || "0"};
+  overflow: hidden;
 `;
 
 export const WrenchIcon = styled.img`
@@ -112,4 +113,19 @@ export const ScribbleUnderline = styled.img`
   top: 28%;
   height: auto;
   width: 20%;
+  @media (max-height: 930px) {
+    top: 30%;
+  }
+  @media (max-height: 860px) {
+    top: 33%;
+  }
+  @media (max-height: 785px) {
+    top: 36%;
+  }
+  @media (max-height: 720px) {
+    top: 40%;
+  }
+  @media (max-height: 630px) {
+    top: 45%;
+  }
 `;
