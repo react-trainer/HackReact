@@ -8,46 +8,95 @@ import {
   Title,
   WrenchIcon,
   ArrowIcon,
-  MenuContainers
+  MenuContainers,
+  MenuContents,
+  ScribbleUnderline
 } from "./LandingSC";
 import PreviousButton from "./pictures/arrow-left.svg";
 import NextButton from "./pictures/arrow-right.svg";
 import Wrench from "./pictures/wrench.svg";
+import Underline from "./pictures/underline.png";
 
 class Landing extends Component {
   constructor() {
     super();
     this.state = {
-      menuContainers: ["Test 1", "Test 2", "Test 3", "Test 4", "Test 5"],
+      menuContainers: [
+        {
+          title: (
+            <Title
+              color="black"
+              fontSize="3.7rem"
+              fontWeight="300"
+              fontFamily="CeraGR-Black, sans-serif"
+            >
+              React Made Simple.
+              <br />
+              For You.
+              <br />
+              By You.
+            </Title>
+          ),
+          sub: (
+            <Title
+              fontSize="1rem"
+              margin="2% 0 0 0"
+              fontWeight="200"
+              color="black"
+            >
+              New to React? Trouble understanding the React Documentation? Start
+              here to begin your journey!
+            </Title>
+          ),
+          image: <ScribbleUnderline src={Underline} alt="scribble" />,
+          button: (
+            <Button
+              boxShadow="0 0 0 0"
+              borderSize="1px"
+              borderColor="rgb(37, 37, 37)"
+              color="rgb(37, 37, 37)"
+              position="absolute"
+              top="60%"
+              onClick={() => this.redirect()}
+            >
+              Learn More
+            </Button>
+          )
+        },
+        { title: "About" },
+        { title: "React Docs" },
+        { title: "Sandbox" },
+        { title: "Sign Up" }
+      ],
       count: 0,
-      topPosition: 0
+      sidePosition: 0
     };
   }
   nextQuestion() {
-    const { count, topPosition } = this.state;
-    if (count >= 5) {
+    const { count, sidePosition } = this.state;
+    if (count >= 4) {
       this.setState({
         count: 0,
-        topPosition: 0
+        sidePosition: 0
       });
     } else {
       this.setState({
         count: count + 1,
-        topPosition: topPosition + 5
+        sidePosition: sidePosition + 1
       });
     }
   }
   previousQuestion() {
-    const { count, topPosition } = this.state;
+    const { count, sidePosition } = this.state;
     if (count <= 0) {
       this.setState({
         count: 4,
-        topPosition: 25
+        sidePosition: 4
       });
     } else {
       this.setState({
         count: count - 1,
-        topPosition: topPosition - 5
+        sidePosition: sidePosition - 1
       });
     }
   }
@@ -55,22 +104,19 @@ class Landing extends Component {
     window.location.href = `${process.env.REACT_APP_SERVER}/login`;
   };
   render() {
-    const { menuContainers, count, topPosition } = this.state;
+    const { menuContainers, sidePosition } = this.state;
     const displayMenus = menuContainers.map((value, index) => {
-      if (count === index) {
-        return (
-          <MenuContainers top={`${topPosition}%`} key={index}>
-            {value}
-          </MenuContainers>
-        );
-      } else if (count >= 5) {
-        this.setState({ count: 0, topPosition: 25 });
-      }
+      return (
+        <MenuContents translateX={sidePosition} key={index}>
+          {value.title} {value.image} {value.sub} {value.button}
+        </MenuContents>
+      );
     });
     return (
       <OuterContainer flexDirection="row">
         <LeftContainer>
-          {displayMenus}
+          <MenuContainers>{displayMenus}</MenuContainers>
+
           <ArrowIcon
             left="26%"
             src={PreviousButton}
