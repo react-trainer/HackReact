@@ -112,7 +112,7 @@ class Lesson extends Component {
               backgroundColor="#00a6cc"
               position="fixed"
               top="92%"
-              left="13%"
+              left="13%" 
               onClick={this.showCompleted}
             >
               Quiz
