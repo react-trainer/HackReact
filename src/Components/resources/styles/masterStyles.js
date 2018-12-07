@@ -51,7 +51,7 @@ export const Button = styled.button`
   bottom: ${props => props.bottom || "0"};
   right: ${props => props.right || "0"};
   left: ${props => props.left || "0"};
-  z-index: ${props => props.zIndex || "0"};
+  /* z-index: ${props => props.zIndex || "0"}; */
   outline: none;
   overflow: hidden;
   cursor: pointer;
