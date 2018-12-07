@@ -65,8 +65,8 @@ export const WrenchIcon = styled.img`
 `;
 export const ArrowIcon = styled.img`
   position: absolute;
-  top: ${props => props.top || "75%"};
-  left: ${props => props.left || "35%"};
+  top: ${props => props.top || "60%"};
+  left: ${props => props.left || "60%"};
   height: auto;
   width: ${props => props.width || "2%"};
   overflow: hidden;

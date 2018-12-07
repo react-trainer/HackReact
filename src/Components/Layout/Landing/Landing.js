@@ -21,55 +21,52 @@ class Landing extends Component {
   constructor() {
     super();
     this.state = {
+      count: 0,
+      sidePosition: 0,
       menuContainers: [
         {
-          title: (
-            <Title
-              color="black"
-              fontSize="3.7rem"
-              fontWeight="300"
-              fontFamily="CeraGR-Black, sans-serif"
-            >
-              React Made Simple.
-              <br />
-              For You.
-              <br />
-              By You.
-            </Title>
-          ),
-          sub: (
-            <Title
-              fontSize="1rem"
-              margin="2% 0 0 0"
-              fontWeight="200"
-              color="black"
-            >
-              New to React? Trouble understanding the React Documentation? Start
-              here to begin your journey!
-            </Title>
-          ),
+          title: ` React Made Simple. `,
+          title2: `For You.`,
+          title3: `By You.`,
+          sub:
+            "New to React? Trouble understanding the React Documentation? Start here to begin your journey!",
           image: <ScribbleUnderline src={Underline} alt="scribble" />,
+          button: "Learn More",
+          link: () => this.toAbout()
+        },
+        {
+          title: "What is HackReact?",
+          title2: "What Do We Do?",
+          sub: "Learn more about HackReact by clicking below!",
+          button: "About",
+          link: () => this.toAbout()
+        },
+        {
+          title: "Read the",
+          title2: "React Docs",
+          sub:
+            "Feel free to browser the React Docs Yourself! We provide a simple way of learning them.",
           button: (
-            <Button
-              boxShadow="0 0 0 0"
-              borderSize="1px"
-              borderColor="rgb(37, 37, 37)"
-              color="rgb(37, 37, 37)"
-              position="absolute"
-              top="60%"
-              onClick={() => this.redirect()}
+            <a
+              style={{ color: "black" }}
+              href="https://reactjs.org/docs/getting-started.html"
             >
-              Learn More
-            </Button>
+              React Docs
+            </a>
           )
         },
-        { title: "About" },
-        { title: "React Docs" },
-        { title: "Sandbox" },
-        { title: "Sign Up" }
-      ],
-      count: 0,
-      sidePosition: 0
+        {
+          title: "Test Out Your Skills",
+          title2: "In Our Sandbox",
+          sub: `Take a dive in the sandbox and try out your skills before or after our course!`,
+          button: "Play Around"
+        },
+        {
+          title: "Sign Up",
+          sub: "Ready to learn more about React? Sign up and learn more!",
+          button: "Sign Up"
+        }
+      ]
     };
   }
   nextQuestion() {
@@ -100,7 +97,7 @@ class Landing extends Component {
       });
     }
   }
-  redirect = () => {
+  toLogin = () => {
     window.location.href = `${process.env.REACT_APP_SERVER}/login`;
   };
   render() {
@@ -108,7 +105,33 @@ class Landing extends Component {
     const displayMenus = menuContainers.map((value, index) => {
       return (
         <MenuContents translateX={sidePosition} key={index}>
-          {value.title} {value.image} {value.sub} {value.button}
+          <Title
+            color="black"
+            fontSize="3.7rem"
+            fontWeight="300"
+            fontFamily="CeraGR-Black, sans-serif"
+          >
+            {value.title}
+            <br />
+            {value.title2}
+            <br />
+            {value.title3}
+          </Title>
+          {value.image}{" "}
+          <Title fontSize="1rem" margin="2% 0" fontWeight="200" color="black">
+            {value.sub}
+          </Title>{" "}
+          <Button
+            boxShadow="0 0 0 0"
+            borderSize="1px"
+            borderColor="rgb(37, 37, 37)"
+            color="rgb(37, 37, 37)"
+            position="relative"
+            top="60%"
+            onClick={value.link}
+          >
+            {value.button}
+          </Button>
         </MenuContents>
       );
     });
@@ -118,7 +141,7 @@ class Landing extends Component {
           <MenuContainers>{displayMenus}</MenuContainers>
 
           <ArrowIcon
-            left="26%"
+            left="55%"
             src={PreviousButton}
             alt="previous button"
             onClick={() => this.previousQuestion()}
@@ -144,7 +167,7 @@ class Landing extends Component {
               borderSize="1px"
               borderColor="rgb(37, 37, 37)"
               color="rgb(37, 37, 37)"
-              onClick={() => this.redirect()}
+              onClick={() => this.toLogin()}
             >
               Login/SignUp
             </Button>
@@ -162,7 +185,7 @@ class Landing extends Component {
             <Button
               boxShadow="0 0 0 0"
               borderSize="2px"
-              onClick={() => this.redirect()}
+              onClick={() => this.toLogin()}
             >
               VIEW
             </Button>
