@@ -21,10 +21,8 @@ module.exports = app => {
   );
 
   passport.serializeUser((profile, done) => {
-    console.log(profile);
     const db = app.get("db");
     db.get_user_by_authid(profile.id).then(user => {
-      console.log(user);
       if (!user[0]) {
         db.add_user_by_authid([
           profile.id,
@@ -48,7 +46,7 @@ module.exports = app => {
   app.get(
     "/login",
     passport.authenticate("auth0", {
-      successRedirect: `${process.env.REACT_APP_CLIENT}/dashboard`,
+      successRedirect: `${process.env.REACT_APP_CLIENT}/dashboard/recent`,
       failureRedirect: "/"
       // failureFlash: true
     })

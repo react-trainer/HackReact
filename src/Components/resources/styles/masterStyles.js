@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const OuterContainer = styled.div`
   /* position: fixed;*/
-  height: ${props =>props.height || null};
+  height: ${props => props.height || null};
   width: 100vw;
   display: flex;
-  flex-direction: ${props=> props.flexDirection || 'column'};
+  flex-direction: ${props => props.flexDirection || "column"};
   align-items: ${props => props.alignItems || "center"};
   justify-content: ${props => props.justifyContent || "center"};
   background-image: ${props => props.backgroundImage || null};
@@ -21,7 +21,7 @@ export const MainContainer = styled.div`
   flex-direction: ${props => props.flexDirection || "row"};
   flex-wrap: wrap;
   overflow: hidden;
-  margin:${props => props.margin || "null"};
+  margin: ${props => props.margin || "null"};
 `;
 
 export const Button = styled.button`
@@ -46,6 +46,12 @@ export const Button = styled.button`
   font-family: ${props => props.fontFamily || "'Signika', sans-serif"};
   box-shadow: ${props => props.boxShadow || "0px -3px 20px -6px inset #a7f5f1"};
   transition: ${props => props.transition || "0.5s"};
+  position: ${props => props.position || null};
+  top: ${props => props.top || "0"};
+  bottom: ${props => props.bottom || "0"};
+  right: ${props => props.right || "0"};
+  left: ${props => props.left || "0"};
+  /* z-index: ${props => props.zIndex || "0"}; */
   outline: none;
   overflow: hidden;
   cursor: pointer;
@@ -90,9 +96,9 @@ export const Card = styled.div`
   box-shadow: ${props =>
     props.boxShadow || "0px 4px 6px -3px inset rgb(0,216,255)"};
   margin: ${props => props.margin || "25px"};
-  overflow: ${props => props.overflow ||"hidden"};
+  overflow: ${props => props.overflow || "hidden"};
   background-size: ${props => props.backgroundSize || "cover"};
-  object-fit: ${props =>props.objectFit || "contain"};
+  object-fit: ${props => props.objectFit || "contain"};
 `;
 
 export const LessonOverlay = styled.div`
