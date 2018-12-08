@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { getUser } from "../../../../ducks/userReducer";
 import { connect } from "react-redux";
-import "./Sandbox.css";
+import "./sandbox.css";
 
 import { IframeContainer, ContainerDiv } from "./SandboxSC";
 

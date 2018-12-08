@@ -18,8 +18,7 @@ class Quiz extends Component {
           answers: ["3", "5", "Jerry", "4"]
         }
       ],
-      answers: [], 
-      
+      answers: []
     };
   }
 
@@ -68,11 +67,7 @@ class Quiz extends Component {
         </div>
       );
     });
-    return (
-      <div>
-        <h1>{quizdisplay}</h1>
-      </div>
-    );
+    return <div>{quizdisplay}</div>;
   }
 }
 
