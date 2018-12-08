@@ -27,7 +27,7 @@ class Landing extends Component {
         {
           title: ` React Made Simple. `,
           title2: `For You.`,
-          title3: `By You.`,
+          // title3: `By You.`,
           sub:
             "New to React? Trouble understanding the React Documentation? Start here to begin your journey!",
           image: <ScribbleUnderline src={Underline} alt="scribble" />,
