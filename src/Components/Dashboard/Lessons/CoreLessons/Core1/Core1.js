@@ -10,6 +10,7 @@ class Lesson extends Component {
     this.state = {
       goals: false,
       completed: false,
+      lesson_id: 1,
       title: "Title",
       number: "1",
       docsURL: "https://reactjs.org/docs/components-and-props.html",
@@ -144,6 +145,7 @@ class Lesson extends Component {
             title={this.state.title}
             number={this.state.number}
             goals={this.state.lessongoals}
+            lesson_id={this.state.lesson_id}
           />
         ) : null}
       </Container>

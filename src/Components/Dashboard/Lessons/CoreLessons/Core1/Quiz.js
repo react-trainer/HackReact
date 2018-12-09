@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Answer, Swal1 } from "./Core1SC";
 import swal from "sweetalert";
+import PropTypes from "prop-types";
 
 class Quiz extends Component {
   constructor() {
@@ -36,7 +37,7 @@ class Quiz extends Component {
         if (j === 0) {
           return (
             <Answer
-              key={i}
+              key={j}
               onClick={() => this.checkAnswer("a", e.correct_answer)}
             >
               a. {f}
@@ -45,7 +46,7 @@ class Quiz extends Component {
         } else if (j === 1) {
           return (
             <Answer
-              key={i}
+              key={j}
               onClick={() => this.checkAnswer("b", e.correct_answer)}
             >
               b. {f}
@@ -54,7 +55,7 @@ class Quiz extends Component {
         } else if (j === 2) {
           return (
             <Answer
-              key={i}
+              key={j}
               onClick={() => this.checkAnswer("c", e.correct_answer)}
             >
               c. {f}
@@ -63,7 +64,7 @@ class Quiz extends Component {
         } else if (j === 3) {
           return (
             <Answer
-              key={i}
+              key={j}
               onClick={() => this.checkAnswer("d", e.correct_answer)}
             >
               d. {f}
@@ -82,5 +83,14 @@ class Quiz extends Component {
     return <div>{quizdisplay}</div>;
   }
 }
+
+Quiz.propTypes = {
+  index: PropTypes.number,
+  finished: PropTypes.bool,
+  correct: PropTypes.number,
+  progress: PropTypes.number,
+  questions: PropTypes.array,
+  quiz_id: PropTypes.number
+};
 
 export default Quiz;
