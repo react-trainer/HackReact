@@ -10,8 +10,10 @@ class Lesson extends Component {
     this.state = {
       goals: false,
       completed: false,
+      lesson_id: 1,
       title: "Title",
       number: "1",
+      docsURL: "https://reactjs.org/docs/components-and-props.html",
       // lesson_id: this.props.lesson_id,
       lessongoals: [
         "get shwifty",
@@ -84,11 +86,11 @@ class Lesson extends Component {
           <Title>
             <h1>{this.state.title}</h1>
             <a
-              href="https://reactjs.org/docs/components-and-props.html"
+              href={this.state.docsURL}
               target="_blank"
               rel="noopener noreferrer"
             >
-              React Component Docs
+              React {this.state.title} Docs
             </a>
           </Title>
           <Instructions>
@@ -112,7 +114,7 @@ class Lesson extends Component {
               backgroundColor="#00a6cc"
               position="fixed"
               top="92%"
-              left="13%" 
+              left="13%"
               onClick={this.showCompleted}
             >
               Quiz
@@ -143,6 +145,7 @@ class Lesson extends Component {
             title={this.state.title}
             number={this.state.number}
             goals={this.state.lessongoals}
+            lesson_id={this.state.lesson_id}
           />
         ) : null}
       </Container>
