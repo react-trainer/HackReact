@@ -143,4 +143,14 @@ export const CodeIcon = styled.img`
   right: ${props => props.right || null};
   bottom: ${props => props.bottom || null};
   filter: ${props => props.filter || null};
+
+  @media (max-width: 1680px) {
+    top: ${props => (props.leftContainer === "true" ? "20px" : props.top)};
+  }
+  @media (max-width: 1500px) {
+    top: ${props => (props.leftContainer === "true" ? "23px" : props.top)};
+  }
+  @media (max-width: 1400px) {
+    top: ${props => (props.leftContainer === "true" ? "26px" : props.top)};
+  }
 `;

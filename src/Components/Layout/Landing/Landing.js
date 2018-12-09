@@ -143,18 +143,26 @@ class Landing extends Component {
     return (
       <OuterContainer flexDirection="row">
         <LeftContainer>
-          <CodeIcon src={CodeImg} top="15px" left="50px" alt="icon" />
-          <Title
-            color="black"
-            position="absolute"
-            top="20px"
-            left="115px"
-            fontSize="40px"
-            fontFamily="CeraGR-Black, sans-serif"
-            letterSpacing="3px"
-          >
-            HackReact
-          </Title>
+          <>
+            <CodeIcon
+              src={CodeImg}
+              top="15px"
+              left="50px"
+              leftContainer="true"
+              alt="icon"
+            />
+            <Title
+              color="black"
+              position="absolute"
+              top="20px"
+              left="115px"
+              fontSize="40px"
+              fontFamily="CeraGR-Black, sans-serif"
+              letterSpacing="3px"
+            >
+              HackReact
+            </Title>
+          </>
           <MenuContainers>{displayMenus}</MenuContainers>
 
           <ArrowIcon
