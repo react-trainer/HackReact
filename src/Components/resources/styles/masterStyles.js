@@ -99,15 +99,34 @@ export const Card = styled.div`
   overflow: ${props => props.overflow || "hidden"};
   background-size: ${props => props.backgroundSize || "cover"};
   object-fit: ${props => props.objectFit || "contain"};
+  transition: 0.4s;
+
+  :hover {
+    box-shadow: 0px 4px 6px -3px inset rgb(212, 71, 200);
+  }
 `;
 
 export const LessonOverlay = styled.div`
   width: 100%;
   border-radius: 3%;
   height: 50%;
-  background-color: rgba(37, 37, 37, 0.7);
+  background-color: rgba(37, 37, 37, 0.8);
+  font-size: 1.3rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+`;
+
+export const Title = styled.h1`
+  font-size: ${props => props.fontSize || "35px"};
+  color: ${props => props.color || "white"};
+  letter-spacing: ${props => props.letterSpacing || "1px"};
+  text-transform: ${props => props.textTransform || null};
+  font-family: ${props => props.fontFamily || null};
+  font-weight: ${props => props.fontWeight || "bold"};
+  margin: ${props => props.margin || "0"};
+  position: ${props => props.position || null};
+  top: ${props => props.top || null};
+  left: ${props => props.left || null};
+  overflow: hidden;
 `;
