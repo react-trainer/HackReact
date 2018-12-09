@@ -6,7 +6,7 @@ import Goals from "./Goals";
 import MockAdapter from "axios-mock-adapter";
 import axios from "axios";
 
-describe("Core1", () => {
+describe("Core1 - Initial", () => {
   let wrapper;
   beforeEach(() => (wrapper = shallow(<Core1 />)));
   it("should render a <div />", () => {
@@ -38,7 +38,7 @@ describe("Core1", () => {
   });
 });
 
-describe("Core1 - Axios", () => {
+describe("Core1 - Axios/Mounting", () => {
   const spy = jest.spyOn(Core1.prototype, "getLesson");
   const wrapper = mount(<Core1 />);
   const mockData = {
@@ -61,7 +61,7 @@ describe("Core1 - Axios", () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  it("sets lesson to state", () => {
+  it("sets lesson info to state", () => {
     expect(wrapper.state().lesson_info).toEqual(mockData);
   });
 });

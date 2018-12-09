@@ -3,6 +3,7 @@ import Goals from "./Goals";
 import Completed from "./Completed";
 import { Container, Content, Editor, Title, Instructions } from "./Core1SC";
 import { Button } from "../../../../resources/styles/masterStyles";
+import axios from "axios";
 
 class Lesson extends Component {
   constructor() {
@@ -39,7 +40,9 @@ class Lesson extends Component {
   }
 
   getLesson() {
-    console.log("get lesson");
+    axios
+      .get(`/api/lesson/1`)
+      .then(response => this.setState({ lesson_info: response.data }));
   }
 
   showGoals = () => {
