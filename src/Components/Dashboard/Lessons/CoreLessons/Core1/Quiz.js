@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Answer, Swal1 } from "./Core1SC";
 import swal from "sweetalert";
+import PropTypes from "prop-types";
 
 class Quiz extends Component {
   constructor() {
@@ -18,8 +19,7 @@ class Quiz extends Component {
           answers: ["3", "5", "Jerry", "4"]
         }
       ],
-      answers: [], 
-      
+      answers: []
     };
   }
 
@@ -36,26 +36,38 @@ class Quiz extends Component {
       let answers = e.answers.map((f, j) => {
         if (j === 0) {
           return (
-            <Answer onClick={() => this.checkAnswer("a", e.correct_answer)}>
-              <h4 key={i}>a. {f} </h4>
+            <Answer
+              key={j}
+              onClick={() => this.checkAnswer("a", e.correct_answer)}
+            >
+              a. {f}
             </Answer>
           );
         } else if (j === 1) {
           return (
-            <Answer onClick={() => this.checkAnswer("b", e.correct_answer)}>
-              <h4 key={i}>b. {f}</h4>
+            <Answer
+              key={j}
+              onClick={() => this.checkAnswer("b", e.correct_answer)}
+            >
+              b. {f}
             </Answer>
           );
         } else if (j === 2) {
           return (
-            <Answer onClick={() => this.checkAnswer("c", e.correct_answer)}>
-              <h4 key={i}>c. {f}</h4>
+            <Answer
+              key={j}
+              onClick={() => this.checkAnswer("c", e.correct_answer)}
+            >
+              c. {f}
             </Answer>
           );
         } else if (j === 3) {
           return (
-            <Answer onClick={() => this.checkAnswer("d", e.correct_answer)}>
-              <h4 key={i}>d. {f}</h4>
+            <Answer
+              key={j}
+              onClick={() => this.checkAnswer("d", e.correct_answer)}
+            >
+              d. {f}
             </Answer>
           );
         }
@@ -68,12 +80,17 @@ class Quiz extends Component {
         </div>
       );
     });
-    return (
-      <div>
-        <h1>{quizdisplay}</h1>
-      </div>
-    );
+    return <div>{quizdisplay}</div>;
   }
 }
+
+Quiz.propTypes = {
+  index: PropTypes.number,
+  finished: PropTypes.bool,
+  correct: PropTypes.number,
+  progress: PropTypes.number,
+  questions: PropTypes.array,
+  quiz_id: PropTypes.number
+};
 
 export default Quiz;
