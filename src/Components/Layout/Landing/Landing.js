@@ -10,12 +10,14 @@ import {
   ArrowIcon,
   MenuContainers,
   MenuContents,
-  ScribbleUnderline
+  ScribbleUnderline,
+  CodeIcon
 } from "./LandingSC";
 import PreviousButton from "./pictures/arrow-left.svg";
 import NextButton from "./pictures/arrow-right.svg";
 import Wrench from "./pictures/wrench.svg";
 import Underline from "./pictures/underline.png";
+import CodeImg from "./pictures/code.svg";
 
 class Landing extends Component {
   constructor() {
@@ -141,6 +143,18 @@ class Landing extends Component {
     return (
       <OuterContainer flexDirection="row">
         <LeftContainer>
+          <CodeIcon src={CodeImg} top="15px" left="50px" alt="icon" />
+          <Title
+            color="black"
+            position="absolute"
+            top="20px"
+            left="115px"
+            fontSize="40px"
+            fontFamily="CeraGR-Black, sans-serif"
+            letterSpacing="3px"
+          >
+            HackReact
+          </Title>
           <MenuContainers>{displayMenus}</MenuContainers>
 
           <ArrowIcon
@@ -192,6 +206,14 @@ class Landing extends Component {
             >
               VIEW
             </Button>
+            <CodeIcon
+              src={CodeImg}
+              width="2%"
+              bottom="15px"
+              right="50px"
+              alt="icon"
+              filter="invert(50%)"
+            />
           </BottomRight>
         </RightContainer>
       </OuterContainer>
