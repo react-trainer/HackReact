@@ -35,26 +35,38 @@ class Quiz extends Component {
       let answers = e.answers.map((f, j) => {
         if (j === 0) {
           return (
-            <Answer onClick={() => this.checkAnswer("a", e.correct_answer)}>
-              <h4 key={i}>a. {f} </h4>
+            <Answer
+              key={i}
+              onClick={() => this.checkAnswer("a", e.correct_answer)}
+            >
+              a. {f}
             </Answer>
           );
         } else if (j === 1) {
           return (
-            <Answer onClick={() => this.checkAnswer("b", e.correct_answer)}>
-              <h4 key={i}>b. {f}</h4>
+            <Answer
+              key={i}
+              onClick={() => this.checkAnswer("b", e.correct_answer)}
+            >
+              b. {f}
             </Answer>
           );
         } else if (j === 2) {
           return (
-            <Answer onClick={() => this.checkAnswer("c", e.correct_answer)}>
-              <h4 key={i}>c. {f}</h4>
+            <Answer
+              key={i}
+              onClick={() => this.checkAnswer("c", e.correct_answer)}
+            >
+              c. {f}
             </Answer>
           );
         } else if (j === 3) {
           return (
-            <Answer onClick={() => this.checkAnswer("d", e.correct_answer)}>
-              <h4 key={i}>d. {f}</h4>
+            <Answer
+              key={i}
+              onClick={() => this.checkAnswer("d", e.correct_answer)}
+            >
+              d. {f}
             </Answer>
           );
         }

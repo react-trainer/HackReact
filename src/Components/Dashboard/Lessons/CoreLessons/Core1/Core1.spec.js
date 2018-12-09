@@ -1,9 +1,8 @@
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 import Core1 from "./Core1";
 import Completed from "./Completed";
 import Goals from "./Goals";
-import { Content } from "./Core1SC";
 
 describe("Core1", () => {
   let wrapper;
@@ -21,8 +20,20 @@ describe("Core1", () => {
     expect(wrapper.containsMatchingElement(<Completed />)).toEqual(false);
   });
 
-  it("should mount with goals false", () => {
-    const wrapper = mount(<Core1 />);
-    expect(wrapper.state().completed).to.equal(false);
+  it("should mount with state", () => {
+    const wrapper = shallow(<Core1 />);
+    const componentInstance = wrapper.instance();
+    componentInstance.componentDidMount();
+    expect(wrapper.state("goals")).toBe(true);
+    expect(wrapper.state("completed")).toBe(false);
+    expect(wrapper.state("title")).toBe("Title");
+    expect(wrapper.state("number")).toBe("1");
+    expect(wrapper.state("docsURL")).toBe(
+      "https://reactjs.org/docs/components-and-props.html"
+    );
+    expect(wrapper.state("iframe")).toBe("30l5vp4jqq");
+    expect(wrapper.state("module")).toBe("/src/App.js");
   });
+
+  
 });
