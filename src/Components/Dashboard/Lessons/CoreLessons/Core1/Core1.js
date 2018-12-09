@@ -8,6 +8,7 @@ class Lesson extends Component {
   constructor() {
     super();
     this.state = {
+      lesson_info: {},
       goals: false,
       completed: false,
       lesson_id: 1,
@@ -29,12 +30,16 @@ class Lesson extends Component {
     this.onOpen = this.onOpen.bind(this);
     this.onCloseCompleted = this.onCloseCompleted.bind(this);
     this.onOpenCompleted = this.onOpenCompleted.bind(this);
+    this.getLesson = this.getLesson.bind(this);
   }
 
   componentDidMount() {
-    //this.getlesson() -- get a lesson from db
-
+    this.getLesson();
     this.showGoals();
+  }
+
+  getLesson() {
+    console.log("get lesson");
   }
 
   showGoals = () => {
