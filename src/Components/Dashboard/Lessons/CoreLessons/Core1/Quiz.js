@@ -2,15 +2,13 @@ import React, { Component } from "react";
 import { Answer, Swal1 } from "./Core1SC";
 import swal from "sweetalert";
 import PropTypes from "prop-types";
+import axios from "axios";
 
 class Quiz extends Component {
   constructor() {
     super();
     this.state = {
-      index: 0,
-      finished: false,
-      correct: 0,
-      progress: 0,
+      quiz_info: {},
       questions: [
         {
           question_id: 0,
@@ -18,9 +16,19 @@ class Quiz extends Component {
           correct_answer: "d",
           answers: ["3", "5", "Jerry", "4"]
         }
-      ],
-      answers: []
+      ]
     };
+    this.getQuiz = this.getQuiz.bind(this);
+  }
+
+  componentDidMount() {
+    this.getQuiz();
+  }
+
+  getQuiz() {
+    axios
+      .get("/api/quiz/1")
+      .then(response => this.setState({ quiz_info: response.data }));
   }
 
   checkAnswer = (value, correct) => {

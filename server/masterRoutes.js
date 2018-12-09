@@ -1,8 +1,8 @@
 const commentCtrl = require("./controllers/commentCtrl");
 const ratingCtrl = require("./controllers/ratingCtrl");
 
-const { getImages } = require("./controllers/lessonCtrl");
 const { getUser } = require("./controllers/userCtrl");
+const { getLesson, getQuiz, getImages } = require("./controllers/lessonCtrl");
 
 const express = require("express");
 // const router = express.Router();
@@ -40,9 +40,12 @@ module.exports = app => {
   app.put("/api/lesson/:lesson_id");
   app.put("/api/image/:lesson_id");
   app.get("/api/lesson/all");
-  app.get("/api/images", getImages);
-  app.get("/api/lesson/:lesson_id");
+  app.get("/api/lesson/:lesson_id", getLesson);
   app.get("/api/lesson/:user_id");
+  app.get("/api/images", getImages);
+
+  //quiz
+  app.get("/api/quiz/:quiz_id", getQuiz);
 
   //comment
   app.post("/api/comment/:lesson_id");
