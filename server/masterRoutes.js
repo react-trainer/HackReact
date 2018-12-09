@@ -4,7 +4,7 @@ const commentCtrl = require("./controllers/commentCtrl");
 const ratingCtrl = require("./controllers/ratingCtrl");
 
 const { getUser } = require("./controllers/userCtrl");
-const { getLesson } = require("./controllers/lessonCtrl");
+const { getLesson, getQuiz } = require("./controllers/lessonCtrl");
 
 const express = require("express");
 // const router = express.Router();
@@ -44,6 +44,9 @@ module.exports = app => {
   app.get("/api/lesson/all");
   app.get("/api/lesson/:lesson_id", getLesson);
   app.get("/api/lesson/:user_id");
+
+  //quiz
+  app.get("/api/quiz/:quiz_id", getQuiz);
 
   //comment
   app.post("/api/comment/:lesson_id");

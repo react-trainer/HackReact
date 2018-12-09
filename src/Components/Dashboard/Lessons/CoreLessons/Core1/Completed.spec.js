@@ -14,6 +14,4 @@ describe("Completed", () => {
   it("should render the Quiz Component", () => {
     expect(wrapper.containsMatchingElement(<Quiz />)).toEqual(true);
   });
-
-  
 });
