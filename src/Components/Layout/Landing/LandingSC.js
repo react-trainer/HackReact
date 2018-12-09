@@ -48,11 +48,14 @@ export const BottomRight = styled(UpperRight)`
 export const Title = styled.h1`
   font-size: ${props => props.fontSize || "35px"};
   color: ${props => props.color || "white"};
-  letter-spacing: 1px;
+  letter-spacing: ${props => props.letterSpacing || "1px"};
   text-transform: ${props => props.textTransform || null};
   font-family: ${props => props.fontFamily || null};
   font-weight: ${props => props.fontWeight || "bold"};
   margin: ${props => props.margin || "0"};
+  position: ${props => props.position || null};
+  top: ${props => props.top || null};
+  left: ${props => props.left || null};
   overflow: hidden;
 `;
 
@@ -127,5 +130,27 @@ export const ScribbleUnderline = styled.img`
   }
   @media (max-height: 630px) {
     top: 45%;
+  }
+`;
+
+export const CodeIcon = styled.img`
+  height: auto;
+  width: ${props => props.width || "3%"};
+  margin: ${props => props.margin || "0"};
+  position: ${props => props.position || "absolute"};
+  top: ${props => props.top || null};
+  left: ${props => props.left || null};
+  right: ${props => props.right || null};
+  bottom: ${props => props.bottom || null};
+  filter: ${props => props.filter || null};
+
+  @media (max-width: 1680px) {
+    top: ${props => (props.leftContainer === "true" ? "20px" : props.top)};
+  }
+  @media (max-width: 1500px) {
+    top: ${props => (props.leftContainer === "true" ? "23px" : props.top)};
+  }
+  @media (max-width: 1400px) {
+    top: ${props => (props.leftContainer === "true" ? "26px" : props.top)};
   }
 `;
