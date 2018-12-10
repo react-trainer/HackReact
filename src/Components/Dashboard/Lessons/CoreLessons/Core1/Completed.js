@@ -79,7 +79,7 @@ class Completed extends Component {
             correct={this.state.correct}
             progress={this.state.progress}
             questions={this.state.questions}
-            quiz_id={this.state.quiz_id}
+            lesson_id={this.props.lesson_id}
           />
           <br />
           <br />
