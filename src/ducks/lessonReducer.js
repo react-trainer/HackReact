@@ -19,7 +19,7 @@ export const getImages = () => {
 };
 
 //REDUCER
-export default function userReducer(state = initialState, action) {
+export default function lessonReducer(state = initialState, action) {
   console.log(action.type);
   switch (action.type) {
     case `${GET_IMAGES}_PENDING`:
