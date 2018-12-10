@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { getUser } from "../../../../ducks/userReducer";
+
 import { connect } from "react-redux";
 import "./sandbox.css";
 
@@ -26,9 +27,13 @@ class Sandbox extends Component {
   render() {
     console.log(this.props);
     let linkToggle = this.props.state.user.loggedIn ? (
-      <button onClick={() => this.linkToggle()}>Dashboard</button>
+      <button className="logbtn" onClick={() => this.linkToggle()}>
+        Dashboard
+      </button>
     ) : (
-      <button onClick={() => this.linkToggle()}>Back</button>
+      <button className="loggedOutBtn" onClick={() => this.linkToggle()}>
+        Back
+      </button>
     );
     return (
       <ContainerDiv>

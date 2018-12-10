@@ -226,3 +226,14 @@ input[type="checkbox"] {
   color: black;
   background: grey;
 }
+
+.logbtn,
+.loggedOutBtn {
+  float: left;
+  border-radius: 10px;
+  padding: 5px;
+  background: black;
+  color: lime;
+  font-family: "Share Tech Mono", monospace;
+  cursor: pointer;
+}
