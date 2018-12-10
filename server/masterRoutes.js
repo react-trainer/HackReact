@@ -42,11 +42,11 @@ module.exports = app => {
   app.put("/api/lesson/:lesson_id");
   app.put("/api/image/:lesson_id");
   app.get("/api/lesson/all");
-  app.get("/api/lesson/:lesson_id", getLesson);
+  app.get("/api/lesson/:lesson_id");
   app.get("/api/lesson/:user_id");
 
   //quiz
-  app.get("/api/quiz/:quiz_id", getQuiz);
+  app.get("/api/quiz/:quiz_id");
 
   //comment
   app.post("/api/comment/:lesson_id");
