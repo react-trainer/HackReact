@@ -17,8 +17,6 @@ const getDrills = (req, res) => {
 
 const editUserAbout = (req, res) => {
   let db = req.app.get("db");
-  console.log(req.user.about_user, req.user.user_id);
-  console.log(req.body);
   db.update_user_about([req.user.user_id, req.body.about_user])
     .then(response => {
       res.state(200).json(response);
@@ -26,8 +24,19 @@ const editUserAbout = (req, res) => {
     .catch(err => res.status(500).send(err => console.log(err)));
 };
 
+const editUserImg = (req, res) => {
+  let db = req.app.get("db");
+  db.update_user_img([req.user.user_id, req.body.imageUrl])
+  .then(response => {
+    res.status(200).json(response);
+  })
+  .catch(err => res.status(500).send(err => console.log(err)));
+ }
+ 
+
 module.exports = {
   getUser,
   getDrills,
-  editUserAbout
+  editUserAbout,
+  editUserImg
 };
