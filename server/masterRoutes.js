@@ -1,7 +1,12 @@
 const commentCtrl = require("./controllers/commentCtrl");
 const ratingCtrl = require("./controllers/ratingCtrl");
 
-const { getUser, editUserAbout, getDrills, editUserImg } = require("./controllers/userCtrl");
+const {
+  getUser,
+  editUserAbout,
+  getDrills,
+  editUserImg
+} = require("./controllers/userCtrl");
 const { getLesson, getQuiz, getImages } = require("./controllers/lessonCtrl");
 
 const express = require("express");
@@ -32,7 +37,7 @@ module.exports = app => {
   app.get("/api/images", getImages);
 
   //quiz
-  app.get("/api/quiz/:quiz_id");
+  app.get("/api/quiz/:lesson_id", getQuiz);
 
   //comment
   app.post("/api/comment/:lesson_id");

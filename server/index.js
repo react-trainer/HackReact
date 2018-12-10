@@ -10,6 +10,7 @@ const cors = require("cors");
 const authCtrl = require("./controllers/authCtrl");
 const masterRoutes = require("./masterRoutes");
 
+<<<<<<< HEAD
 // const multer = require('multer');
 // const multerS3 = require('multer-s3');
 const AWS = require('aws-sdk')
@@ -30,8 +31,11 @@ app.use(
   })
 )
 
+=======
+>>>>>>> master
 app.use(json());
 app.use(cors());
+
 app.use(
   session({
     secret,
@@ -42,8 +46,6 @@ app.use(
     }
   })
 );
-
-// app.use(multer({dest:'/api/user/image'}).single('image'));
 
 massive(CONNECTION_STRING).then(dbInstance => {
   app.set("db", dbInstance);

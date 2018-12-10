@@ -16,6 +16,7 @@ const initialState = {
 
 //ACTION CREATORS
 //GET
+
 export const getUser = () => {
   return {
     type: GET_USER,
@@ -48,7 +49,7 @@ export default function userReducer(state = initialState, action) {
       );
       return {
         ...state,
-        [action.payload.target.name]: action.payload.target.value
+        [action.payload.target.name]: action.payload.target.value.toLowerCase()
       };
     case `${GET_DRILLS}_PENDING`:
       return {

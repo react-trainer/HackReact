@@ -24,6 +24,7 @@ export default (
     <Route path="/lesson4" component={Core4} />
     <Route path="/lesson5" component={Core5} />
     <Route path="/lesson6" component={Core6} />
+    <Route path="/sandbox/:id" component={Sandbox} />
     <Route path="/sandbox" component={Sandbox} />
     <Route path="/profile" component={Profile} />
     <Route path="/forum" component={Forum} />
