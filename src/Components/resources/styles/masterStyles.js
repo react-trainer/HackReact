@@ -109,7 +109,7 @@ export const Card = styled.div`
 export const LessonOverlay = styled.div`
   width: 100%;
   border-radius: 3%;
-  height: 50%;
+  height: 30%;
   background-color: rgba(37, 37, 37, 0.8);
   font-size: 1.3rem;
   display: flex;
