@@ -24,8 +24,19 @@ const editUserAbout = (req, res) => {
     .catch(err => res.status(500).send(err => console.log(err)));
 };
 
+const editUserImg = (req, res) => {
+  let db = req.app.get("db");
+  db.update_user_img([req.user.user_id, req.body.imageUrl])
+  .then(response => {
+    res.status(200).json(response);
+  })
+  .catch(err => res.status(500).send(err => console.log(err)));
+ }
+ 
+
 module.exports = {
   getUser,
   getDrills,
-  editUserAbout
+  editUserAbout,
+  editUserImg
 };
