@@ -1,53 +1,87 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-
+import { getImages } from "../../../../ducks/lessonReducer";
 import {
   Card,
   MainContainer,
-  LessonOverlay
+  LessonOverlay,
+  Title
 } from "../../../resources/styles/masterStyles";
 
 class LessonsDisplayed extends Component {
-  constructor() {
-    super();
-    this.state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      lessonComponents: [
+        {
+          title: "Lesson 1",
+          description: "This is a test description",
+          image:
+            "https://images.unsplash.com/photo-1516934955-a48560318e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+          title: "Lesson 2",
+          description: "This is a test description",
+          image:
+            "https://images.unsplash.com/photo-1497732270315-9593381855d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+          title: "Lesson 3",
+          description: "This is a test description",
+          image:
+            "https://images.unsplash.com/photo-1488228350390-e20f4c892840?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+          title: "Lesson 4",
+          description: "This is a test description",
+          image:
+            "https://images.unsplash.com/photo-1484587658517-51c2ea232f9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+          title: "Lesson 5",
+          description: "This is a test description",
+          image:
+            "https://images.unsplash.com/photo-1475887694576-62c01252e177?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+        },
+        {
+          title: "Lesson 6",
+          description: "This is a test description",
+          image:
+            "https://images.unsplash.com/photo-1488390224393-39b815d3cb3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+        }
+      ]
+    };
   }
-  
+
+  componentDidMount() {
+    this.props.getImages();
+  }
+
   render() {
-    return (
-      <MainContainer>
-        <Link to="/lesson1">
-          <Card backgroundImage="url(https://images.unsplash.com/photo-1536619493521-1ba5d2c25532?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
-            <LessonOverlay>Lesson 1</LessonOverlay>
+    const { lessonComponents } = this.state;
+    const { imageURL } = this.props.lesson;
+    const displayLessons = lessonComponents.map((value, index) => {
+      return (
+        <Link key={index} to={`/lesson${index + 1}`}>
+          <Card backgroundImage={`url(${value.image})`}>
+            <LessonOverlay>
+              <Title letterSpacing="2px" fontFamily="CeraGR-Black, sans-serif">
+                {value.title}
+              </Title>
+              {value.description}
+            </LessonOverlay>
           </Card>
         </Link>
-        <Card backgroundImage="url(https://images.unsplash.com/photo-1541591681685-0246308f076b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
-          <LessonOverlay>Lesson 2</LessonOverlay>
-        </Card>
-        <Card backgroundImage="url(https://images.unsplash.com/photo-1463597990030-6cf9519fd4b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
-          <LessonOverlay>Lesson 3</LessonOverlay>
-        </Card>
-        <Card backgroundImage="url(https://images.unsplash.com/photo-1536890992765-f42a1ee1e2a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
-          <LessonOverlay>Lesson 4</LessonOverlay>
-        </Card>
-        <Card backgroundImage="url(https://images.unsplash.com/photo-1529755138190-9f36355c530d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
-          <LessonOverlay>Lesson 5</LessonOverlay>
-        </Card>
-        <Card backgroundImage="url(https://images.unsplash.com/photo-1470723710355-95304d8aece4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60)">
-          <LessonOverlay>Lesson 6</LessonOverlay>
-        </Card>
-        <Card backgroundImage="url(https://images.unsplash.com/photo-1524282592407-25bf4101ac81?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)">
-          <LessonOverlay>Lesson 7</LessonOverlay>
-        </Card>
-        <Card backgroundImage="url(https://images.unsplash.com/photo-1523807010671-a587c2fba288?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)">
-          <LessonOverlay>Lesson 8</LessonOverlay>
-        </Card>
-      </MainContainer>
-    );
+      );
+    });
+    return <MainContainer>{displayLessons}</MainContainer>;
   }
 }
 
 const mapStateToProps = state => state;
 
-export default connect(mapStateToProps)(LessonsDisplayed);
+export default connect(
+  mapStateToProps,
+  { getImages }
+)(LessonsDisplayed);
