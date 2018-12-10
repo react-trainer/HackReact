@@ -25,7 +25,7 @@ module.exports = app => {
   app.put("/api/lesson/:lesson_id");
   app.put("/api/image/:lesson_id");
   app.get("/api/lesson/all");
-  app.get("/api/lesson/:lesson_id");
+  app.get("/api/lesson/:lesson_id", getLesson);
   app.get("/api/lesson/:user_id");
   app.get("/api/images", getImages);
 
