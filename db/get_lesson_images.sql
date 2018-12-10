@@ -1,0 +1,1 @@
+SELECT image_url FROM images;

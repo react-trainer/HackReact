@@ -1,16 +1,15 @@
 import axios from "axios";
 
-//action types
+//ACTION TYPES
 const GET_USER = "GET_USER";
 
-//initial state
-
+//INITIAL STATE
 const initialState = {
   user: [],
   loggedIn: false
 };
 
-//action creators
+//ACTION CREATORS
 export const getUser = () => {
   return {
     type: GET_USER,
@@ -18,8 +17,7 @@ export const getUser = () => {
   };
 };
 
-//reducer
-
+//REDUCER
 export default function userReducer(state = initialState, action) {
   switch (action.type) {
     case `${GET_USER}_PENDING`:

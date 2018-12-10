@@ -13,6 +13,7 @@ import {
   ScribbleUnderline,
   CodeIcon
 } from "./LandingSC";
+import { Link } from "react-router-dom";
 import PreviousButton from "./pictures/arrow-left.svg";
 import NextButton from "./pictures/arrow-right.svg";
 import Wrench from "./pictures/wrench.svg";
@@ -102,6 +103,7 @@ class Landing extends Component {
       });
     }
   }
+
   toLogin = () => {
     window.location.href = `${process.env.REACT_APP_SERVER}/login`;
   };
@@ -207,13 +209,11 @@ class Landing extends Component {
               <br />
               No need to sign up!
             </p>
-            <Button
-              boxShadow="0 0 0 0"
-              borderSize="2px"
-              onClick={() => this.toLogin()}
-            >
-              VIEW
-            </Button>
+            <Link to="/lesson1">
+              <Button boxShadow="0 0 0 0" borderSize="2px">
+                VIEW
+              </Button>
+            </Link>
             <CodeIcon
               src={CodeImg}
               width="2%"
