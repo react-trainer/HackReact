@@ -31,6 +31,12 @@ class Quiz extends Component {
       .then(response => this.setState({ quiz_info: response.data }));
   }
 
+  quizDrill() {
+    this.setState({
+      
+    })
+  }
+
   checkAnswer = (value, correct) => {
     return value === correct ? (
       <Swal1>{swal({ text: "Got it!", icon: "success", className: "" })}</Swal1>
