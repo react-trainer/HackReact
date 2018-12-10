@@ -27,7 +27,7 @@ class Quiz extends Component {
 
   getQuiz() {
     axios
-      .get("/api/quiz/1")
+      .get(`/api/quiz/${this.props.lesson_id}`)
       .then(response => this.setState({ quiz_info: response.data }));
   }
 
