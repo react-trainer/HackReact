@@ -152,10 +152,7 @@ class Lesson extends Component {
           <Completed
             onClose={this.onCloseCompleted}
             onOpen={this.onOpenCompleted}
-            title={this.state.title}
-            number={this.state.number}
-            goals={this.state.lessongoals}
-            lesson_id={this.state.lesson_id}
+            lesson_id={this.state.lesson_number}
           />
         ) : null}
       </Container>
