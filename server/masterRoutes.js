@@ -3,7 +3,7 @@ const lessonCtrl = require("./controllers/lessonCtrl");
 const commentCtrl = require("./controllers/commentCtrl");
 const ratingCtrl = require("./controllers/ratingCtrl");
 
-const {getUser} = require('./controllers/userCtrl');
+const {getUser, editUserAbout} = require('./controllers/userCtrl');
 
 const express = require("express");
 // const router = express.Router();
@@ -29,7 +29,7 @@ module.exports = app => {
 
     app.get('/api/user/all')
     app.get('/api/completed/:user_id')
-    app.put('/api/user/:user_id')
+    app.put('/api/user/:user_id', editUserAbout)
     app.put('/api/completed_counter')
     app.put('/api/drill_counter')
 
