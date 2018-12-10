@@ -1,7 +1,7 @@
 const commentCtrl = require("./controllers/commentCtrl");
 const ratingCtrl = require("./controllers/ratingCtrl");
 
-const { getUser, editUserAbout, getDrills } = require("./controllers/userCtrl");
+const { getUser, editUserAbout, getDrills, editUserImg } = require("./controllers/userCtrl");
 const { getLesson, getQuiz, getImages } = require("./controllers/lessonCtrl");
 
 const express = require("express");
@@ -14,6 +14,7 @@ module.exports = app => {
   app.get("/api/user/all");
   app.get("/api/completed/:user_id");
   app.put("/api/user/:user_id", editUserAbout);
+  app.put("/api/user/img/:user_id", editUserImg)
   app.put("/api/completed_counter");
   app.put("/api/drill_counter");
 
