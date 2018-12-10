@@ -26,8 +26,12 @@ const editUserAbout = (req, res) => {
 
 const editUserImg = (req, res) => {
   let db = req.app.get("db");
-  db.update_user_img([req.user.user_id, req.body.imageUrl])
+  // console.log(req.params)
+  // console.log(req.body)
+
+  db.update_user_img([req.params.user_id, req.body.image_url])
   .then(response => {
+    // console.log(response)
     res.status(200).json(response);
   })
   .catch(err => res.status(500).send(err => console.log(err)));

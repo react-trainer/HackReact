@@ -12,15 +12,23 @@ const masterRoutes = require("./masterRoutes");
 
 // const multer = require('multer');
 // const multerS3 = require('multer-s3');
-// const aws = require('aws-sdk')
+const AWS = require('aws-sdk')
 
-// aws.config.update({
-//   secretAccessKey: (process.env.AWS_SECRET_ACCESS_KEY),
-//   asscessKeyId: (process.env.AWS_ACCESS_KEY_ID),
-//   region: 'us-east-2'
-// })
+AWS.config.update({
+  secretAccessKey: (process.env.AWS_SECRET_ACCESS_KEY),
+  asscessKeyId: (process.env.AWS_ACCESS_KEY_ID),
+  region: 'us-east-2'
+})
 
-// const s3 = new aws.S3();
+app.use(
+  "/s3",
+  require("react-s3-uploader/s3router")({
+    bucket: 'hackreact',
+    region: "us-east-2",
+    headers: {"Access-Control_Allow-Origin": "*"},
+    ACL: "public-read"
+  })
+)
 
 app.use(json());
 app.use(cors());

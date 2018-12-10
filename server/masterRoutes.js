@@ -14,7 +14,7 @@ module.exports = app => {
   app.get("/api/user/all");
   app.get("/api/completed/:user_id");
   app.put("/api/user/:user_id", editUserAbout);
-  app.put("/api/user/img/:user_id", editUserImg)
+  app.put("/api/user/img/:user_id", editUserImg);
   app.put("/api/completed_counter");
   app.put("/api/drill_counter");
 
