@@ -63,7 +63,7 @@ class LessonsDisplayed extends Component {
     const { imageURL } = this.props.lesson;
     const displayLessons = lessonComponents.map((value, index) => {
       return (
-        <Link key={index} to={`/lesson${index + 1}`}>
+        <Link key={index} to={`/lesson/${index + 1}`}>
           <Card backgroundImage={`url(${value.image})`}>
             <LessonOverlay>
               <Title letterSpacing="2px" fontFamily="CeraGR-Black, sans-serif">
