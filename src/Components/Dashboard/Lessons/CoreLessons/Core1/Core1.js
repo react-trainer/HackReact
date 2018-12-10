@@ -13,7 +13,7 @@ class Lesson extends Component {
       goals: true,
       completed: false,
       lesson_number: this.props.match.params.id,
-      title: "",
+      lesson_title: "Title",
       lesson_description: ["loading!"],
       lesson_content: { test: "loading!" },
       docs_url: "https://reactjs.org/docs/components-and-props.html",
@@ -81,30 +81,44 @@ class Lesson extends Component {
   }
 
   render() {
-    console.log("scrip scip" + this.state.lesson_description);
+    let contentMap = Object.keys(this.state.lesson_content).map((e, i) => {
+      return [this.state.lesson_content[e]];
+    });
+
+    let contentDisplay = contentMap.map((e, i) => {
+      return (
+        <h3 key={i}>
+          <br />
+          {i + 1}. {e}
+          <br />
+          <br />
+        </h3>
+      );
+    });
+
     return (
       <Container>
         {this.state.goals ? (
           <Goals
             onClose={this.onClose}
             onOpen={this.onOpen}
-            title={this.state.title}
+            title={this.state.lesson_title}
             number={this.state.lesson_number}
             goals={this.state.lesson_description}
           />
         ) : null}
         <Content>
           <Title>
-            <h1>{this.state.title}</h1>
+            <h1>{this.state.lesson_title}</h1>
             <a
               href={this.state.docs_url}
               target="_blank"
               rel="noopener noreferrer"
             >
-              React {this.state.title} Docs
+              React {this.state.lesson_title} Docs
             </a>
           </Title>
-          <Instructions>{this.state.lesson_content.test}</Instructions>
+          <Instructions>{contentDisplay}</Instructions>
           <div className="navbuttons">
             <Button
               backgroundColor="#00a6cc"
