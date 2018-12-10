@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { MainContainer, Title } from "../../../resources/styles/masterStyles";
 import {
   SearchInput,
@@ -22,20 +23,21 @@ class DrillsDisplayed extends Component {
     const { updateInput } = this.props;
     const { drills, searchDrillsInput } = this.props.user;
     const displayDrills = drills
-      .map((value, index) => {
-        return value.drill_title;
-      })
-      .filter((value, index) => {
-        return value.toLowerCase().includes(searchDrillsInput);
+      .filter(value => {
+        return value.drill_title.toLowerCase().includes(searchDrillsInput);
       })
       .map((value, index) => {
-        return <DrillsContainer key={index}>{value}</DrillsContainer>;
+        return (
+          <DrillsContainer key={index}>
+            <Link to={`/sandbox/${value.drill_id}`}>{value.drill_title}</Link>
+          </DrillsContainer>
+        );
       });
-
+    console.log(this.props.user);
     return (
       <MainContainer height="100vh" flexDirection="column" alignItems="center">
         <HeaderContainer>
-          <Title> Drills by CodeWars </Title>{" "}
+          <Title fontFamily="Scada"> Drills by CodeWars </Title>{" "}
           <CodeWarsLogo src={CodeWars} alt="Codewars Logo" />
         </HeaderContainer>
         <SearchInput
