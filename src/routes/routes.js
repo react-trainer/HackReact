@@ -18,7 +18,7 @@ export default (
     <Route path="/" exact component={Landing} />
     <Route path="/dashboard" component={Dashboard} />
     <Route path="/about" component={About} />
-    <Route path="/lesson1" component={Core1} />
+    <Route path="/lesson/:id" component={Core1} />
     <Route path="/lesson2" component={Core2} />
     <Route path="/lesson3" component={Core3} />
     <Route path="/lesson4" component={Core4} />
