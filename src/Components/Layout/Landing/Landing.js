@@ -13,7 +13,7 @@ import {
   ScribbleUnderline,
   CodeIcon
 } from "./LandingSC";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import PreviousButton from "./pictures/arrow-left.svg";
 import NextButton from "./pictures/arrow-right.svg";
 import Wrench from "./pictures/wrench.svg";
@@ -64,7 +64,8 @@ class Landing extends Component {
           title: "Test Out Your Skills",
           title2: "In Our Sandbox",
           sub: `Take a dive in the sandbox and try out your skills before or after our course!`,
-          button: "Play Around"
+          button: "Play Around",
+          link: () => this.toSandbox()
         },
         {
           title: "Sign Up",
@@ -75,6 +76,7 @@ class Landing extends Component {
       ]
     };
   }
+
   nextQuestion() {
     const { count, sidePosition } = this.state;
     if (count >= 4) {
@@ -106,6 +108,10 @@ class Landing extends Component {
 
   toLogin = () => {
     window.location.href = `${process.env.REACT_APP_SERVER}/login`;
+  };
+
+  toSandbox = () => {
+    window.location.href = `${process.env.REACT_APP_CLIENT}/sandbox`;
   };
   render() {
     const { menuContainers, sidePosition } = this.state;

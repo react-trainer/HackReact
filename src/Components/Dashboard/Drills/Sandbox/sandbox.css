@@ -148,6 +148,7 @@ input[type="checkbox"] {
 
   border-radius: 7px;
   transition: all 0.25s ease-in-out;
+  overflow-x: hidden;
 }
 
 .lbl-toggle:hover {
@@ -236,4 +237,8 @@ input[type="checkbox"] {
   color: lime;
   font-family: "Share Tech Mono", monospace;
   cursor: pointer;
+}
+
+.wrap-collapsible {
+  background-color: black;
 }
