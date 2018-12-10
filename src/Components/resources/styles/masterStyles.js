@@ -18,6 +18,8 @@ export const MainContainer = styled.div`
   height: ${props => props.height || null};
   width: ${props => props.width || "70vw"};
   display: flex;
+  justify-content: ${props => props.justifyContent || null};
+  align-items: ${props => props.alignItems || null};
   flex-direction: ${props => props.flexDirection || "row"};
   flex-wrap: wrap;
   overflow: hidden;
