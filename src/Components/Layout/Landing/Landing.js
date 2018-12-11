@@ -65,7 +65,8 @@ class Landing extends Component {
           title: "Test Out Your Skills",
           title2: "In Our Sandbox",
           sub: `Take a dive in the sandbox and try out your skills before or after our course!`,
-          button: "Play Around"
+          button: "Play Around",
+          link: this.toSandbox
         },
         {
           title: "Sign Up",
@@ -104,7 +105,9 @@ class Landing extends Component {
       });
     }
   }
-
+  toSandbox = () => {
+    window.location.href = `${process.env.REACT_APP_CLIENT}/sandbox`;
+  };
   toLogin = () => {
     window.location.href = `${process.env.REACT_APP_SERVER}/login`;
   };
@@ -136,7 +139,7 @@ class Landing extends Component {
             color="rgb(37, 37, 37)"
             position="relative"
             top="60%"
-            onClick={value.link}
+            onClick={() => value.link()}
           >
             {value.button}
           </Button>

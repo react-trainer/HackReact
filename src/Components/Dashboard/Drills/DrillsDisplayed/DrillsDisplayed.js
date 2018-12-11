@@ -33,7 +33,6 @@ class DrillsDisplayed extends Component {
           </DrillsContainer>
         );
       });
-    console.log(this.props.user);
     return (
       <MainContainer height="100vh" flexDirection="column" alignItems="center">
         <HeaderContainer>

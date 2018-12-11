@@ -45,7 +45,7 @@ class Nav extends Component {
               <Link to="">
                 <h2>Forum</h2>
               </Link>
-              <Link to="">
+              <Link to="/sandbox">
                 <h4>Sandbox</h4>
               </Link>
               <a href="https://reactjs.org/docs/getting-started.html">
