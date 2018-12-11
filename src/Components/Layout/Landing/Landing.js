@@ -211,7 +211,7 @@ class Landing extends Component {
               <br />
               No need to sign up!
             </p>
-            <Link to="/lesson1">
+            <Link to="/lesson/1">
               <Button boxShadow="0 0 0 0" borderSize="2px">
                 VIEW
               </Button>

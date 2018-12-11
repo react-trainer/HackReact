@@ -22,7 +22,7 @@ export default class Canvas extends Component {
       x: undefined,
       y: undefined
     };
-    let maxRadius = 40;
+    let maxRadius = 30;
     // let minRadius = 2;
 
     let colorArray = ["#55DDE0", "#33658A", "#2F4858", "#00D8FF", "#3AAED8"];
