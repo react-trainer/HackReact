@@ -18,7 +18,7 @@ export const SearchInput = styled.input`
 export const DrillsContainer = styled.div`
   height: 5vh;
   width: 50vw;
-  background-color: rgb(38, 38, 38);
+  background-color: rgba(38, 38, 38, 0);
   border-bottom: 1px solid rgba(0, 216, 255, 0.4);
   letter-spacing: 2px;
   font-size: 20px;
@@ -27,6 +27,11 @@ export const DrillsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.5s;
+
+  :hover {
+    background-color: rgba(161, 45, 35, 0.5);
+  }
 `;
 export const HeaderContainer = styled.div`
   display: flex;

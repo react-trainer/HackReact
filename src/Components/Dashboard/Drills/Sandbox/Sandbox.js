@@ -43,7 +43,6 @@ class Sandbox extends Component {
         return value.drill_id === id;
       })
       .map((value, index) => {
-        console.log(value);
         return <p>{value.drill_description}</p>;
       });
     return (

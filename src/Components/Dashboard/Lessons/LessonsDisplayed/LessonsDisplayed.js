@@ -66,7 +66,7 @@ class LessonsDisplayed extends Component {
         <Link key={index} to={`/lesson/${index + 1}`}>
           <Card backgroundImage={`url(${value.image})`}>
             <LessonOverlay>
-              <Title letterSpacing="2px" fontFamily="CeraGR-Black, sans-serif">
+              <Title letterSpacing="2px" fontFamily="Scada">
                 {value.title}
               </Title>
               {value.description}

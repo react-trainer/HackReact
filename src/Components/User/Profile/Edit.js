@@ -1,100 +1,101 @@
-import React, {Component} from 'react'
-import {
-    Card,
-    Button
-  } from "../../resources/styles/masterStyles";
-  import S3Uploader from './S3Uploader';
-  import {connect} from "react-redux";
-  import {getUser} from '../../../ducks/userReducer';
-  import axios from "axios";
+import React, { Component } from "react";
+import { Card, Button } from "../../resources/styles/masterStyles";
+import S3Uploader from "./S3Uploader";
+import { connect } from "react-redux";
+import { getUser } from "../../../ducks/userReducer";
+import axios from "axios";
 
- class Edit extends Component {
-    constructor(){
-        super();
-        this.state={
-            image_url: null,
-            aboutText: ""
-        };
-    }
-    componentDidMount(){
-        this.props.getUser() 
-      }
+class Edit extends Component {
+  constructor() {
+    super();
+    this.state = {
+      image_url: null,
+      aboutText: ""
+    };
+  }
+  componentDidMount() {
+    this.props.getUser();
+  }
 
-      aboutHandler(input){
-        this.setState({aboutText: input})
-    }
+  aboutHandler(input) {
+    this.setState({ aboutText: input });
+  }
 
-    // async axios.put()
+  // async axios.put()
 
-      async  handleEdit  (id) {
-        await axios.put(`/api/user/${id}`,{
-            about_user: this.state.aboutText
-            })
-        .then( ()=> {
-            this.setState({aboutText: ""})
-            this.props.getUser()})
-    }
-
-    updateImage = (user_id, fileUrl)=> {
-        // console.log(user_id)
-        axios.put(`/api/user/img/${user_id}`,{image_url: fileUrl})
-        //   .then(this.setState({ image: this.props.image }));
-      };
-
-//"/api/user/img/:user_id"
-
-    render(){
-        
-        const user = this.props.state.user.user
-
-       const submitButton = user.map((e,i) => {
-           return (
-               <div key={i}>
-                <Card >
-                <input value={this.state.aboutText} type="text" onChange={e => this.aboutHandler(e.target.value)} />
-                    tell us about yourself
-                </Card>
-               <Button height="25px" width="100px" onClick={()=>{this.handleEdit(e.user_id, this.state.aboutText)}}>Submit</Button>
-               </div>
-           )
-       })
-
-       const s3 = user.map((e,i) => {
-        return(
-          <div key={i}>
-           <S3Uploader
-                    image_url={this.state.image_url}
-                    updateImage={this.updateImage}
-                    user_id={e.user_id}
-                    />
-          </div>
-        )
+  async handleEdit(id) {
+    await axios
+      .put(`/api/user/${id}`, {
+        about_user: this.state.aboutText
       })
+      .then(() => {
+        this.setState({ aboutText: "" });
+        this.props.getUser();
+      });
+  }
 
-      console.log(ylersMug)
+  updateImage = (user_id, fileUrl) => {
+    // console.log(user_id)
+    axios.put(`/api/user/img/${user_id}`, { image_url: fileUrl });
+    //   .then(this.setState({ image: this.props.image }));
+  };
 
-        return(
-            
-                <Card height="40vh" width="100vw" padding="20px">
+  //"/api/user/img/:user_id"
 
-                <Card>
-                   {s3}
-                    
-                </Card>
+  render() {
+    const user = this.props.state.user.user;
 
-                    {submitButton}
+    const submitButton = user.map((e, i) => {
+      return (
+        <div key={i}>
+          <Card>
+            <input
+              value={this.state.aboutText}
+              type="text"
+              onChange={e => this.aboutHandler(e.target.value)}
+            />
+            tell us about yourself
+          </Card>
+          <Button
+            height="25px"
+            width="100px"
+            onClick={() => {
+              this.handleEdit(e.user_id, this.state.aboutText);
+            }}
+          >
+            Submit
+          </Button>
+        </div>
+      );
+    });
 
-                </Card>
-             
-        )
-    }
+    const s3 = user.map((e, i) => {
+      return (
+        <div key={i}>
+          <S3Uploader
+            image_url={this.state.image_url}
+            updateImage={this.updateImage}
+            user_id={e.user_id}
+          />
+        </div>
+      );
+    });
+
+    return (
+      <Card height="40vh" width="100vw" padding="20px">
+        <Card>{s3}</Card>
+
+        {submitButton}
+      </Card>
+    );
+  }
 }
 
-function mapStatetoProps(state){
-    return {state};
-  }
-  
-  export default connect(
-    mapStatetoProps, 
-    { getUser }
-    )(Edit);
+function mapStatetoProps(state) {
+  return { state };
+}
+
+export default connect(
+  mapStatetoProps,
+  { getUser }
+)(Edit);
