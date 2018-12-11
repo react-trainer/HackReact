@@ -18,7 +18,6 @@ class Completed extends Component {
     };
     this.upQuiz = this.upQuiz.bind(this);
     this.setRedirect = this.setRedirect.bind(this);
-    this.renderRedirect = this.renderRedirect.bind(this);
   }
 
   //set this up to activate certain buttons
@@ -70,18 +69,12 @@ class Completed extends Component {
     });
   }
 
-  renderRedirect() {
-    if (this.state.redirect) {
-      this.setState({ redirect: false });
-      return <Redirect to={`/lesson/${this.props.lesson_id + 1}`} />;
-    }
-  }
-
   refresh() {
     this.forceUpdate();
   }
 
   render() {
+    const { redirect } = this.state;
     return (
       <div>
         <Overlay />
@@ -105,7 +98,7 @@ class Completed extends Component {
             <Button onClick={this.upQuiz}>Next Question</Button>
           ) : (
             <div>
-              {this.renderRedirect()}
+              {redirect ? this.props.renderRedirect() : null}
               <Button onClick={this.setRedirect}>Next Lesson</Button>
             </div>
           )}

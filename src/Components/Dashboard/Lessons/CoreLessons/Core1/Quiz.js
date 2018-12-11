@@ -36,12 +36,10 @@ class Quiz extends Component {
   }
 
   checkAnswer = (value, correct) => {
-    return value === correct ? 
-      alert('got it!') :
-      alert('nope!')}
+    return value === correct ? alert("got it!") : alert("nope!");
+  };
 
   render() {
-    console.log(this.state.quiz_info);
     let quizdisplay = this.state.quiz_info.map((e, i) => {
       return (
         <div>
