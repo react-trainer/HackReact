@@ -33,11 +33,13 @@ export const DrillsContainer = styled.div`
     background-color: rgba(161, 45, 35, 0.5);
   }
 `;
+
 export const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 20px;
 `;
+
 export const CodeWarsLogo = styled.img`
   margin-left: 10px;
 `;
