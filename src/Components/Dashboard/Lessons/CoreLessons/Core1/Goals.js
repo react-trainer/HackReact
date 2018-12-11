@@ -44,15 +44,16 @@ class Goals extends Component {
   }
 
   render() {
-    let goalsDisplay = this.props.goals.map((e, i) => {
-      return (
-        <div key={i}>
-          <p>
-            {i + 1}: {e}
-          </p>
-        </div>
-      );
-    });
+    console.log("goals props" + this.props.goals);
+    // let goalsDisplay = this.props.goals.map((e, i) => {
+    //   return (
+    //     <div key={i}>
+    //       <p>
+    //         {i + 1}: {e}
+    //       </p>
+    //     </div>
+    //   );
+    // });
 
     return (
       <div>
@@ -65,7 +66,7 @@ class Goals extends Component {
           <br />
           <h2>What You Will Learn:</h2>
           <br />
-          {goalsDisplay}
+          {this.props.goals}
           <h2>Click anywhere to start!</h2>
           <br />
           <br />

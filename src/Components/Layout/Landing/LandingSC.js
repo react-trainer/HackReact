@@ -66,6 +66,11 @@ export const WrenchIcon = styled.img`
   height: auto;
   width: 9%;
   overflow: hidden;
+  @media (max-width: 1400px) {
+    top: 43%;
+    right: 4%;
+    width: 3%;
+  }
 `;
 export const ArrowIcon = styled.img`
   position: absolute;
@@ -117,6 +122,7 @@ export const ScribbleUnderline = styled.img`
   height: auto;
   width: 20%;
   @media (max-height: 930px) {
+    width: 30%;
     top: 30%;
   }
   @media (max-height: 860px) {

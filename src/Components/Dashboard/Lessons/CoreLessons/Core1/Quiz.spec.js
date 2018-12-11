@@ -37,4 +37,6 @@ describe("Quiz - Axios/Mounting", () => {
   it("sets the quiz info to state", () => {
     expect(wrapper.state().quiz_info).toEqual(mockData);
   });
+
+  
 });

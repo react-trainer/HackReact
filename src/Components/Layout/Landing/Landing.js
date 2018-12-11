@@ -13,7 +13,8 @@ import {
   ScribbleUnderline,
   CodeIcon
 } from "./LandingSC";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Canvas from "./Canvas";
 import PreviousButton from "./pictures/arrow-left.svg";
 import NextButton from "./pictures/arrow-right.svg";
 import Wrench from "./pictures/wrench.svg";
@@ -151,6 +152,7 @@ class Landing extends Component {
     return (
       <OuterContainer flexDirection="row">
         <LeftContainer>
+          <Canvas />
           <>
             <CodeIcon
               src={CodeImg}
@@ -215,7 +217,7 @@ class Landing extends Component {
               <br />
               No need to sign up!
             </p>
-            <Link to="/lesson1">
+            <Link to="/lesson/1">
               <Button boxShadow="0 0 0 0" borderSize="2px">
                 VIEW
               </Button>

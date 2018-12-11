@@ -232,11 +232,17 @@ input[type="checkbox"] {
 .loggedOutBtn {
   float: left;
   border-radius: 10px;
-  padding: 5px;
+  padding: 13px;
+  font-size: 20px;
   background: black;
   color: lime;
   font-family: "Share Tech Mono", monospace;
   cursor: pointer;
+  outline: none;
+}
+
+.wrap-collapsible {
+  background-color: black;
 }
 
 .wrap-collapsible {

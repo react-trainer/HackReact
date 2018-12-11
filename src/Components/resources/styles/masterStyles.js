@@ -18,10 +18,16 @@ export const MainContainer = styled.div`
   height: ${props => props.height || null};
   width: ${props => props.width || "70vw"};
   display: flex;
+  justify-content: ${props => props.justifyContent || null};
+  align-items: ${props => props.alignItems || null};
   flex-direction: ${props => props.flexDirection || "row"};
   flex-wrap: wrap;
   overflow: hidden;
   margin: ${props => props.margin || "null"};
+
+  @media (max-width: 1400px) {
+    width: ${props => props.mediaWidth || null};
+  }
 `;
 
 export const Button = styled.button`
@@ -129,4 +135,7 @@ export const Title = styled.h1`
   top: ${props => props.top || null};
   left: ${props => props.left || null};
   overflow: hidden;
+  @media (max-width: 1400px) {
+    font-size: ${props => props.mediaFontSize || null};
+  }
 `;

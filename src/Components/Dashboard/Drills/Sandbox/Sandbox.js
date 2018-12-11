@@ -1,15 +1,16 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { getUser } from "../../../../ducks/userReducer";
-
-import { connect } from "react-redux";
-import "./sandbox.css";
-
 import { IframeContainer, ContainerDiv } from "./SandboxSC";
+import "./sandbox.css";
 
 class Sandbox extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      drillInfo: []
+    };
   }
 
   componentDidMount() {
@@ -25,7 +26,8 @@ class Sandbox extends Component {
   }
 
   render() {
-    console.log(this.props);
+    const { id } = this.props.match.params;
+
     let linkToggle = this.props.state.user.loggedIn ? (
       <button className="logbtn" onClick={() => this.linkToggle()}>
         Dashboard
@@ -35,13 +37,18 @@ class Sandbox extends Component {
         Back
       </button>
     );
+
+    const displayDescription = this.props.state.user.drills
+      .filter((value, index) => {
+        return value.drill_id === id;
+      })
+      .map((value, index) => {
+        return <p>{value.drill_description}</p>;
+      });
     return (
       <ContainerDiv>
         <div className="wrap-collapsible">
-          {/* <button id="leaveSandbox" onClick={() => this.linkToggle()}> */}
           {linkToggle}
-          {/* Home{" "} */}
-          {/* </button> */}
           <input id="collapsible" className="toggle" type="checkbox" />
           <label for="collapsible" class="lbl-toggle">
             More Info
@@ -49,11 +56,15 @@ class Sandbox extends Component {
 
           <div className="collapsible-content">
             <div className="content-inner">
-              <p>
-                This is the code sandbox where you can flex those new React
-                skills! Change anything in the editor and see it rendered in
-                real time on the right hand side.
-              </p>
+              {id ? (
+                displayDescription
+              ) : (
+                <p>
+                  This is the code sandbox where you can flex those new React
+                  skills! Change anything in the editor and see it rendered in
+                  real time on the right hand side.
+                </p>
+              )}
             </div>
           </div>
         </div>
