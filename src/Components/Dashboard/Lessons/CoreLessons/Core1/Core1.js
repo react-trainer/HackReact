@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Goals from "./Goals";
 import Completed from "./Completed";
+import { Link, Redirect } from "react-router-dom";
 import { Container, Content, Editor, Title, Instructions } from "./Core1SC";
 import { Button } from "../../../../resources/styles/masterStyles";
 import axios from "axios";
@@ -25,12 +26,17 @@ class Lesson extends Component {
     this.onCloseCompleted = this.onCloseCompleted.bind(this);
     this.onOpenCompleted = this.onOpenCompleted.bind(this);
     this.getLesson = this.getLesson.bind(this);
+    this.renderRedirect = this.renderRedirect.bind(this);
   }
 
   componentDidMount() {
     this.getLesson();
   }
-
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.getLesson();
+    }
+  }
   getLesson() {
     axios
       .get(`/api/lesson/${this.props.match.params.id}`)
@@ -78,6 +84,10 @@ class Lesson extends Component {
 
   onOpenCompleted() {
     this.showCompleted();
+  }
+
+  renderRedirect() {
+    return <Redirect to={`/lesson/${this.state.lesson_number + 1}`} />;
   }
 
   render() {
@@ -154,6 +164,7 @@ class Lesson extends Component {
             onOpen={this.onOpenCompleted}
             lesson_id={this.state.lesson_number}
             lesson_title={this.state.lesson_title}
+            renderRedirect={this.renderRedirect}
           />
         ) : null}
       </Container>
