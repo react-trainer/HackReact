@@ -14,6 +14,7 @@ import {
   CodeIcon
 } from "./LandingSC";
 import { Link } from "react-router-dom";
+import Canvas from "./Canvas";
 import PreviousButton from "./pictures/arrow-left.svg";
 import NextButton from "./pictures/arrow-right.svg";
 import Wrench from "./pictures/wrench.svg";
@@ -145,6 +146,7 @@ class Landing extends Component {
     return (
       <OuterContainer flexDirection="row">
         <LeftContainer>
+          <Canvas />
           <>
             <CodeIcon
               src={CodeImg}
