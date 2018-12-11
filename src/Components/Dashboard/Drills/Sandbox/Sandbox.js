@@ -27,8 +27,27 @@ class Sandbox extends Component {
 
   render() {
     const { id } = this.props.match.params;
+    const { loggedIn, drills } = this.props.state.user;
+    const defaultSandbox = "xrmmr06z6p";
+    const consoled = "console";
+    const browser = "browser";
 
-    let linkToggle = this.props.state.user.loggedIn ? (
+    const drillUrl = drills
+      .filter((value, index) => {
+        return value.drill_id === id;
+      })
+      .map((value, index) => {
+        return value.drill_url;
+      });
+
+    const displayDescription = drills
+      .filter((value, index) => {
+        return value.drill_id === id;
+      })
+      .map((value, index) => {
+        return <p>{value.drill_description}</p>;
+      });
+    let linkToggle = loggedIn ? (
       <button className="logbtn" onClick={() => this.linkToggle()}>
         Dashboard
       </button>
@@ -38,13 +57,6 @@ class Sandbox extends Component {
       </button>
     );
 
-    const displayDescription = this.props.state.user.drills
-      .filter((value, index) => {
-        return value.drill_id === id;
-      })
-      .map((value, index) => {
-        return <p>{value.drill_description}</p>;
-      });
     return (
       <ContainerDiv>
         <div className="wrap-collapsible">
@@ -71,7 +83,9 @@ class Sandbox extends Component {
 
         <IframeContainer>
           <iframe
-            src={`https://codesandbox.io/embed/new?codemirror=1&forcerefresh=1&verticallayout=0`}
+            src={`https://codesandbox.io/embed/${
+              id ? drillUrl : defaultSandbox
+            }?view=split&previewwindow=${id ? consoled : browser}`}
             width="100%"
             height="890px"
             overflow="hidden"
