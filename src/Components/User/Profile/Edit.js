@@ -51,7 +51,7 @@ class Edit extends Component {
       return (
         <div key={i}>
           <Card>
-            <input
+          <textarea rows="4" cols="50"
               value={this.state.aboutText}
               type="text"
               onChange={e => this.aboutHandler(e.target.value)}

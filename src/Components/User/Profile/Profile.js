@@ -17,7 +17,7 @@ import Edit from './Edit';
      super();
      this.state={
        editable: false,
-       editName: "Edit"
+       editName: false
      }
    }
 
@@ -26,16 +26,13 @@ import Edit from './Edit';
   }
 
   showEdit = () => {
-    this.setState({editable: !this.state.editable})
-    this.props.getUser()
-    if(this.state.editable === true){
-      this.setState({editName: "Finish"})
-    }
-  }
-
-  // componentDidUpdate(){
-  //   this.props.getUser()
-  // }
+    this.setState({
+      editable: !this.state.editable,
+      editName: !this.state.editName})
+      this.props.getUser()
+      }
+    
+  
 
 
     render(){
@@ -55,7 +52,9 @@ import Edit from './Edit';
       const tylersMug = user.map((e,i) => {
         return(
           <div key={i}>
+          <Card height="11vw"width="11vw" borderRadius="50%" objectFit="fill" >
           <img src={e.image_url} />
+          </Card>
           </div>
         )
       })
@@ -86,13 +85,13 @@ import Edit from './Edit';
 
           <MainContainer margin="3% 0 0 0"width="100vw">
           <MainContainer width="30vw" flexDirection="column">
-          <Card height="17vw"width="17vw" borderRadius="50%" objectFit="fill" >
+         
           {tylersMug}
-          </Card>
+          
           <Card height="5vh" width="5vw" boxShadow="null" borderRadius="null">
             {userMapped}
           </Card>
-            <Button height="25px" width="100px" onClick={() => this.showEdit()}>{this.state.editName}</Button>
+            <Button height="25px" width="100px" onClick={() => this.showEdit()}>{this.state.editName ?  "Finish":  "Edit"}</Button>
           </MainContainer>
 
                      <Card alignItem="flex-start" backgroundColor="rgb(37,37,37)" boxShadow="null" borderRadius="null"width="29vw">{userAbout}</Card>
@@ -106,6 +105,7 @@ import Edit from './Edit';
         )
     }
 }
+
 function mapStatetoProps(state){
   return {state};
 }
