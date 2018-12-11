@@ -3,6 +3,7 @@ import { Overlay, ModalContent, QuizDialog } from "./Core1SC";
 import { Button } from "../../../../resources/styles/masterStyles";
 import Quiz from "./Quiz";
 import PropTypes from "prop-types";
+import { Redirect } from "react-router-dom";
 
 class Completed extends Component {
   constructor() {
@@ -12,16 +13,9 @@ class Completed extends Component {
       finished: false,
       correct: 0,
       progress: 0,
-      questions: [
-        {
-          question_id: 0,
-          text: "How many best friends made this project?",
-          correct_answer: "d",
-          answers: ["3", "5", "Jerry", "4"]
-        }
-      ],
-      quiz_id: 1
+      total: 3
     };
+    this.upQuiz = this.upQuiz.bind(this);
   }
 
   //set this up to activate certain buttons
@@ -60,6 +54,14 @@ class Completed extends Component {
     event.stopPropagation();
   }
 
+  upQuiz() {
+    this.setState({ progress: this.state.progress + 1 });
+  }
+
+  nextLesson() {
+    return <Redirect to={`/lesson/${this.props.lesson_id + 1}`} />;
+  }
+
   render() {
     return (
       <div>
@@ -71,7 +73,7 @@ class Completed extends Component {
             You have finished Lesson {this.props.number}: {this.props.title}!
           </h1>
           <br />
-          <h2>Ready to put your knowledge to the test?</h2>
+          <h1>Complete the quiz!</h1>
           <br />
           <Quiz
             index={this.state.index}
@@ -80,10 +82,18 @@ class Completed extends Component {
             progress={this.state.progress}
             questions={this.state.questions}
             lesson_id={this.props.lesson_id}
+            upQuiz={this.upQuiz}
           />
           <br />
           <br />
-          <Button>Next Question</Button>
+          {this.state.progress + 1 !== this.state.total ? (
+            <Button onClick={this.upQuiz}>Next Question</Button>
+          ) : (
+            <Button onClick={this.nextLesson}>Next Lesson</Button>
+          )}
+          <h1>
+            {this.state.progress + 1} / {this.state.total}
+          </h1>
         </QuizDialog>
       </div>
     );
