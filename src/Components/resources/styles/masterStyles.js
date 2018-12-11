@@ -24,6 +24,10 @@ export const MainContainer = styled.div`
   flex-wrap: wrap;
   overflow: hidden;
   margin: ${props => props.margin || "null"};
+
+  @media (max-width: 1400px) {
+    width: ${props => props.mediaWidth || null};
+  }
 `;
 
 export const Button = styled.button`
@@ -131,4 +135,7 @@ export const Title = styled.h1`
   top: ${props => props.top || null};
   left: ${props => props.left || null};
   overflow: hidden;
+  @media (max-width: 1400px) {
+    font-size: ${props => props.mediaFontSize || null};
+  }
 `;

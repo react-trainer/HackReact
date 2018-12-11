@@ -69,6 +69,9 @@ export const MenuButtons = styled.div`
     margin-bottom: 2%;
     letter-spacing: 5px;
   }
+  @media (max-width: 1400px) {
+    font-size: 35px;
+  }
 `;
 export const MenuToggle = styled.button`
   position: absolute;
@@ -80,4 +83,7 @@ export const MenuToggle = styled.button`
   border: none;
   outline: none;
   cursor: pointer;
+  @media (max-width: 1400px) {
+    font-size: 21px;
+  }
 `;

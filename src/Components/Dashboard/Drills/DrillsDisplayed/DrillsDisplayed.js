@@ -37,7 +37,7 @@ class DrillsDisplayed extends Component {
     return (
       <MainContainer height="100vh" flexDirection="column" alignItems="center">
         <HeaderContainer>
-          <Title fontFamily="Scada"> Drills by CodeWars </Title>{" "}
+          <Title fontFamily="Scada"> Powered by CodeWars </Title>{" "}
           <CodeWarsLogo src={CodeWars} alt="Codewars Logo" />
         </HeaderContainer>
         <SearchInput
