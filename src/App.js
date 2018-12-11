@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router>{routes}</Router>
+        <Router forceRefresh={true}>{routes}</Router>
       </Provider>
     );
   }
