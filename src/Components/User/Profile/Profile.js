@@ -33,11 +33,12 @@ import Edit from './Edit';
     }
   }
 
-
+  // componentDidUpdate(){
+  //   this.props.getUser()
+  // }
 
 
     render(){
-      // console.log(this.props.state.user.user)
 
       const user = this.props.state.user.user
 

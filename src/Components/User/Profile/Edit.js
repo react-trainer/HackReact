@@ -23,15 +23,17 @@ class Edit extends Component {
 
   // async axios.put()
 
-  async handleEdit(id) {
-    await axios
+   handleEdit(id) {
+    axios
       .put(`/api/user/${id}`, {
         about_user: this.state.aboutText
       })
-      .then(() => {
-        this.setState({ aboutText: "" });
-        this.props.getUser();
-      });
+      // .then((response)=>{
+
+      //   console.log(response)
+      //  return this.setState({ aboutText: "" })
+        
+      // }).catch(err => console.log(err));
   }
 
   updateImage = (user_id, fileUrl) => {
