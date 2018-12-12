@@ -66,7 +66,10 @@ class Goals extends Component {
           <br />
           <h2>What You Will Learn:</h2>
           <br />
+          <br />
           {this.props.goals}
+          <br />
+          <br />
           <h2>Click anywhere to start!</h2>
           <br />
           <br />
