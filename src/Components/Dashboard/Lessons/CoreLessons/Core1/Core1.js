@@ -26,13 +26,15 @@ class Lesson extends Component {
     this.onCloseCompleted = this.onCloseCompleted.bind(this);
     this.onOpenCompleted = this.onOpenCompleted.bind(this);
     this.getLesson = this.getLesson.bind(this);
-    this.renderRedirect = this.renderRedirect.bind(this);
   }
 
   componentDidMount() {
     this.getLesson();
   }
   componentDidUpdate(prevProps) {
+    console.log("updated");
+    console.log("prev" + prevProps.match.params.id);
+    console.log("next" + this.props.match.params.id);
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.getLesson();
     }
@@ -86,23 +88,23 @@ class Lesson extends Component {
     this.showCompleted();
   }
 
-  renderRedirect() {
-    return <Redirect to={`/lesson/${this.state.lesson_number + 1}`} />;
-  }
-
   render() {
     let contentMap = Object.keys(this.state.lesson_content).map((e, i) => {
-      return [this.state.lesson_content[e]];
+      if (e === "img") {
+        return <img alt={"screenshot"} src={[this.state.lesson_content[e]]} />;
+      } else {
+        return parseInt(e) + 1 + ".) " + [this.state.lesson_content[e]];
+      }
     });
 
     let contentDisplay = contentMap.map((e, i) => {
       return (
-        <h3 key={i}>
+        <div key={i}>
           <br />
-          {i + 1}. {e}
+          {e}
           <br />
           <br />
-        </h3>
+        </div>
       );
     });
 

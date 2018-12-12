@@ -31,10 +31,6 @@ class Quiz extends Component {
       .then(response => this.setState({ quiz_info: response.data }));
   }
 
-  quizDrill() {
-    this.setState({});
-  }
-
   checkAnswer = (value, correct) => {
     return value === correct ? alert("got it!") : alert("nope!");
   };

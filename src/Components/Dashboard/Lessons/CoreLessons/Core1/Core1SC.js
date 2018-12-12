@@ -64,8 +64,6 @@ export const ModalContent = styled.div`
 
 export const Dialog = styled.div`
   position: fixed;
-  top: 20%;
-  left: 36%;
   outline: 0;
   width: auto;
   display: inline-block;
@@ -90,6 +88,8 @@ export const Title = styled.div`
 export const Instructions = styled.div`
   padding-top: 10vh;
   margin-bottom: 8vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
 
   img {
     height: 20vh;
@@ -97,7 +97,7 @@ export const Instructions = styled.div`
   }
 `;
 
-export const Finished = styled.button``;
+// export const Finished = styled.button``;
 
 export const QuizDialog = styled.div`
   position: fixed;
