@@ -90,6 +90,11 @@ export const Title = styled.div`
 export const Instructions = styled.div`
   padding-top: 10vh;
   margin-bottom: 8vh;
+
+  img {
+    height: 20vh;
+    width: 20vw;
+  }
 `;
 
 export const Finished = styled.button``;
