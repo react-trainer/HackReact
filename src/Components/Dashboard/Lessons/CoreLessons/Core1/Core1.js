@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Goals from "./Goals";
 import Completed from "./Completed";
+import { Link, Redirect } from "react-router-dom";
 import { Container, Content, Editor, Title, Instructions } from "./Core1SC";
 import { Button } from "../../../../resources/styles/masterStyles";
 import axios from "axios";
@@ -30,7 +31,14 @@ class Lesson extends Component {
   componentDidMount() {
     this.getLesson();
   }
-
+  componentDidUpdate(prevProps) {
+    console.log("updated");
+    console.log("prev" + prevProps.match.params.id);
+    console.log("next" + this.props.match.params.id);
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.getLesson();
+    }
+  }
   getLesson() {
     axios
       .get(`/api/lesson/${this.props.match.params.id}`)
@@ -82,17 +90,21 @@ class Lesson extends Component {
 
   render() {
     let contentMap = Object.keys(this.state.lesson_content).map((e, i) => {
-      return [this.state.lesson_content[e]];
+      if (e === "img") {
+        return <img alt={"screenshot"} src={[this.state.lesson_content[e]]} />;
+      } else {
+        return parseInt(e) + 1 + ".) " + [this.state.lesson_content[e]];
+      }
     });
 
     let contentDisplay = contentMap.map((e, i) => {
       return (
-        <h3 key={i}>
+        <div key={i}>
           <br />
-          {i + 1}. {e}
+          {e}
           <br />
           <br />
-        </h3>
+        </div>
       );
     });
 
@@ -153,6 +165,8 @@ class Lesson extends Component {
             onClose={this.onCloseCompleted}
             onOpen={this.onOpenCompleted}
             lesson_id={this.state.lesson_number}
+            lesson_title={this.state.lesson_title}
+            renderRedirect={this.renderRedirect}
           />
         ) : null}
       </Container>
