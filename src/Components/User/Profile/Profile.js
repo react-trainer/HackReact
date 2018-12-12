@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {
     MainContainer,
-    Button,
-    Card
+    Button
   } from "../../resources/styles/masterStyles";
   import {connect} from "react-redux";
 import {getUser} from '../../../ducks/userReducer';
@@ -10,6 +9,8 @@ import Nav from "../../Layout/Nav/Nav"
 import Edit from './Edit';
 import CompletedLessons from './CompletedLessons';
 import styled from 'styled-components';
+import LoginStreak from './LoginStreak';
+import LoginTime from './LoginTime';
 
 const Img = styled.img`
 height:17vw;
@@ -30,6 +31,32 @@ const OuterContainer = styled.div`
   background-color: ${props => props.backgroundColor || "white"};
   font-family: ${props => props.fontFamily || "'Signika', sans-serif"};
   overflow-x: hidden;
+`;
+
+const Card = styled.div`
+  height: ${props => props.height || "41vh"};
+  width: ${props => props.width || "20vw"};
+  background-image: ${props => props.backgroundImage || null};
+  background-color: ${props => props.backgroundColor || "rgb(34, 34, 34)"};
+  color: ${props => props.color || "rgb(170, 170, 170)"};
+  display: flex;
+  flex-direction: ${props => props.flexDirection || "row"};
+  justify-content: ${props => props.justifyContent || "center"};
+  align-items: ${props => props.alignItems || "flex-end"};
+  border-radius: ${props => props.borderRadius || "3%"};
+  border: ${props => props.border || "1px solid rgb(0, 0, 0)"};
+  box-shadow: ${props =>
+    props.boxShadow || "0px 4px 6px -3px inset rgb(0,216,255)"};
+  margin: ${props => props.margin || "25px"};
+  overflow: ${props => props.overflow || "hidden"};
+  background-size: ${props => props.backgroundSize || "cover"};
+  object-fit: ${props => props.objectFit || "contain"};
+  transition: 0.4s;
+  
+
+  :hover {
+    box-shadow: 0px 4px 6px -3px inset rgb(212, 71, 200);
+  }
 `;
 
  class Profile extends Component {
@@ -66,7 +93,7 @@ const OuterContainer = styled.div`
         )
       })
 
-      const tylersMug = user.map((e,i) => {
+      const userPic = user.map((e,i) => {
         return(
           <div key={i}>
           <Card height="17vw"width="17vw" borderRadius="50%" objectFit="fill" >
@@ -103,20 +130,26 @@ const OuterContainer = styled.div`
           <MainContainer margin="3% 0 0 0"width="100vw">
           <MainContainer width="30vw" flexDirection="column">
          
-          {tylersMug}
+            <Button margin="1.5%" height="25px" width="100px" onClick={() => this.showEdit()}>{this.state.editName ?  "Finish":  "Edit"}</Button>
+          {userPic}
           
-            <Button height="25px" width="100px" onClick={() => this.showEdit()}>{this.state.editName ?  "Finish":  "Edit"}</Button>
           <Card height="7vh" width="7vw" boxShadow="null" borderRadius="null">
             {userMapped}
           </Card>
           </MainContainer>
 
-                     <Card alignItem="flex-start" backgroundColor="rgb(37,37,37)" boxShadow="null" borderRadius="null"width="29vw">{userAbout}</Card>
-                     <Card backgroundColor="rgb(37,37,37)" boxShadow="null" borderRadius="null"width="18vw">Login Streak</Card>
-                     <Card backgroundColor="rgb(37,37,37)" boxShadow="null" borderRadius="null"width="18vw">Login Time </Card>
-                     <Card backgroundColor="rgb(37,37,37)" boxShadow="null" borderRadius="null"width="18vw">
+                     <Card alignItem="flex-start" backgroundColor="rgba(37,37,37, 0.3)" boxShadow="null" borderRadius="null"width="29vw">{userAbout}</Card>
+                     <Card flexDirection="column" alignItems="center"backgroundColor="rgba(37,37,37, 0.3)" boxShadow="null" borderRadius="null"width="19vw">
+                     <LoginStreak/>
+                     Work Completed
+                     </Card>
+                     <Card flexDirection="column" alignItems="center"backgroundColor="rgba(37,37,37, 0.3)" boxShadow="null" borderRadius="null"width="19vw">
+                     <LoginTime/>
+                     Login Time
+                      </Card>
+                     <Card flexDirection="column" alignItems="center"backgroundColor="rgba(37,37,37, 0.3)" boxShadow="null" borderRadius="null"width="19vw">
                       <CompletedLessons/>
-                      Completed Lessons
+                        Completed Lessons
                       </Card>
 
           </MainContainer>
