@@ -90,19 +90,23 @@ class Lesson extends Component {
 
   render() {
     const { lesson_content } = this.state;
-
+    {
+      console.log(lesson_content);
+    }
     let contentMap = Object.keys(lesson_content).map((e, i) => {
-      if (e === "img") {
+      if (e.includes("img")) {
         return <img alt={"screenshot"} src={[lesson_content[e]]} />;
-      } else if (e === "title") {
+      } else if (e.includes("title")) {
         return <h2>{[lesson_content[e]]}</h2>;
-      } else if (e === "content") {
+      } else if (e.includes("content")) {
         return [lesson_content[e]];
       } else {
         return parseInt(e) + ".) " + [lesson_content[e]];
       }
     });
-
+    {
+      console.log(contentMap);
+    }
     let contentDisplay = contentMap.map((e, i) => {
       return (
         <div key={i}>
