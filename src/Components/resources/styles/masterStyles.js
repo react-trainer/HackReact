@@ -25,7 +25,7 @@ export const MainContainer = styled.div`
   overflow: hidden;
   margin: ${props => props.margin || "null"};
 
-  @media (max-width: 1400px) {
+  @media (max-width: 1700px) {
     width: ${props => props.mediaWidth || null};
   }
 `;
