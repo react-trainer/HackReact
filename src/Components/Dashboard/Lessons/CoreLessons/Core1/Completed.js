@@ -3,7 +3,7 @@ import { Overlay, ModalContent, QuizDialog } from "./Core1SC";
 import { Button } from "../../../../resources/styles/masterStyles";
 import Quiz from "./Quiz";
 import PropTypes from "prop-types";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 class Completed extends Component {
   constructor() {
@@ -18,6 +18,7 @@ class Completed extends Component {
     };
     this.upQuiz = this.upQuiz.bind(this);
     this.setRedirect = this.setRedirect.bind(this);
+    this.renderRedirect = this.renderRedirect.bind(this);
   }
 
   //set this up to activate certain buttons
@@ -63,14 +64,20 @@ class Completed extends Component {
     this.setState({ progress: this.state.progress + 1 });
   }
 
+  unmountCompleted() {
+    this.setState({
+      finished: false
+    });
+  }
+
   setRedirect() {
     this.setState({
       redirect: true
     });
   }
 
-  refresh() {
-    this.forceUpdate();
+  renderRedirect() {
+    return <Redirect to={`/lesson/${this.props.lesson_id + 1}`} />;
   }
 
   render() {
@@ -98,8 +105,10 @@ class Completed extends Component {
             <Button onClick={this.upQuiz}>Next Question</Button>
           ) : (
             <div>
-              {redirect ? this.props.renderRedirect() : null}
-              <Button onClick={this.setRedirect}>Next Lesson</Button>
+              {/* {redirect ? this.renderRedirect() : null} */}
+              <Link to={`/lesson/${parseInt(this.props.lesson_id) + 1}`}>
+                <Button onClick={this.props.onClose}>Next Lesson</Button>
+              </Link>
             </div>
           )}
           <h1>
