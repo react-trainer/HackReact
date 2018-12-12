@@ -12,6 +12,7 @@ export const NavContainer = styled.div`
     rgb(0, 216, 255)-24%,
     rgb(38, 38, 38) 106%
   );
+  z-index: 1;
   transition: 0.5s;
   overflow: hidden;
 `;
@@ -26,6 +27,7 @@ export const MenuContainer = styled.div`
     props.showMenu ? "rgba(0,0,0,0.2)" : "rgba(53, 203, 191, 0.2)"};
   border-radius: 0 0 100% 0;
   transition: ${props => (props.showMenu ? "0.6s" : "0.15s")};
+
   /* transition-delay: ${props => (props.showMenu ? "0.4s" : "0.2s")}; */
   overflow: hidden;
 `;

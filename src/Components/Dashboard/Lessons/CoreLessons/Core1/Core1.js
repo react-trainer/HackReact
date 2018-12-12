@@ -89,11 +89,17 @@ class Lesson extends Component {
   }
 
   render() {
-    let contentMap = Object.keys(this.state.lesson_content).map((e, i) => {
+    const { lesson_content } = this.state;
+
+    let contentMap = Object.keys(lesson_content).map((e, i) => {
       if (e === "img") {
-        return <img alt={"screenshot"} src={[this.state.lesson_content[e]]} />;
+        return <img alt={"screenshot"} src={[lesson_content[e]]} />;
+      } else if (e === "title") {
+        return <h2>{[lesson_content[e]]}</h2>;
+      } else if (e === "content") {
+        return [lesson_content[e]];
       } else {
-        return parseInt(e) + 1 + ".) " + [this.state.lesson_content[e]];
+        return parseInt(e) + ".) " + [lesson_content[e]];
       }
     });
 
