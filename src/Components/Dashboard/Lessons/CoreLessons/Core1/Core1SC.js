@@ -92,7 +92,7 @@ export const Instructions = styled.div`
   padding-right: 2vw;
 
   img {
-    height: 20vh;
+    height: auto;
     width: 20vw;
   }
 `;
