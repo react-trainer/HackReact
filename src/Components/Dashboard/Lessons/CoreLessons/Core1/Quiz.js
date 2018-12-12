@@ -8,7 +8,7 @@ class Quiz extends Component {
   constructor() {
     super();
     this.state = {
-      quiz_info: {},
+      quiz_info: [{ answers: ["3", "5", "jerry", "4"] }],
       questions: [
         {
           question_id: 0,
@@ -32,69 +32,50 @@ class Quiz extends Component {
   }
 
   quizDrill() {
-    this.setState({
-      
-    })
+    this.setState({});
   }
 
   checkAnswer = (value, correct) => {
-    return value === correct ? (
-      <Swal1>{swal({ text: "Got it!", icon: "success", className: "" })}</Swal1>
-    ) : (
-      <Swal1> {swal({ text: "Nope!", icon: "error" })}</Swal1>
-    );
+    return value === correct ? alert("got it!") : alert("nope!");
   };
 
   render() {
-    let quizdisplay = this.state.questions.map((e, i) => {
-      let answers = e.answers.map((f, j) => {
-        if (j === 0) {
-          return (
-            <Answer
-              key={j}
-              onClick={() => this.checkAnswer("a", e.correct_answer)}
-            >
-              a. {f}
-            </Answer>
-          );
-        } else if (j === 1) {
-          return (
-            <Answer
-              key={j}
-              onClick={() => this.checkAnswer("b", e.correct_answer)}
-            >
-              b. {f}
-            </Answer>
-          );
-        } else if (j === 2) {
-          return (
-            <Answer
-              key={j}
-              onClick={() => this.checkAnswer("c", e.correct_answer)}
-            >
-              c. {f}
-            </Answer>
-          );
-        } else if (j === 3) {
-          return (
-            <Answer
-              key={j}
-              onClick={() => this.checkAnswer("d", e.correct_answer)}
-            >
-              d. {f}
-            </Answer>
-          );
-        }
-      });
+    let quizdisplay = this.state.quiz_info.map((e, i) => {
       return (
-        <div key={i}>
-          <h3>{e.text}</h3>
-          <br />
-          {answers}
+        <div>
+          <h2>{e.question_text}</h2>
+          <Answer
+            key={0}
+            onClick={() => this.checkAnswer("a", e.correct_answer)}
+          >
+            a. {e.answers[0]}
+          </Answer>
+
+          <Answer
+            key={1}
+            onClick={() => this.checkAnswer("b", e.correct_answer)}
+          >
+            b. {e.answers[1]}
+          </Answer>
+
+          <Answer
+            key={2}
+            onClick={() => this.checkAnswer("c", e.correct_answer)}
+          >
+            c. {e.answers[2]}
+          </Answer>
+
+          <Answer
+            key={3}
+            onClick={() => this.checkAnswer("d", e.correct_answer)}
+          >
+            d. {e.answers[3]}
+          </Answer>
         </div>
       );
     });
-    return <div>{quizdisplay}</div>;
+    console.log(quizdisplay);
+    return <div>{quizdisplay[this.props.progress]}</div>;
   }
 }
 

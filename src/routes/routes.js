@@ -28,5 +28,13 @@ export default (
     <Route path="/sandbox" component={Sandbox} />
     <Route path="/profile" component={Profile} />
     <Route path="/forum" component={Forum} />
+    <Route
+      path="*"
+      render={() => (
+        <div className="redirectPage">
+          <h1>404</h1>
+        </div>
+      )}
+    />
   </Switch>
 );
