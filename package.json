@@ -4,6 +4,10 @@
   "private": true,
   "proxy": "http://localhost:3100",
   "dependencies": {
+    "@vx/group": "0.0.182",
+    "@vx/heatmap": "0.0.182",
+    "@vx/mock-data": "0.0.182",
+    "@vx/scale": "0.0.182",
     "aws-sdk": "^2.372.0",
     "axios": "^0.18.0",
     "axios-mock-adapter": "^1.15.0",

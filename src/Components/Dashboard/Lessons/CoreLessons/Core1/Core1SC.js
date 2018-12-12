@@ -90,9 +90,14 @@ export const Instructions = styled.div`
   margin-bottom: 8vh;
   padding-left: 2vw;
   padding-right: 2vw;
+
+  img {
+    height: 20vh;
+    width: 20vw;
+  }
 `;
 
-export const Finished = styled.button``;
+// export const Finished = styled.button``;
 
 export const QuizDialog = styled.div`
   position: fixed;
