@@ -8,15 +8,7 @@ class Quiz extends Component {
   constructor() {
     super();
     this.state = {
-      quiz_info: [{ answers: ["3", "5", "jerry", "4"] }],
-      questions: [
-        {
-          question_id: 0,
-          text: "How many best friends made this project?",
-          correct_answer: "d",
-          answers: ["3", "5", "Jerry", "4"]
-        }
-      ]
+      quiz_info: [{ answers: ["a", "b", "c", "d"] }]
     };
     this.getQuiz = this.getQuiz.bind(this);
   }
@@ -28,7 +20,8 @@ class Quiz extends Component {
   getQuiz() {
     axios
       .get(`/api/quiz/${this.props.lesson_id}`)
-      .then(response => this.setState({ quiz_info: response.data }));
+      .then(response => this.setState({ quiz_info: response.data }))
+      .catch(err => console.log(err));
   }
 
   checkAnswer = (value, correct) => {
