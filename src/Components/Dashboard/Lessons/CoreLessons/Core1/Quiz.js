@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Answer, Swal1 } from "./Core1SC";
-import swal from "sweetalert";
+import { Answer} from "./Core1SC";
 import PropTypes from "prop-types";
 import axios from "axios";
 

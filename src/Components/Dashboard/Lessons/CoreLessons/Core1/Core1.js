@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Goals from "./Goals";
 import Completed from "./Completed";
-import { Link, Redirect } from "react-router-dom";
 import { Container, Content, Editor, Title, Instructions } from "./Core1SC";
 import { Button } from "../../../../resources/styles/masterStyles";
 import axios from "axios";
