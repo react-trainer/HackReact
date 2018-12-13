@@ -21,6 +21,7 @@ module.exports = app => {
   );
 
   passport.serializeUser((profile, done) => {
+    console.log(profile);
     const db = app.get("db");
     db.get_user_by_authid(profile.id).then(user => {
       if (!user[0]) {

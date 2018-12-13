@@ -8,6 +8,7 @@ class Recent extends Component {
     super();
     this.state = {};
   }
+
   render() {
     return (
       <MainContainer height="100vh">
