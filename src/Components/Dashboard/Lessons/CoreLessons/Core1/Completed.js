@@ -81,7 +81,6 @@ class Completed extends Component {
   }
 
   render() {
-    const { redirect } = this.state;
     return (
       <div>
         <Overlay />

@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { mount } from "enzyme";
 import Quiz from "./Quiz";
 import MockAdapter from "axios-mock-adapter";
 import axios from "axios";
@@ -16,12 +16,7 @@ import axios from "axios";
 describe("Quiz - Axios/Mounting", () => {
   const spy = jest.spyOn(Quiz.prototype, "getQuiz");
   const wrapper = mount(<Quiz />);
-  const mockData = {
-    question_id: 0,
-    text: "How many best friends made this project?",
-    correct_answer: "d",
-    answers: ["3", "5", "Jerry", "4"]
-  };
+  const mockData = [{ answers: ["a", "b", "c", "d"] }];
 
   beforeEach(() => {
     const mock = new MockAdapter(axios);
@@ -37,6 +32,4 @@ describe("Quiz - Axios/Mounting", () => {
   it("sets the quiz info to state", () => {
     expect(wrapper.state().quiz_info).toEqual(mockData);
   });
-
-  
 });
