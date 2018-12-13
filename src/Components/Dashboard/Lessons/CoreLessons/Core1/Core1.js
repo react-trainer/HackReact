@@ -10,10 +10,9 @@ class Lesson extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lesson_info: {},
+      lesson_info: [],
       goals: true,
       completed: false,
-      lesson_number: this.props.match.params.id,
       lesson_title: "Title",
       lesson_description: ["loading!"],
       lesson_content: { test: "loading!" },
@@ -50,11 +49,9 @@ class Lesson extends Component {
   showGoals = () => {
     this.setState({
       goals: true,
-      lesson_number: this.state.lesson_info[0].lesson_number,
       lesson_title: this.state.lesson_info[0].lesson_title,
       lesson_description: this.state.lesson_info[0].lesson_description,
       lesson_content: this.state.lesson_info[0].lesson_content,
-      code_snips: this.state.lesson_info[0].code_snips,
       docs_url: this.state.lesson_info[0].docs_url,
       iframe: this.state.lesson_info[0].iframe
     });
@@ -90,9 +87,6 @@ class Lesson extends Component {
 
   render() {
     const { lesson_content } = this.state;
-    {
-      console.log(lesson_content);
-    }
     let contentMap = Object.keys(lesson_content).map((e, i) => {
       if (e.includes("img")) {
         return <img alt={"screenshot"} src={[lesson_content[e]]} />;
@@ -104,9 +98,6 @@ class Lesson extends Component {
         return parseInt(e) + ".) " + [lesson_content[e]];
       }
     });
-    {
-      console.log(contentMap);
-    }
     let contentDisplay = contentMap.map((e, i) => {
       return (
         <div key={i}>
@@ -125,7 +116,7 @@ class Lesson extends Component {
             onClose={this.onClose}
             onOpen={this.onOpen}
             title={this.state.lesson_title}
-            number={this.state.lesson_number}
+            number={this.props.match.params.id}
             goals={this.state.lesson_description}
           />
         ) : null}
@@ -174,7 +165,7 @@ class Lesson extends Component {
           <Completed
             onClose={this.onCloseCompleted}
             onOpen={this.onOpenCompleted}
-            lesson_id={this.state.lesson_number}
+            lesson_id={this.props.match.params.id}
             lesson_title={this.state.lesson_title}
             renderRedirect={this.renderRedirect}
           />
