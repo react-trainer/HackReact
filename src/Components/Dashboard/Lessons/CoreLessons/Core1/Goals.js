@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Overlay, ModalContent, Dialog } from "./Core1SC";
 import { Button } from "../../../../resources/styles/masterStyles";
+import { Link } from "react-router-dom";
 
 class Goals extends Component {
   constructor() {
@@ -59,7 +60,7 @@ class Goals extends Component {
       <div>
         <Overlay />
         <ModalContent onClick={this.onOverlayClick.bind(this)} />
-        <Dialog onClick={this.onDialogClick}>
+        <Dialog onClick={this.onOverlayClick.bind(this)}>
           <h1>
             Lesson {this.props.number}: {this.props.title}
           </h1>
@@ -67,13 +68,16 @@ class Goals extends Component {
           <h2>What You Will Learn:</h2>
           <br />
           <br />
-          {this.props.goals}
+          <h3>{this.props.goals}</h3>
+          <br />
           <br />
           <br />
           <h2>Click anywhere to start!</h2>
           <br />
           <br />
-          <Button>Back To Lessons</Button>
+          <Link to="/dashboard/lessons/all">
+            <Button>Back To Lessons</Button>
+          </Link>
         </Dialog>
       </div>
     );
