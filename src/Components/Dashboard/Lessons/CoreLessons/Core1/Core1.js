@@ -4,6 +4,7 @@ import Completed from "./Completed";
 import { Container, Content, Editor, Title, Instructions } from "./Core1SC";
 import { Button } from "../../../../resources/styles/masterStyles";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class Lesson extends Component {
   constructor(props) {
@@ -132,11 +133,21 @@ class Lesson extends Component {
           </Title>
           <Instructions>{contentDisplay}</Instructions>
           <div className="navbuttons">
+            <Link to="/dashboard/lessons/all">
+              <Button
+                backgroundColor="#00a6cc"
+                position="fixed"
+                top="92%"
+                left="2%"
+              >
+                Lessons
+              </Button>
+            </Link>
             <Button
               backgroundColor="#00a6cc"
               position="fixed"
-              top="92%"
-              left="13%"
+              top="91.5%"
+              left="28%"
               onClick={this.showCompleted}
             >
               Quiz

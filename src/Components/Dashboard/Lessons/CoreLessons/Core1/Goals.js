@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Overlay, ModalContent, Dialog } from "./Core1SC";
 import { Button } from "../../../../resources/styles/masterStyles";
+import { Link } from "react-router-dom";
 
 class Goals extends Component {
   constructor() {
@@ -74,7 +75,9 @@ class Goals extends Component {
           <h2>Click anywhere to start!</h2>
           <br />
           <br />
-          <Button>Back To Lessons</Button>
+          <Link to="/dashboard/lessons/all">
+            <Button>Back To Lessons</Button>
+          </Link>
         </Dialog>
       </div>
     );
