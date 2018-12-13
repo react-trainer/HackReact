@@ -59,7 +59,7 @@ class Goals extends Component {
       <div>
         <Overlay />
         <ModalContent onClick={this.onOverlayClick.bind(this)} />
-        <Dialog onClick={this.onDialogClick}>
+        <Dialog onClick={this.onOverlayClick.bind(this)}>
           <h1>
             Lesson {this.props.number}: {this.props.title}
           </h1>
@@ -67,7 +67,8 @@ class Goals extends Component {
           <h2>What You Will Learn:</h2>
           <br />
           <br />
-          {this.props.goals}
+          <h3>{this.props.goals}</h3>
+          <br />
           <br />
           <br />
           <h2>Click anywhere to start!</h2>
