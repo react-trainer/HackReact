@@ -48,7 +48,11 @@ class Nav extends Component {
               <Link to="/sandbox">
                 <h4>Sandbox</h4>
               </Link>
-              <a href="https://reactjs.org/docs/getting-started.html">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://reactjs.org/docs/getting-started.html"
+              >
                 <h6>React Docs</h6>
               </a>
               <Link to="">

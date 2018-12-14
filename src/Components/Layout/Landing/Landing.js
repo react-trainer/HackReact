@@ -35,14 +35,14 @@ class Landing extends Component {
             "New to React? Trouble understanding the React Documentation? Start here to begin your journey!",
           image: <ScribbleUnderline src={Underline} alt="scribble" />,
           button: "Learn More",
-          link: () => this.toAbout()
+          link: this.toAbout
         },
         {
           title: "What is HackReact?",
           title2: "What Do We Do?",
           sub: "Learn more about HackReact by clicking below!",
           button: "About",
-          link: () => this.toAbout()
+          link: this.toAbout
         },
         {
           title: "Read the",
@@ -106,6 +106,9 @@ class Landing extends Component {
   }
   toSandbox = () => {
     window.location.href = `${process.env.REACT_APP_CLIENT}/sandbox`;
+  };
+  toAbout = () => {
+    window.location.href = `${process.env.REACT_APP_CLIENT}/about`;
   };
   toLogin = () => {
     window.location.href = `${process.env.REACT_APP_SERVER}/login`;

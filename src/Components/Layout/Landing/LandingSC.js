@@ -61,10 +61,10 @@ export const Title = styled.h1`
 
 export const WrenchIcon = styled.img`
   position: absolute;
-  top: 28%;
-  right: 4%;
+  top: 43%;
+  right: 2%;
   height: auto;
-  width: 9%;
+  width: 2%;
   overflow: hidden;
   @media (max-width: 1400px) {
     top: 43%;

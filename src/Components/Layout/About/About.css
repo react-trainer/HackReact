@@ -1,0 +1,135 @@
+.exploreContainer {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(45deg, rgb(0, 0, 0)-69%, rgb(0, 216, 255));
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.exploreSubOne {
+  height: 60vh;
+  width: 50vw;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(38, 38, 38, 0.3);
+  box-shadow: 0px 0px 5px 2px inset rgba(38, 38, 38, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+#geauxfurTextLogo {
+  height: 15%;
+  width: 40%;
+}
+.exploreContainerTwo {
+  height: 150vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: black;
+  z-index: 0;
+}
+
+.zero {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  box-shadow: 0px 0px 0px 0px inset black;
+  z-index: 3;
+  transition: 0.2s;
+}
+
+.twenty {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  box-shadow: 0px -100px 99px 48px inset black;
+  z-index: 3;
+  transition: 0.2s;
+}
+
+.forty {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  box-shadow: 0px -89px 99px 95px inset black;
+  z-index: 3;
+  transition: 1s;
+}
+.sixty {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  box-shadow: 0px 77px 135px 140px inset black;
+  z-index: 23;
+  transition: 0.2s;
+}
+
+.eighty {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  box-shadow: 0px 14px 135px 113px inset black;
+  z-index: 3;
+  transition: 0.2s;
+}
+
+.textBar {
+  height: 4px;
+  width: 13%;
+  position: fixed;
+  top: 48%;
+  left: 20%;
+  z-index: 1;
+  background: linear-gradient(45deg, rgb(212, 71, 200)-37%, rgb(0, 216, 255));
+}
+.floaterContainer {
+  height: 200vh;
+  width: 100vw;
+  background: rgb(0, 0, 0);
+}
+.floaterContainer p {
+  position: fixed;
+  top: 50%;
+  right: 40%;
+  z-index: 1;
+  font-size: 25px;
+  letter-spacing: 1px;
+  color: rgb(255, 255, 255);
+  width: 40%;
+  font-family: "Scada", sans-serif;
+}
+.floaterOne {
+  height: 20vh;
+  width: 20vw;
+  position: relative;
+  top: 35%;
+  right: -50%;
+  background: linear-gradient(45deg, rgb(212, 71, 200)-37%, rgb(0, 216, 255));
+  z-index: 1;
+}
+.floaterTwo {
+  left: 55%;
+  height: 20vh;
+  width: 20vw;
+  position: relative;
+  top: 21%;
+  background: linear-gradient(45deg, rgb(212, 71, 200)-37%, rgb(0, 216, 255));
+  z-index: 4;
+  box-shadow: 0px 0px 41px;
+}
+.gif {
+  position: sticky;
+  height: 20%;
+  width: auto;
+  top: -27%;
+  right: 77%;
+  border: 1px solid rgb(0, 0, 0);
+  z-index: 0;
+}
