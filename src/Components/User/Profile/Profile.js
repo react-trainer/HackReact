@@ -43,7 +43,7 @@ const Card = styled.div`
   flex-direction: ${props => props.flexDirection || "row"};
   justify-content: ${props => props.justifyContent || "center"};
   align-items: ${props => props.alignItems || "flex-end"};
-  border-radius: ${props => props.borderRadius || "3%"};
+  border-radius: ${props => props.borderRadius || "0%"};
   border: ${props => props.border || "1px solid rgb(0, 0, 0)"};
   box-shadow: ${props =>
     props.boxShadow || "0px 4px 6px -3px inset rgb(0,216,255)"};
@@ -52,6 +52,7 @@ const Card = styled.div`
   background-size: ${props => props.backgroundSize || "cover"};
   object-fit: ${props => props.objectFit || "contain"};
   transition: 0.4s;
+  padding: ${props => props.padding || "0"};
   
 
   :hover {
@@ -130,26 +131,28 @@ const Card = styled.div`
           <MainContainer margin="3% 0 0 0"width="100vw">
           <MainContainer width="30vw" flexDirection="column">
          
-            <Button margin="1.5%" height="25px" width="100px" onClick={() => this.showEdit()}>{this.state.editName ?  "Finish":  "Edit"}</Button>
           {userPic}
-          
-          <Card height="7vh" width="7vw" boxShadow="null" borderRadius="null">
-            {userMapped}
-          </Card>
+            <Button margin="1.5%" height="25px" width="100px" onClick={() => this.showEdit()}>{this.state.editName ?  "Finish":  "Edit"}</Button>
           </MainContainer>
 
-                     <Card alignItem="flex-start" backgroundColor="rgba(37,37,37, 0.3)" boxShadow="null" borderRadius="null"width="29vw">{userAbout}</Card>
-                     <Card flexDirection="column" alignItems="center"backgroundColor="rgba(37,37,37, 0.3)" boxShadow="null" borderRadius="null"width="19vw">
+                     <Card height="38vh" flexDirection="column" alignItems="flex-start" backgroundColor="rgba(37,37,37, 0.3)" boxShadow="null" borderRadius="null"width="29vw" padding="10px">  
+                        <Card height="7vh" width="7vw" boxShadow="null" borderRadius="null" border="0" backgroundColor="transparent">
+                        {userMapped}
+                        </Card >
+                      {userAbout}
+                      </Card>
+
+                     <Card border="0" flexDirection="column" alignItems="center"backgroundColor="transparent" boxShadow="null" borderRadius="null"width="19vw">
                      <LoginStreak/>
                      
                      </Card>
-                     <Card flexDirection="column" alignItems="center"backgroundColor="rgba(37,37,37, 0.3)" boxShadow="null" borderRadius="null"width="19vw">
+
+                     <Card border="0" flexDirection="column" alignItems="center"backgroundColor="transparent" boxShadow="null" borderRadius="null"width="19vw">
                      <LoginTime/>
-                     
                       </Card>
-                     <Card flexDirection="column" alignItems="center"backgroundColor="rgba(37,37,37, 0.3)" boxShadow="null" borderRadius="null"width="19vw">
-                      <CompletedLessons/>
-                        
+
+                     <Card border="0" flexDirection="column" alignItems="center"backgroundColor="transparent" boxShadow="null" borderRadius="null"width="19vw">
+                      <CompletedLessons/> 
                       </Card>
 
           </MainContainer>
