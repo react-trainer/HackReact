@@ -12,6 +12,8 @@ class About extends Component {
     console.log(window.scrollY);
     let scrollHeight = document.querySelector(".exploreOuter").scrollHeight;
     let scroll = Math.floor((window.scrollY / scrollHeight) * 100);
+
+    //Change class based on scroll position.
     if (scroll < 10) {
       this.setState({ sideBarClass: "zero" });
     } else if (scroll >= 10 && scroll < 20) {
@@ -38,6 +40,10 @@ class About extends Component {
           <div className="exploreSubOne" />
         </div>
         <div className="floaterContainer">
+          {/* <iframe
+            src="https://giphy.com/embed/l3vR16pONsV8cKkWk"
+            className="gif"
+          /> */}
           <div className="floaterOne" />
           <div className="textBar" />
           <p>
@@ -51,7 +57,7 @@ class About extends Component {
           <div className="floaterTwo" />
         </div>
         <div className="exploreContainer">
-          {/* <div className="exploreSubOne" /> */}
+          <div className="loginContainer" />
         </div>
       </div>
     );

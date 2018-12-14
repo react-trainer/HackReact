@@ -133,3 +133,23 @@
   border: 1px solid rgb(0, 0, 0);
   z-index: 0;
 }
+.loginContainer {
+  border-radius: 8px;
+  -webkit-box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25),
+    0 10px 10px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25),
+    0 10px 10px 0 rgba(0, 0, 0, 0.26);
+
+  background-image: linear-gradient(
+    97deg,
+    rgb(245, 193, 220),
+    rgb(87, 99, 177) 78%
+  );
+  width: 35vw;
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
