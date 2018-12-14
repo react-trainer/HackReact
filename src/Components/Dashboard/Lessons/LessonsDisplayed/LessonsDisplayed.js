@@ -15,38 +15,42 @@ class LessonsDisplayed extends Component {
     this.state = {
       lessonComponents: [
         {
-          title: "Lesson 1",
-          description: "This is a test description",
+          title: "What is JSX?",
+          description: "Explore the differences between JavaScript and JSX.",
           image:
             "https://images.unsplash.com/photo-1516934955-a48560318e0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
         },
         {
-          title: "Lesson 2",
-          description: "Virtual DOM / Render method",
+          title: "Virtual DOM & Rendering",
+          description: "Virtual DOM / Render Method",
           image:
             "https://images.unsplash.com/photo-1497732270315-9593381855d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
         },
         {
-          title: "Lesson 3",
-          description: "This is a test description",
+          title: "Components and Props",
+          description:
+            "Learn what components are and how 'props' are used within those components.",
           image:
             "https://images.unsplash.com/photo-1488228350390-e20f4c892840?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
         },
         {
-          title: "Lesson 4",
-          description: "This is a test description",
+          title: "What is State?",
+          description:
+            "Local state is important to creating Class Components. Jump in and discover State!",
           image:
             "https://images.unsplash.com/photo-1484587658517-51c2ea232f9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
         },
         {
-          title: "Lesson 5",
-          description: "This is a test description",
+          title: "The React Lifecycle",
+          description:
+            "Learn about the circle of life! Actually, it's the circle of life for React!",
           image:
             "https://images.unsplash.com/photo-1475887694576-62c01252e177?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
         },
         {
-          title: "Lesson 6",
-          description: "This is a test description",
+          title: "Event Handling",
+          description:
+            "Time to step out of our comfort zone. Let's put these React methods to use!",
           image:
             "https://images.unsplash.com/photo-1488390224393-39b815d3cb3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
         }
@@ -64,10 +68,11 @@ class LessonsDisplayed extends Component {
     const displayLessons = lessonComponents.map((value, index) => {
       return (
         <Link key={index} to={`/lesson/${index + 1}`}>
-          <Card backgroundImage={`url(${value.image})`}>
+          <Card borderRadius="0" backgroundImage={`url(${value.image})`}>
             <LessonOverlay>
               <Title
                 letterSpacing="2px"
+                fontSize="30px"
                 mediaFontSize="30px"
                 fontFamily="Scada"
               >
