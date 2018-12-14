@@ -77,6 +77,7 @@ class Landing extends Component {
       ]
     };
   }
+
   nextQuestion() {
     const { count, sidePosition } = this.state;
     if (count >= 4) {
@@ -110,6 +111,10 @@ class Landing extends Component {
   };
   toLogin = () => {
     window.location.href = `${process.env.REACT_APP_SERVER}/login`;
+  };
+
+  toSandbox = () => {
+    window.location.href = `${process.env.REACT_APP_CLIENT}/sandbox`;
   };
   render() {
     const { menuContainers, sidePosition } = this.state;
