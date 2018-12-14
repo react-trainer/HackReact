@@ -11,7 +11,7 @@ class Post extends Component {
   constructor() {
     super();
     this.state = {
-      post_info: [{ post_id: 1 }],
+      post_info: [],
       comment: false
     };
   }
@@ -63,7 +63,7 @@ class Post extends Component {
           <Button onClick={this.onOpen}>Comment</Button>
         </IndPost>
         <CommentsContainer>
-          <Comments post_id={this.state.post_info[0].post_id} />
+          <Comments post_id={this.props.match.params.id} />
         </CommentsContainer>
         {this.state.comment ? (
           <NewComment
