@@ -31,7 +31,6 @@ class Landing extends Component {
         {
           title: ` React Made Simple. `,
           title2: `For You.`,
-          // title3: `By You.`,
           sub:
             "New to React? Trouble understanding the React Documentation? Start here to begin your journey!",
           image: <ScribbleUnderline src={Underline} alt="scribble" />,
@@ -77,7 +76,7 @@ class Landing extends Component {
       ]
     };
   }
-  nextQuestion() {
+  nextCard() {
     const { count, sidePosition } = this.state;
     if (count >= 4) {
       this.setState({
@@ -91,7 +90,7 @@ class Landing extends Component {
       });
     }
   }
-  previousQuestion() {
+  previousCard() {
     const { count, sidePosition } = this.state;
     if (count <= 0) {
       this.setState({
@@ -176,12 +175,12 @@ class Landing extends Component {
             left="55%"
             src={PreviousButton}
             alt="previous button"
-            onClick={() => this.previousQuestion()}
+            onClick={() => this.previousCard()}
           />
           <ArrowIcon
             src={NextButton}
             alt="next button"
-            onClick={() => this.nextQuestion()}
+            onClick={() => this.nextCard()}
           />
         </LeftContainer>
         <RightContainer>
