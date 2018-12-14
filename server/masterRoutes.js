@@ -8,6 +8,7 @@ const {
   editUserImg
 } = require("./controllers/userCtrl");
 const { getLesson, getQuiz, getImages } = require("./controllers/lessonCtrl");
+const { makePost } = require("./controllers/forumCtrl");
 
 const express = require("express");
 
@@ -38,6 +39,9 @@ module.exports = app => {
 
   //quiz
   app.get("/api/quiz/:lesson_id", getQuiz);
+
+  //forum
+  app.post("/api/post", makePost);
 
   //comment
   app.post("/api/comment/:lesson_id");

@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow} from "enzyme";
+import { shallow } from "enzyme";
 import Core1 from "./Core1";
 import Completed from "./Completed";
 // import Goals from "./Goals";
