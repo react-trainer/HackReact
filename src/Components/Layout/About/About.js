@@ -8,6 +8,10 @@ class About extends Component {
       sideBarClass: "zero"
     };
   }
+  toLogin = () => {
+    window.location.href = `${process.env.REACT_APP_SERVER}/login`;
+  };
+
   trackScroll = () => {
     console.log(window.scrollY);
     let scrollHeight = document.querySelector(".exploreOuter").scrollHeight;
@@ -57,7 +61,11 @@ class About extends Component {
           <div className="floaterTwo" />
         </div>
         <div className="exploreContainer">
-          <div className="loginContainer" />
+          <div className="loginContainer">
+            <button className="loginButton" onClick={() => this.toLogin()}>
+              Login / Sign up
+            </button>
+          </div>
         </div>
       </div>
     );
