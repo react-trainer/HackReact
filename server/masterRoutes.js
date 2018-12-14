@@ -9,7 +9,8 @@ const {
   makePost,
   getAllPosts,
   getPost,
-  makeComment
+  makeComment,
+  getAllComments
 } = require("./controllers/forumCtrl");
 
 const express = require("express");
@@ -47,6 +48,7 @@ module.exports = app => {
   app.get("/api/posts/all", getAllPosts);
   app.get("/api/post/:id", getPost);
   app.post("/api/comment", makeComment);
+  app.get("/api/comments/all/:post_id", getAllComments);
 
   //rating
   app.put("/api/rating/:lesson_id");

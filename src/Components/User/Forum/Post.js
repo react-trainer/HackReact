@@ -11,7 +11,7 @@ class Post extends Component {
   constructor() {
     super();
     this.state = {
-      post_info: [{ post_id: 0 }],
+      post_info: [{ post_id: 1 }],
       comment: false
     };
   }
