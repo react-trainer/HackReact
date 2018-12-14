@@ -7,7 +7,7 @@ import './Profile.css'
 class CompletedLessons extends Component{
     render(){ 
         const data = [
-                        {angle: 1, color: 'rgb(140, 71, 170)'}, {angle: 5, color: 'rgb(212, 69, 200)'}
+                        {angle: 1, color: '#00d8ff'}, {angle: 5, color: 'rgb(212, 69, 200)'}
                       ];
                     return( 
                         <div>
