@@ -15,8 +15,8 @@ import {
 } from "./LandingSC";
 import { Link } from "react-router-dom";
 import Canvas from "./Canvas";
-import PreviousButton from "./pictures/arrow-left.svg";
-import NextButton from "./pictures/arrow-right.svg";
+import PreviousButton from "./pictures/play.svg";
+import NextButton from "./pictures/play.svg";
 import Wrench from "./pictures/wrench.svg";
 import Underline from "./pictures/underline.png";
 import CodeImg from "./pictures/code.svg";
@@ -180,6 +180,7 @@ class Landing extends Component {
             src={PreviousButton}
             alt="previous button"
             onClick={() => this.previousCard()}
+            backButton="rotate(180deg)"
           />
           <ArrowIcon
             src={NextButton}

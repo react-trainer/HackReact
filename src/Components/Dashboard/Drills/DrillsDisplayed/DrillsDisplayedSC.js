@@ -5,7 +5,7 @@ export const SearchInput = styled.input`
   width: 50vw;
   background-color: rgb(54, 54, 54);
   color: rgb(170, 170, 170);
-  font-size: 25px;
+  font-size: 20px;
   border-radius: 20px;
   border: 1px;
   box-shadow: 0px 5px 17px -5px rgba(0, 216, 255, 0.7);

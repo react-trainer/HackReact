@@ -117,10 +117,12 @@ export const LessonOverlay = styled.div`
   border-radius: 3%;
   height: 30%;
   background-color: rgba(37, 37, 37, 0.8);
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 `;
 
 export const Title = styled.h1`

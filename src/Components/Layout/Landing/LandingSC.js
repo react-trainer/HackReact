@@ -77,9 +77,15 @@ export const ArrowIcon = styled.img`
   top: ${props => props.top || "60%"};
   left: ${props => props.left || "60%"};
   height: auto;
-  width: ${props => props.width || "2%"};
+  width: ${props => props.width || "3%"};
   overflow: hidden;
+  transform: ${props => props.backButton || null};
   cursor: pointer;
+  transition: 0.5s;
+
+  :hover {
+    filter: invert(100%);
+  }
 `;
 
 export const MenuContainers = styled.div`
