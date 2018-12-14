@@ -146,7 +146,7 @@ class Lesson extends Component {
             <Button
               backgroundColor="#00a6cc"
               position="fixed"
-              top="91.5%"
+              top="92%"
               left="28%"
               onClick={this.showCompleted}
             >

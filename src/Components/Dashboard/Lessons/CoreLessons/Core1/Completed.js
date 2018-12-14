@@ -97,6 +97,7 @@ class Completed extends Component {
           <Quiz
             progress={this.state.progress}
             lesson_id={this.props.lesson_id}
+            upQuiz={this.upQuiz}
           />
           <br />
           <br />
