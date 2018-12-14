@@ -1,20 +1,25 @@
 import React, {Component} from 'react';
 import {  RadialChart  } from 'react-vis';
+import CompletedLessonsTitle from './CompletedLessonsTitle';
 
 import './Profile.css'
 //use react vis instead of canvas, Tyler
 class CompletedLessons extends Component{
-    render(){
+    render(){ 
         const data = [
-                        {angle: 1, label: 'Not started'}, {angle: 5, label: 'Completed'}
+                        {angle: 1, color: 'rgb(140, 71, 170)'}, {angle: 5, color: 'rgb(212, 69, 200)'}
                       ];
                     return( 
+                        <div>
+
                             
                             <RadialChart data={data}
-                            width={250}
-                            height={250}/>
-                            
-                        
+                            width={225}
+                            height={225}
+                            colorType='literal'
+                            />        
+                            <CompletedLessonsTitle/>                               
+                            </div>
                     )
                 }
             }
