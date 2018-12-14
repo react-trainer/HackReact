@@ -27,8 +27,19 @@ const getPost = (req, res) => {
     .catch(err => res.status(500).send(err => console.log(err)));
 };
 
+const makeComment = (req, res) => {
+  let { user_id, comment_content, post_id } = req.body;
+  let db = req.app.get("db");
+  db.add_comment(user_id, comment_content, post_id)
+    .then(response => {
+      res.status(200).json(response);
+    })
+    .catch(err => res.status(500).send(err => console.log(err)));
+};
+
 module.exports = {
   makePost,
   getAllPosts,
-  getPost
+  getPost,
+  makeComment
 };

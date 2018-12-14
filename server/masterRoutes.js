@@ -1,6 +1,3 @@
-const commentCtrl = require("./controllers/commentCtrl");
-const ratingCtrl = require("./controllers/ratingCtrl");
-
 const {
   getUser,
   editUserAbout,
@@ -8,7 +5,12 @@ const {
   editUserImg
 } = require("./controllers/userCtrl");
 const { getLesson, getQuiz, getImages } = require("./controllers/lessonCtrl");
-const { makePost, getAllPosts, getPost } = require("./controllers/forumCtrl");
+const {
+  makePost,
+  getAllPosts,
+  getPost,
+  makeComment
+} = require("./controllers/forumCtrl");
 
 const express = require("express");
 
@@ -44,11 +46,7 @@ module.exports = app => {
   app.post("/api/post", makePost);
   app.get("/api/posts/all", getAllPosts);
   app.get("/api/post/:id", getPost);
-
-  //comment
-  app.post("/api/comment/:lesson_id");
-  app.delete("/api/comment/:comment_id");
-  app.get("/api/comment/:lesson_id");
+  app.post("/api/comment", makeComment);
 
   //rating
   app.put("/api/rating/:lesson_id");

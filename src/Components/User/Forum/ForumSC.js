@@ -125,13 +125,18 @@ export const IndPost = styled.div`
   overflow: hidden;
   position: fixed;
   top: 10%;
-  width: 100vw;
-  background-color: rgba(37, 37, 37, 0.2);
+  width: 80vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 30vh;
+  height: 35vh;
   align-items: center;
   align-content: center;
-  margin-top: 10vh;
+  margin-top: 5vh;
+`;
+
+export const CommentsContainer = styled.div`
+  overflow: hidden;
+  position: fixed;
+  top: 55%;
 `;
