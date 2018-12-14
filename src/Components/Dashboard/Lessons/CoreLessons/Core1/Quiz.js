@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Answer} from "./Core1SC";
+import { Answer } from "./Core1SC";
 import PropTypes from "prop-types";
 import axios from "axios";
 
@@ -24,7 +24,16 @@ class Quiz extends Component {
   }
 
   checkAnswer = (value, correct) => {
-    return value === correct ? alert("got it!") : alert("nope!");
+    return value === correct ? this.correct() : this.wrong();
+  };
+
+  correct = () => {
+    alert("got it!");
+    this.props.upQuiz();
+  };
+
+  wrong = () => {
+    alert("nope!");
   };
 
   render() {

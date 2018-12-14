@@ -42,7 +42,7 @@ class Nav extends Component {
               <Link to="/profile">
                 <h2>Profile</h2>
               </Link>
-              <Link to="">
+              <Link to="/forum/all">
                 <h2>Forum</h2>
               </Link>
               <Link to="/sandbox">
