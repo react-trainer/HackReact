@@ -76,12 +76,7 @@ class Landing extends Component {
       ]
     };
   }
-<<<<<<< HEAD
   nextCard() {
-=======
-
-  nextQuestion() {
->>>>>>> 9b110a11c0e59d89fab982947b3c34fe65ec0cd3
     const { count, sidePosition } = this.state;
     if (count >= 4) {
       this.setState({
