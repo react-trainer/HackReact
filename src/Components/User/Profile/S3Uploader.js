@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DropzoneS3Uploader from 'react-dropzone-s3-uploader';
-import {withRouter} from 'react-router-dom'
+
 
 
 class S3Uploader extends Component{
@@ -18,7 +18,6 @@ class S3Uploader extends Component{
       }
 
     render(){
-        console.log(this.props.match)
         const uploadOptions = {
             server: process.env.REACT_APP_CLIENT,
             signingUrlQueryParams: {uploadType: 'avatar'},
@@ -38,5 +37,5 @@ class S3Uploader extends Component{
 
 }
 
-export default withRouter(S3Uploader);
+export default S3Uploader;
 

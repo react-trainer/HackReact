@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {  XYPlot, HeatmapSeries,YAxis, XAxis } from 'react-vis';
+import LoginStreakTitle from './LoginStreakTitle'
 
 
 class LoginStreak extends Component{
@@ -14,15 +15,19 @@ class LoginStreak extends Component{
             {x: 7, y: 3},
           ]
                     return( 
+                        <div>
+
                             <XYPlot 
-                            width={250}
-                            height={250}>
+                            width={225}
+                            height={225}>
                             <HeatmapSeries data={myData}
+                            color='rgb(212, 71, 200)'
                             />
                             <YAxis/>
                             <XAxis/>
                             </XYPlot>
-                            
+                           <LoginStreakTitle/>
+                            </div>
                         
                     )
                 }

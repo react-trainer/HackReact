@@ -141,15 +141,15 @@ const Card = styled.div`
                      <Card alignItem="flex-start" backgroundColor="rgba(37,37,37, 0.3)" boxShadow="null" borderRadius="null"width="29vw">{userAbout}</Card>
                      <Card flexDirection="column" alignItems="center"backgroundColor="rgba(37,37,37, 0.3)" boxShadow="null" borderRadius="null"width="19vw">
                      <LoginStreak/>
-                     Work Completed
+                     
                      </Card>
                      <Card flexDirection="column" alignItems="center"backgroundColor="rgba(37,37,37, 0.3)" boxShadow="null" borderRadius="null"width="19vw">
                      <LoginTime/>
-                     Login Time
+                     
                       </Card>
                      <Card flexDirection="column" alignItems="center"backgroundColor="rgba(37,37,37, 0.3)" boxShadow="null" borderRadius="null"width="19vw">
                       <CompletedLessons/>
-                        Completed Lessons
+                        
                       </Card>
 
           </MainContainer>
