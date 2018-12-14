@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import forumRoutes from "../../../routes/forumRoutes";
+import { OuterContainer } from "../../resources/styles/masterStyles";
+import { Container } from "./ForumSC";
+import { connect } from "react-redux";
+import { getUser } from "../../../ducks/userReducer";
 
 class Forum extends Component {
   constructor() {
@@ -9,14 +13,27 @@ class Forum extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.getUser();
+  }
+
   render() {
     return (
-      <div>
-        <h1>Forum</h1>
-        {forumRoutes}
-      </div>
+      <OuterContainer>
+        <Container>
+          <h1>Forum</h1>
+          {forumRoutes}
+        </Container>
+      </OuterContainer>
     );
   }
 }
 
-export default Forum;
+function mapStatetoProps(state) {
+  return { state };
+}
+
+export default connect(
+  mapStatetoProps,
+  { getUser }
+)(Forum);
