@@ -12,9 +12,6 @@ export const Container = styled.div`
   );
   color: white;
   text-align: center;
-  align-items: center;
-  align-content: center;
-  justify-content: space-evenly;
 `;
 
 export const Overlay = styled.div`
@@ -75,4 +72,66 @@ export const NewContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+`;
+
+export const Title = styled.div`
+  overflow: hidden;
+  position: fixed;
+  top: 1%;
+  width: 100vw;
+  background-color: rgb(37, 37, 37);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+`;
+
+export const PostCard = styled.div`
+  overflow: hidden;
+  height: 20vh;
+  width: 27vw;
+  background-color: rgb(34, 34, 34);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 2vw;
+  box-shadow: 0px 4px 6px -3px inset rgb(0, 216, 255);
+`;
+
+export const AllPostsContainer = styled.div`
+  overflow: hidden;
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  padding-left: 5vw;
+`;
+
+export const PostContainer = styled.div`
+  overflow: hidden;
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  margin-top: 10vh;
+`;
+
+export const IndPost = styled.div`
+  overflow: hidden;
+  position: fixed;
+  top: 10%;
+  width: 100vw;
+  background-color: rgba(37, 37, 37, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30vh;
+  align-items: center;
+  align-content: center;
+  margin-top: 10vh;
 `;

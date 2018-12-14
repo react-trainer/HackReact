@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import forumRoutes from "../../../routes/forumRoutes";
 import { OuterContainer, Button } from "../../resources/styles/masterStyles";
-import { Container } from "./ForumSC";
+import { Container, Title } from "./ForumSC";
 import { connect } from "react-redux";
 import { getUser } from "../../../ducks/userReducer";
 import NewPost from "./NewPost";
+import { Link } from "react-router-dom";
 
 class Forum extends Component {
   constructor() {
@@ -41,8 +42,15 @@ class Forum extends Component {
     return (
       <OuterContainer>
         <Container>
-          <h1>Forum</h1>
-          <Button onClick={this.onOpen}>New Post</Button>
+          <Title>
+            <Link to="/dashboard/recent">
+              <Button>Dashboard</Button>
+            </Link>
+            <Link to="/forum/all">
+              <h1>Forum</h1>
+            </Link>
+            <Button onClick={this.onOpen}>New Post</Button>
+          </Title>
           {forumRoutes}
           {this.state.new ? (
             <NewPost

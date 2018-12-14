@@ -6,6 +6,6 @@ import Post from "../components/User/Forum/Post";
 export default (
   <Switch>
     <Route path="/forum/all" component={AllPosts} />
-    <Route path="/forum/:id" component={Post} />
+    <Route path="/forum/post/:id" component={Post} />
   </Switch>
 );
