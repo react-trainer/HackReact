@@ -27,10 +27,13 @@ import {
   HorizontalGridLines,
   AreaSeries
 } from 'react-vis';
+import LoginTimeTitle from './LoginTimeTitle'
 
 export default function LoginTime() {
   return (
-    <XYPlot width={250} height={250}>
+    <div>
+
+    <XYPlot width={225} height={225} >
       <VerticalGridLines />
       <HorizontalGridLines />
       <YAxis /> 
@@ -38,7 +41,11 @@ export default function LoginTime() {
         className="area-series-example"
         curve="curveNatural"
         data={[{x: 1, y: 10}, {x: 2, y: 0}, {x: 3, y: 15}]}
-      />
+        color='rgb(212, 71, 200)'
+        />
+      
     </XYPlot>
+    <LoginTimeTitle/>
+        </div>
   );
 }
