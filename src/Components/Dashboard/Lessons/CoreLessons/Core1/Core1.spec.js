@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { shallow} from "enzyme";
 import Core1 from "./Core1";
 import Completed from "./Completed";
-import Goals from "./Goals";
-import MockAdapter from "axios-mock-adapter";
-import axios from "axios";
+// import Goals from "./Goals";
+// import MockAdapter from "axios-mock-adapter";
+// import axios from "axios";
 
 const match = {
   params: {
@@ -34,24 +34,24 @@ describe("Core1 - Initial", () => {
   });
 });
 
-describe("Core1 - Axios/Mounting", () => {
-  const spy = jest.spyOn(Core1.prototype, "getLesson");
-  const wrapper = mount(<Core1 match={match} />);
-  const mockData = {
-    lesson_title: "lesson_title",
-    lesson_description: "lesson_description",
-    lesson_content: "lesson_content",
-    docs_url: "docs_url",
-    iframe: "iframe"
-  };
-  beforeEach(() => {
-    const mock = new MockAdapter(axios);
-    mock.onGet("/api/lesson/1").reply(200, mockData);
-    const componentInstance = wrapper.instance();
-    componentInstance.componentDidMount();
-  });
+// describe("Core1 - Axios/Mounting", () => {
+//   const spy = jest.spyOn(Core1.prototype, "getLesson");
+//   const wrapper = mount(<Core1 match={match} />);
+//   const mockData = {
+//     lesson_title: "lesson_title",
+//     lesson_description: "lesson_description",
+//     lesson_content: "lessona_content",
+//     docs_url: "docs_url",
+//     iframe: "iframe"
+//   };
+//   beforeEach(() => {
+//     const mock = new MockAdapter(axios);
+//     mock.onGet("/api/lesson/1").reply(200, mockData);
+//     const componentInstance = wrapper.instance();
+//     componentInstance.componentDidMount();
+//   });
 
-  it('calls the "getLesson" function', () => {
-    expect(spy).toHaveBeenCalled();
-  });
-});
+//   it('calls the "getLesson" function', () => {
+//     expect(spy).toHaveBeenCalled();
+//   });
+// });

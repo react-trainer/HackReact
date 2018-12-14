@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { mount } from "enzyme";
 import Quiz from "./Quiz";
 import MockAdapter from "axios-mock-adapter";
 import axios from "axios";

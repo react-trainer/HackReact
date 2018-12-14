@@ -52,13 +52,17 @@ export const ModalContent = styled.div`
   text-align: center;
   padding: 4px;
   cursor: pointer;
+  display: flex;
+  align-content: center;
+  align-items: center;
 
   :after {
-    vertical-align: middle;
-    display: inline-block;
     height: 100%;
     margin-left: -0.05em;
     content: "";
+    display: flex;
+    align-content: center;
+    align-items: center;
   }
 `;
 
@@ -69,12 +73,14 @@ export const Dialog = styled.div`
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
-  max-width: auto;
+  min-width: 75vw;
   cursor: default;
   border-radius: 4px;
   font-size: 1.1em;
   letter-spacing: 1.5px;
   z-index: 10000;
+  top: 20%;
+  left: 12.5vw;
 `;
 
 export const Title = styled.div`
@@ -108,12 +114,14 @@ export const QuizDialog = styled.div`
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
-  max-width: auto;
+  min-width: 75vw;
   cursor: default;
   border-radius: 4px;
   font-size: 1.1em;
   letter-spacing: 1.5px;
   z-index: 10001;
+  top: 20%;
+  left: 12.5%;
 `;
 
 export const Answer = styled.div`
