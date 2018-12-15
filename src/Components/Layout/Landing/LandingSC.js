@@ -61,10 +61,10 @@ export const Title = styled.h1`
 
 export const WrenchIcon = styled.img`
   position: absolute;
-  top: 28%;
-  right: 4%;
+  top: 43%;
+  right: 2%;
   height: auto;
-  width: 9%;
+  width: 2%;
   overflow: hidden;
   @media (max-width: 1400px) {
     top: 43%;
@@ -77,9 +77,15 @@ export const ArrowIcon = styled.img`
   top: ${props => props.top || "60%"};
   left: ${props => props.left || "60%"};
   height: auto;
-  width: ${props => props.width || "2%"};
+  width: ${props => props.width || "3%"};
   overflow: hidden;
+  transform: ${props => props.backButton || null};
   cursor: pointer;
+  transition: 0.5s;
+
+  :hover {
+    filter: invert(100%);
+  }
 `;
 
 export const MenuContainers = styled.div`

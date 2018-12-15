@@ -15,8 +15,8 @@ import {
 } from "./LandingSC";
 import { Link } from "react-router-dom";
 import Canvas from "./Canvas";
-import PreviousButton from "./pictures/arrow-left.svg";
-import NextButton from "./pictures/arrow-right.svg";
+import PreviousButton from "./pictures/play.svg";
+import NextButton from "./pictures/play.svg";
 import Wrench from "./pictures/wrench.svg";
 import Underline from "./pictures/underline.png";
 import CodeImg from "./pictures/code.svg";
@@ -31,19 +31,18 @@ class Landing extends Component {
         {
           title: ` React Made Simple. `,
           title2: `For You.`,
-          // title3: `By You.`,
           sub:
             "New to React? Trouble understanding the React Documentation? Start here to begin your journey!",
           image: <ScribbleUnderline src={Underline} alt="scribble" />,
           button: "Learn More",
-          link: () => this.toAbout()
+          link: this.toAbout
         },
         {
           title: "What is HackReact?",
           title2: "What Do We Do?",
           sub: "Learn more about HackReact by clicking below!",
           button: "About",
-          link: () => this.toAbout()
+          link: this.toAbout
         },
         {
           title: "Read the",
@@ -77,8 +76,7 @@ class Landing extends Component {
       ]
     };
   }
-
-  nextQuestion() {
+  nextCard() {
     const { count, sidePosition } = this.state;
     if (count >= 4) {
       this.setState({
@@ -92,7 +90,7 @@ class Landing extends Component {
       });
     }
   }
-  previousQuestion() {
+  previousCard() {
     const { count, sidePosition } = this.state;
     if (count <= 0) {
       this.setState({
@@ -108,6 +106,9 @@ class Landing extends Component {
   }
   toSandbox = () => {
     window.location.href = `${process.env.REACT_APP_CLIENT}/sandbox`;
+  };
+  toAbout = () => {
+    window.location.href = `${process.env.REACT_APP_CLIENT}/about`;
   };
   toLogin = () => {
     window.location.href = `${process.env.REACT_APP_SERVER}/login`;
@@ -181,12 +182,13 @@ class Landing extends Component {
             left="55%"
             src={PreviousButton}
             alt="previous button"
-            onClick={() => this.previousQuestion()}
+            onClick={() => this.previousCard()}
+            backButton="rotate(180deg)"
           />
           <ArrowIcon
             src={NextButton}
             alt="next button"
-            onClick={() => this.nextQuestion()}
+            onClick={() => this.nextCard()}
           />
         </LeftContainer>
         <RightContainer>
