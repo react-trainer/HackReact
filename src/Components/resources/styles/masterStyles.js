@@ -123,6 +123,9 @@ export const LessonOverlay = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  @media (max-width: 1400px) {
+    font-size: 1rem;
+  }
 `;
 
 export const Title = styled.h1`

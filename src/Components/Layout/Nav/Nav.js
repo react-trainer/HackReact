@@ -55,7 +55,7 @@ class Nav extends Component {
               >
                 <h6>React Docs</h6>
               </a>
-              <Link to="">
+              <Link to="/about">
                 <h5>About</h5>
               </Link>
               <Link to="">

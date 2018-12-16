@@ -1,6 +1,13 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Card, MainContainer } from "../../resources/styles/masterStyles";
-import { RecentProfileContainer, ProfileImage } from "./RecentSC";
+import { getUserImage } from "../../../ducks/userReducer";
+import {
+  RecentProfileContainer,
+  ProfileImage,
+  HeatMapContainer
+} from "./RecentSC";
+import Starfall from "./canvas/Starfall";
 import Heatmap from "./vx/Heatmap";
 
 class Recent extends Component {
@@ -8,19 +15,31 @@ class Recent extends Component {
     super();
     this.state = {};
   }
+  componentDidMount() {
+    this.props.getUserImage();
+  }
 
   render() {
+    const { userImage } = this.props.user;
     return (
       <MainContainer height="100vh">
         <RecentProfileContainer>
-          <ProfileImage
-            src="https://images.unsplash.com/photo-1540871398124-992abe834578?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
-            alt="profile"
-          />
-          <Heatmap height="250" width="550" />
+          {!this.props.user.userImage ? null : (
+            <ProfileImage src={userImage[0].image_url} alt="profile" />
+          )}
+          <HeatMapContainer>
+            Login Activity
+            <Heatmap height="250" width="550" />
+          </HeatMapContainer>
         </RecentProfileContainer>
+        <Starfall />
       </MainContainer>
     );
   }
 }
-export default Recent;
+const mapStateToProps = state => state;
+
+export default connect(
+  mapStateToProps,
+  { getUserImage }
+)(Recent);

@@ -9,4 +9,7 @@ describe("The Bubble Component", () => {
   it("should contain radius", () => {
     expect(Circle).toContain("radius");
   });
+  it("should be undefined", () => {
+    expect("mouse").toBeUndefined();
+  });
 });

@@ -10,7 +10,7 @@ const cool1 = "#122549";
 const cool2 = "#b4fbde";
 const bg = "#262626";
 
-const data = genBins(20, 5);
+const data = genBins(7, 5);
 
 // utils
 const max = (data, value = d => d) => Math.max(...data.map(value));

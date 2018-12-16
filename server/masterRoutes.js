@@ -1,5 +1,6 @@
 const {
   getUser,
+  getUserImage,
   editUserAbout,
   getDrills,
   editUserImg
@@ -20,6 +21,7 @@ module.exports = app => {
   app.post("/api/user/favorites");
   app.get("/api/drills", getDrills);
   app.get("/api/user", getUser);
+  app.get("/api/userImage", getUserImage);
   app.get("/api/user/all");
   app.get("/api/completed/:user_id");
   app.put("/api/user/:user_id", editUserAbout);

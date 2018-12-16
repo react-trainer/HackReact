@@ -5,7 +5,13 @@ class About extends Component {
   constructor() {
     super();
     this.state = {
-      sideBarClass: "zero"
+      sideBarClass: "zero",
+      images: [
+        "https://s3.us-east-2.amazonaws.com/hackreact/Danny.png",
+        "https://s3.us-east-2.amazonaws.com/hackreact/James.png",
+        "https://s3.us-east-2.amazonaws.com/hackreact/Tyler.png",
+        "https://s3.us-east-2.amazonaws.com/hackreact/Image+from+iOS+(4).jpg"
+      ]
     };
   }
   toLogin = () => {
@@ -13,7 +19,6 @@ class About extends Component {
   };
 
   trackScroll = () => {
-    console.log(window.scrollY);
     let scrollHeight = document.querySelector(".exploreOuter").scrollHeight;
     let scroll = Math.floor((window.scrollY / scrollHeight) * 100);
 
@@ -37,11 +42,18 @@ class About extends Component {
   }
 
   render() {
+    const displayPictures = this.state.images.map((value, index) => {
+      return (
+        <div className="imageContainer">
+          <img className="devpic" src={value} alt="Developer Photo" />
+        </div>
+      );
+    });
     return (
       <div className="exploreOuter" id="outer">
         <div className={this.state.sideBarClass} />
         <div className="exploreContainer">
-          <div className="exploreSubOne" />
+          <div className="exploreSubOne">{displayPictures}</div>
         </div>
         <div className="floaterContainer">
           {/* <iframe
@@ -51,16 +63,16 @@ class About extends Component {
           <div className="floaterOne" />
           <div className="textBar" />
           <p>
-            React, designed to create a custom user experience with JavaScript
-            and HTML as the source. People come to React from different
+            React is designed to create a custom user experience with JavaScript
+            and HTML at the helm. People come to React from different
             backgrounds and with different learning styles. Whether you prefer a
             more theoretical or a practical approach, we hope to provide you
             with the best tools to help accelerate your growth as a React
-            developer.
+            developer!
           </p>
           <div className="floaterTwo" />
         </div>
-        <div className="exploreContainer">
+        <div className="exploreContainer" id="bottomDiv">
           <div className="loginContainer">
             <button className="loginButton" onClick={() => this.toLogin()}>
               Login / Sign up

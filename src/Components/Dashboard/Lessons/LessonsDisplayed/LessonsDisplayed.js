@@ -36,7 +36,7 @@ class LessonsDisplayed extends Component {
         {
           title: "What is State?",
           description:
-            "Local state is important to creating Class Components. Jump in and discover State!",
+            "Local state is important in creating Class Components. Jump in and discover State!",
           image:
             "https://images.unsplash.com/photo-1484587658517-51c2ea232f9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
         },
@@ -73,7 +73,7 @@ class LessonsDisplayed extends Component {
               <Title
                 letterSpacing="2px"
                 fontSize="30px"
-                mediaFontSize="30px"
+                mediaFontSize="25px"
                 fontFamily="Scada"
               >
                 {value.title}

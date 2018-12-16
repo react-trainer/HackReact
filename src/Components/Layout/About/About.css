@@ -1,3 +1,6 @@
+.exploreOuter {
+  background-color: black;
+}
 .exploreContainer {
   height: 100vh;
   width: 100vw;
@@ -6,17 +9,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  z-index: 5;
+}
+#bottomDiv {
+  background: none;
+  /* box-shadow: -10px -87px 197px 3px rgba(0, 0, 0, 0.75); */
 }
 .exploreSubOne {
-  height: 60vh;
-  width: 50vw;
-  background-color: rgba(255, 255, 255, 1);
-  border: 1px solid rgba(38, 38, 38, 0.3);
+  height: 25vh;
+  width: 100vw;
+  background: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25),
     0 10px 10px 0 rgba(0, 0, 0, 0.26);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -91,7 +99,7 @@
   background: linear-gradient(45deg, rgb(212, 71, 200)-37%, rgb(0, 216, 255));
 }
 .floaterContainer {
-  height: 200vh;
+  height: 150vh;
   width: 100vw;
   background: rgb(0, 0, 0);
 }
@@ -120,7 +128,7 @@
   height: 20vh;
   width: 20vw;
   position: relative;
-  top: 21%;
+  top: 18%;
   background: linear-gradient(45deg, rgb(212, 71, 200)-37%, rgb(0, 216, 255));
   z-index: 4;
   box-shadow: 0px 0px 41px;
@@ -136,20 +144,15 @@
 }
 .loginContainer {
   border-radius: 8px;
-  -webkit-box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25),
-    0 10px 10px 0 rgba(0, 0, 0, 0.26);
-  box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25),
-    0 10px 10px 0 rgba(0, 0, 0, 0.26);
-  background-image: linear-gradient(
-    200deg,
-    rgba(0, 0, 0, 0.3)-14%,
-    rgb(0, 216, 255) 154%
-  );
-  width: 35vw;
-  height: 55vh;
+  /* border: 4px solid rgb(255, 255, 255); */
+  /* box-shadow: 0 14px 28px 0 rgba(0, 0, 0, 0.25), 0 10px 10px 0 rgba(0, 0, 0, 0.26), 2px 93px 52px -18px inset rgb(0,216,255); */
+  /* background-image: linear-gradient( 223deg,rgb(100, 88, 83) , rgb(202, 216, 222) 70% ); */
+  /* background-color: rgb(255, 255, 255); */
+  width: 30vw;
+  height: 83vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
   padding: 20px;
 }
@@ -157,9 +160,32 @@
 .loginButton {
   height: 10vh;
   width: 15vw;
-  border: 1px solid rgb(255, 255, 255);
+  background: linear-gradient(45deg, rgb(212, 71, 200)-37%, rgb(0, 216, 255));
+  border: 1px solid rgba(212, 71, 200, 0.4);
   cursor: pointer;
   font-size: 30px;
-  border-radius: 5%;
-  box-shadow: 8px 6px 28px -3px black;
+  border-radius: 20rem;
+  font-family: "Scada", sans-serif;
+  color: rgb(255, 255, 255);
+  /* text-shadow: 2px 2px #000000; */
+  box-shadow: 8px 6px 28px -3px black, -5px -13px 18px -11px inset black;
+  transition: 0.6s;
+  z-index: 5;
+  overflow: hidden;
+  outline: none;
+}
+
+.imageContainer {
+  height: 70%;
+  width: 230px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 1px 3px 3px 1px black;
+  border-radius: 17rem;
+  overflow: hidden;
+}
+.devpic {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
 }

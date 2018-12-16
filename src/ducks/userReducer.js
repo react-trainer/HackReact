@@ -2,12 +2,14 @@ import axios from "axios";
 
 //ACTION TYPES
 const GET_USER = "GET_USER";
+const GET_USER_IMAGE = "GET_USER_IMAGE";
 const GET_DRILLS = "GET_DRILLS";
 const UPDATE_INPUT = "UPDATE_INPUT";
 
 //INITIAL STATE
 const initialState = {
   user: [],
+  userImage: "",
   drills: [],
   searchDrillsInput: "",
   loggedIn: false,
@@ -21,6 +23,12 @@ export const getUser = () => {
   return {
     type: GET_USER,
     payload: axios.get("/api/user")
+  };
+};
+export const getUserImage = () => {
+  return {
+    type: GET_USER_IMAGE,
+    payload: axios.get("/api/userImage")
   };
 };
 
@@ -83,6 +91,23 @@ export default function userReducer(state = initialState, action) {
       return {
         ...state,
         loggedIn: false
+      };
+    case `${GET_USER_IMAGE}_PENDING`:
+      return {
+        ...state,
+        isLoading: true
+      };
+    case `${GET_USER_IMAGE}_FULFILLED`:
+      console.log(action.payload);
+      return {
+        ...state,
+        isLoading: false,
+        userImage: action.payload.data
+      };
+    case `${GET_USER_IMAGE}_REJECTED`:
+      return {
+        ...state,
+        isLoading: false
       };
     default:
       return state;
