@@ -32,7 +32,6 @@ module.exports = app => {
           profile._json.email
         ])
           .then(response => {
-            console.log("response" + response);
             return done(null, response[0]);
           })
           .catch(err => console.log(err));

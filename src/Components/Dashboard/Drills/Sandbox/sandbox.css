@@ -141,7 +141,7 @@ input[type="checkbox"] {
 
   padding: 1rem;
 
-  color: lime;
+  color: rgb(0, 216, 255);
   background: black;
 
   cursor: pointer;
@@ -152,7 +152,7 @@ input[type="checkbox"] {
 }
 
 .lbl-toggle:hover {
-  color: limegreen;
+  color: rgb(0, 216, 255);
 }
 
 .lbl-toggle::before {
@@ -171,30 +171,30 @@ input[type="checkbox"] {
 }
 
 .collapsible-content .content.inner {
-  background: limegreen;
+  background: rgb(0, 216, 255);
   border-bottom: 1px solid rgba(250, 224, 66, 0.45);
 
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   padding: 0.5rem 1rem;
   font-family: "Share Tech Mono", monospace;
-  color: limegreen;
+  color: white;
   font-size: 1.5rem;
 }
 
 .collapsible-content {
   max-height: 0px;
   overflow: hidden;
-  color: limegreen;
+  color: white;
   font-size: 1.5rem;
-
+  font-weight: 300;
   position: absolute;
   background: black;
   width: 100%;
-  border-top: 1px solid limegreen;
+  border-top: 1px solid rgb(0, 216, 255);
   padding-bottom: 2px;
-  border-bottom: 1px solid limegreen;
-
+  border-bottom: 1px solid rgb(0, 216, 255);
+  letter-spacing: 1px;
   transition: max-height 0.25s ease-in-out;
 }
 
@@ -217,7 +217,7 @@ input[type="checkbox"] {
   cursor: pointer;
   border: black;
   background: black;
-  color: limegreen;
+  color: rgb(0, 216, 255);
   border-radius: 14px;
   padding: 10px;
   font-family: "Share Tech Mono", monospace;
@@ -235,7 +235,7 @@ input[type="checkbox"] {
   padding: 13px;
   font-size: 20px;
   background: black;
-  color: lime;
+  color: rgb(0, 216, 255);
   font-family: "Share Tech Mono", monospace;
   cursor: pointer;
   outline: none;

@@ -100,7 +100,8 @@ export const Card = styled.div`
   border-radius: ${props => props.borderRadius || "3%"};
   border: ${props => props.border || "1px solid rgb(0, 0, 0)"};
   box-shadow: ${props =>
-    props.boxShadow || "0px 4px 6px -3px inset rgb(0,216,255)"};
+    props.boxShadow ||
+    "1px 1px 25px 1px rgba(0, 0, 0, 0.3),0px 4px 6px -3px inset rgb(212, 71, 200)"};
   margin: ${props => props.margin || "25px"};
   overflow: ${props => props.overflow || "hidden"};
   background-size: ${props => props.backgroundSize || "cover"};
@@ -108,7 +109,8 @@ export const Card = styled.div`
   transition: 0.4s;
 
   :hover {
-    box-shadow: 0px 4px 6px -3px inset rgb(212, 71, 200);
+    box-shadow: 1px 1px 25px 1px rgba(0, 0, 0, 0.3),
+      0px 4px 6px -3px inset rgb(212, 71, 200);
   }
 `;
 
@@ -123,6 +125,9 @@ export const LessonOverlay = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  @media (max-width: 1400px) {
+    font-size: 1rem;
+  }
 `;
 
 export const Title = styled.h1`

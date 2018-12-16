@@ -36,7 +36,7 @@ class LessonsDisplayed extends Component {
         {
           title: "What is State?",
           description:
-            "Local state is important to creating Class Components. Jump in and discover State!",
+            "Local state is important in creating Class Components. Jump in and discover State!",
           image:
             "https://images.unsplash.com/photo-1484587658517-51c2ea232f9a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
         },
@@ -68,12 +68,16 @@ class LessonsDisplayed extends Component {
     const displayLessons = lessonComponents.map((value, index) => {
       return (
         <Link key={index} to={`/lesson/${index + 1}`}>
-          <Card borderRadius="0" backgroundImage={`url(${value.image})`}>
+          <Card
+            borderRadius="0"
+            boxShadow="1px 1px 25px 1px rgba(0,0,0,0.3), 0px 4px 6px -3px inset rgb(0,216,255)"
+            backgroundImage={`url(${value.image})`}
+          >
             <LessonOverlay>
               <Title
                 letterSpacing="2px"
                 fontSize="30px"
-                mediaFontSize="30px"
+                mediaFontSize="25px"
                 fontFamily="Scada"
               >
                 {value.title}
