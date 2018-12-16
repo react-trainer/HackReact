@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -39,7 +39,7 @@ export const Overlay = styled.div`
   height: 100%;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.9);
 `;
 
 export const ModalContent = styled.div`
@@ -154,9 +154,21 @@ export const Swal1 = styled.div`
   z-index: 10002;
 `;
 
+export const Blink = keyframes`
+  0%,12%,18.999%,23%,31.999%,37%,44.999%,46%,49.999%,51%,58.999%,61%,68.999%,71%,85.999%,96%,100% {
+    opacity:0.99; text-shadow: 0px 0px 100px rgba(227, 22, 177, 0.9);
+  }
+  19%,22.99%,32%,36.999%,45%,45.999%,50%,50.99%,59%,60.999%,69%,70.999%,86%,95.999% { 
+    opacity:0.5; text-shadow: none; 
+  }
+`;
+
 export const Wavy = styled.h1`
   font-family: Monoton;
   font-size: 5em;
+  opacity: 1;
+  color: rgb(227, 22, 177);
+  animation: ${Blink} 8s linear infinite;
 `;
 
 export const Spread = styled.div`
