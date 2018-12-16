@@ -31,9 +31,6 @@ class Lesson extends Component {
     this.getLesson();
   }
   componentDidUpdate(prevProps) {
-    console.log("updated");
-    console.log("prev" + prevProps.match.params.id);
-    console.log("next" + this.props.match.params.id);
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.getLesson();
     }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Answer } from "./Core1SC";
+import { Answer, AnswerContainer } from "./Core1SC";
 import PropTypes from "prop-types";
 import axios from "axios";
 
@@ -24,24 +24,20 @@ class Quiz extends Component {
   }
 
   checkAnswer = (value, correct) => {
-    return value === correct ? this.correct() : this.wrong();
-  };
-
-  correct = () => {
-    alert("got it!");
-    this.props.upQuiz();
-  };
-
-  wrong = () => {
-    alert("nope!");
+    return value === correct
+      ? this.props.correct(value)
+      : this.props.wrong(value);
   };
 
   render() {
     let quizdisplay = this.state.quiz_info.map((e, i) => {
       return (
-        <div>
+        <AnswerContainer>
           <h2>{e.question_text}</h2>
+          <br />
+          <br />
           <Answer
+            correct={this.props.correcta}
             key={0}
             onClick={() => this.checkAnswer("a", e.correct_answer)}
           >
@@ -49,6 +45,7 @@ class Quiz extends Component {
           </Answer>
 
           <Answer
+            correct={this.props.correctb}
             key={1}
             onClick={() => this.checkAnswer("b", e.correct_answer)}
           >
@@ -56,6 +53,7 @@ class Quiz extends Component {
           </Answer>
 
           <Answer
+            correct={this.props.correctc}
             key={2}
             onClick={() => this.checkAnswer("c", e.correct_answer)}
           >
@@ -63,12 +61,13 @@ class Quiz extends Component {
           </Answer>
 
           <Answer
+            correct={this.props.correctd}
             key={3}
             onClick={() => this.checkAnswer("d", e.correct_answer)}
           >
             d. {e.answers[3]}
           </Answer>
-        </div>
+        </AnswerContainer>
       );
     });
     console.log(quizdisplay);
