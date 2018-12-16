@@ -12,6 +12,7 @@ export const Container = styled.div`
   );
   color: white;
   text-align: center;
+  font-family: "Exo 2";
 `;
 
 export const Content = styled.div`
@@ -74,13 +75,15 @@ export const Dialog = styled.div`
   vertical-align: middle;
   box-sizing: border-box;
   min-width: 75vw;
+  max-width: 75vw;
   cursor: default;
   border-radius: 4px;
   font-size: 1.1em;
   letter-spacing: 1.5px;
   z-index: 10000;
-  top: 20%;
+  top: 5%;
   left: 12.5vw;
+  font-family: "Exo 2";
 `;
 
 export const Title = styled.div`
@@ -110,7 +113,8 @@ export const QuizDialog = styled.div`
   top: 10%;
   left: 20%;
   outline: 0;
-  width: auto;
+  max-width: 35vw;
+  min-width: 35vw;
   display: inline-block;
   vertical-align: middle;
   box-sizing: border-box;
@@ -120,19 +124,45 @@ export const QuizDialog = styled.div`
   font-size: 1.1em;
   letter-spacing: 1.5px;
   z-index: 10001;
-  top: 20%;
+  top: 5%;
   left: 12.5%;
+  height: 95vh;
 `;
 
 export const Answer = styled.div`
   transition: 0.1s;
   border-radius: 9999em;
+  transition: 0.5s;
+  /* transform: ${props => (props.correct ? "translateX(-100%)" : null)}; */
+  background-color: ${props => (props.correct ? null : "red")};
   :hover {
     background-color: #00a6cc;
   }
 `;
 
+export const AnswerContainer = styled.div`
+  max-width: 40vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 1.15em;
+`;
+
 export const Swal1 = styled.div`
   position: fixed;
   z-index: 10002;
+`;
+
+export const Wavy = styled.h1`
+  font-family: Monoton;
+  font-size: 5em;
+`;
+
+export const Spread = styled.div`
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 1.5em;
 `;

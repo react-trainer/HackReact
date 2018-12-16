@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Overlay, ModalContent, QuizDialog } from "./Core1SC";
+import { Overlay, ModalContent, QuizDialog, Wavy } from "./Core1SC";
 import { Button } from "../../../../resources/styles/masterStyles";
 import Quiz from "./Quiz";
 import PropTypes from "prop-types";
@@ -14,7 +14,11 @@ class Completed extends Component {
       correct: 0,
       progress: 0,
       total: 3,
-      redirect: false
+      redirect: false,
+      correcta: true,
+      correctb: true,
+      correctc: true,
+      correctd: true
     };
     this.upQuiz = this.upQuiz.bind(this);
     this.setRedirect = this.setRedirect.bind(this);
@@ -61,8 +65,22 @@ class Completed extends Component {
   }
 
   upQuiz() {
-    this.setState({ progress: this.state.progress + 1 });
+    this.setState({
+      progress: this.state.progress + 1,
+      correcta: true,
+      correctb: true,
+      correctc: true,
+      correctd: true
+    });
   }
+
+  correct = () => {
+    return this.state.progress + 1 < this.state.total ? this.upQuiz() : null;
+  };
+
+  wrong = value => {
+    this.setState({ [`correct${value}`]: false });
+  };
 
   unmountCompleted() {
     this.setState({
@@ -87,17 +105,20 @@ class Completed extends Component {
         <ModalContent onClick={this.onOverlayClick.bind(this)} />
 
         <QuizDialog onClick={this.onDialogClick}>
-          <h1>
-            You have finished Lesson {this.props.lesson_id}:{" "}
-            {this.props.lesson_title}!
-          </h1>
+          <Wavy>Pop Quiz!</Wavy>
           <br />
-          <h1>Complete the quiz!</h1>
           <br />
           <Quiz
             progress={this.state.progress}
+            total={this.state.total}
             lesson_id={this.props.lesson_id}
             upQuiz={this.upQuiz}
+            correct={this.correct}
+            wrong={this.wrong}
+            correcta={this.state.correcta}
+            correctb={this.state.correctb}
+            correctc={this.state.correctc}
+            correctd={this.state.correctd}
           />
           <br />
           <br />

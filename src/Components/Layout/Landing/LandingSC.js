@@ -127,9 +127,9 @@ export const ScribbleUnderline = styled.img`
   top: 28%;
   height: auto;
   width: 20%;
-  @media (max-height: 930px) {
+  @media (max-height: 940px) {
     width: 30%;
-    top: 30%;
+    top: 35%;
   }
   @media (max-height: 860px) {
     top: 33%;
