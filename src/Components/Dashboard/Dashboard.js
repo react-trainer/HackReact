@@ -7,6 +7,7 @@ import {
   TabContainer
 } from "../resources/styles/masterStyles";
 import Nav from "../Layout/Nav/Nav";
+import Starfall from "./Recent/canvas/Starfall";
 import dashRoutes from "../../routes/dashRoutes";
 
 class Dashboard extends Component {
@@ -16,7 +17,6 @@ class Dashboard extends Component {
   }
 
   render() {
-    
     return (
       <OuterContainer
         height="auto"
@@ -30,9 +30,7 @@ class Dashboard extends Component {
             <Tab margin="6% 0 0 0"> Recent </Tab>
           </Link>
           <Link to="/dashboard/lessons">
-            <Tab margin="6% 0 0 0" >
-              Lesson
-            </Tab>
+            <Tab margin="6% 0 0 0">Lesson</Tab>
           </Link>
           <Link to="/dashboard/drills">
             <Tab margin="6% 0 0 0"> Drills </Tab>

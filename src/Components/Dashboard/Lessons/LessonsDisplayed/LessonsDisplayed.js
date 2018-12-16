@@ -68,7 +68,11 @@ class LessonsDisplayed extends Component {
     const displayLessons = lessonComponents.map((value, index) => {
       return (
         <Link key={index} to={`/lesson/${index + 1}`}>
-          <Card borderRadius="0" backgroundImage={`url(${value.image})`}>
+          <Card
+            borderRadius="0"
+            boxShadow="1px 1px 25px 1px rgba(0,0,0,0.3), 0px 4px 6px -3px inset rgb(0,216,255)"
+            backgroundImage={`url(${value.image})`}
+          >
             <LessonOverlay>
               <Title
                 letterSpacing="2px"

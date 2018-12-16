@@ -29,7 +29,7 @@ class Recent extends Component {
           )}
           <HeatMapContainer>
             Login Activity
-            <Heatmap height="250" width="550" />
+            <Heatmap height="250" width="450" />
           </HeatMapContainer>
         </RecentProfileContainer>
         <Starfall />
