@@ -193,7 +193,11 @@ class Landing extends Component {
         </LeftContainer>
         <RightContainer>
           <UpperRight>
-            <Title color="rgb(37, 37, 37)" textTransform="uppercase">
+            <Title
+              color="rgb(37, 37, 37)"
+              textShadow="2px 2px #ffffff"
+              textTransform="uppercase"
+            >
               Log in || Sign up!
             </Title>
             <p>
@@ -213,7 +217,9 @@ class Landing extends Component {
             <WrenchIcon src={Wrench} alt="previous button" />
           </UpperRight>
           <BottomRight>
-            <Title textTransform="uppercase">Lesson 1</Title>
+            <Title textTransform="uppercase" textShadow="2px 2px #22525c">
+              Lesson 1
+            </Title>
             <p>
               Ready to tackle the fundamentals of React?
               <br />

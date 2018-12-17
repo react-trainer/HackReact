@@ -6,7 +6,8 @@ import {
   RecentProfileContainer,
   ProfileImage,
   HeatMapContainer,
-  NextLessonContainer
+  NextLessonContainer,
+  ShowNextButton
 } from "./RecentSC";
 import Starfall from "./canvas/Starfall";
 import Heatmap from "./vx/Heatmap";
@@ -14,15 +15,21 @@ import Heatmap from "./vx/Heatmap";
 class Recent extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      showNext: false
+    };
   }
   componentDidMount() {
     this.props.getUserImage();
   }
 
+  toggleNextLesson() {
+    const { showNext } = this.state;
+    this.setState({ showNext: !showNext });
+  }
   render() {
     const { userImage } = this.props.user;
-    console.log(userImage);
+    const { showNext } = this.state;
     return (
       <MainContainer height="100vh">
         <RecentProfileContainer>
@@ -41,11 +48,12 @@ class Recent extends Component {
             Login Activity
             <Heatmap height="250" width="450" />
           </HeatMapContainer>
+          <ShowNextButton onClick={() => this.toggleNextLesson()} />
         </RecentProfileContainer>
-        <NextLessonContainer />
-        <NextLessonContainer left="55%" />
+        <NextLessonContainer showNext={showNext} />
+        <NextLessonContainer showNext={showNext} left="55%" />
 
-        <Starfall />
+        {showNext ? null : <Starfall />}
       </MainContainer>
     );
   }

@@ -56,6 +56,7 @@ export const Title = styled.h1`
   position: ${props => props.position || null};
   top: ${props => props.top || null};
   left: ${props => props.left || null};
+  text-shadow: ${props => props.textShadow || null};
   overflow: hidden;
 `;
 
