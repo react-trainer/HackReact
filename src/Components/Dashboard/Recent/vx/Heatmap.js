@@ -8,7 +8,7 @@ const hot1 = "#77312f";
 const hot2 = "#f33d15";
 const cool1 = "#122549";
 const cool2 = "#b4fbde";
-const bg = "rgba(50,50,50,0.05)";
+const bg = "rgba(50,50,50,0.01)";
 
 const data = genBins(7, 5);
 
