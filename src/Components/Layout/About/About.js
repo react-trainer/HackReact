@@ -56,19 +56,13 @@ class About extends Component {
           <div className="exploreSubOne">{displayPictures}</div>
         </div>
         <div className="floaterContainer">
-          {/* <iframe
-            src="https://giphy.com/embed/l3vR16pONsV8cKkWk"
-            className="gif"
-          /> */}
           <div className="floaterOne" />
           <div className="textBar" />
           <p>
             React is designed to create a custom user experience with JavaScript
-            and HTML at the helm. People come to React from different
-            backgrounds and with different learning styles. Whether you prefer a
-            more theoretical or a practical approach, we hope to provide you
-            with the best tools to help accelerate your growth as a React
-            developer!
+            and HTML. Whether you prefer a more theoretical or a practical
+            approach, we hope to provide you with the best tools to help
+            accelerate your growth as a React developer!
           </p>
           <div className="floaterTwo" />
         </div>

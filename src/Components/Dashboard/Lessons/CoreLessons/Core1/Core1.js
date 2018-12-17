@@ -145,6 +145,7 @@ class Lesson extends Component {
               position="fixed"
               top="92%"
               left="28%"
+              mediaLeft="25%"
               onClick={this.showCompleted}
             >
               Quiz

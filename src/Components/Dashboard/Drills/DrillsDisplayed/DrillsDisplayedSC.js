@@ -8,7 +8,8 @@ export const SearchInput = styled.input`
   font-size: 20px;
   border-radius: 20px;
   border: 1px;
-  box-shadow: 0px 5px 17px -5px rgba(0, 216, 255, 0.7);
+  box-shadow: 0px 5px 6px -5px rgba(0, 216, 255, 0.7),
+    0px 4px 1px -3px inset rgb(0, 216, 255, 0.7);
   outline: none;
   padding-left: 20px;
   font-family: "Scada";

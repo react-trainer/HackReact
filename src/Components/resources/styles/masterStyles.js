@@ -66,6 +66,9 @@ export const Button = styled.button`
     box-shadow: 0px -3px 20px -3px inset #a7f5f1;
     transition: ${props => props.transition || "0.5s"};
   }
+  @media (max-width: 1400px){
+    left: ${props => props.mediaLeft || null}
+  }
 `;
 export const Tab = styled(Button)`
   height: ${props => props.height || "60px"};
@@ -86,6 +89,7 @@ export const TabContainer = styled.div`
   a {
     display: flex;
     align-items: flex-end;
+    box-shadow: 1px 1px 25px 1px rgba(0, 0, 0, 0.3);
   }
 `;
 export const Card = styled.div`
@@ -101,7 +105,7 @@ export const Card = styled.div`
   border: ${props => props.border || "1px solid rgb(0, 0, 0)"};
   box-shadow: ${props =>
     props.boxShadow ||
-    "1px 1px 25px 1px rgba(0, 0, 0, 0.3),0px 4px 6px -3px inset rgb(212, 71, 200)"};
+    "1px 1px 25px 1px rgba(0, 0, 0, 0.3), 0px 4px 6px -3px inset rgb(212, 71, 200)"};
   margin: ${props => props.margin || "25px"};
   overflow: ${props => props.overflow || "hidden"};
   background-size: ${props => props.backgroundSize || "cover"};
