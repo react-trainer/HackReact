@@ -57,9 +57,9 @@ export const NextLessonContainer = styled.div`
   border-radius: 50%;
   box-shadow: 10px 18px 33px -11px rgba(0, 0, 0, 0.3);
   background-color: rgba(50, 50, 50, 0.5);
-  transition: 0.5s;
+  transition: 0.8s;
   transform: ${props =>
-    props.showNext ? "translateY(0%)" : "translateY(200%)"};
+    props.showNext ? "translateX(0%)" : "translateX(400%)"};
 `;
 
 export const ShowNextButton = styled.button`
@@ -77,8 +77,8 @@ export const ShowNextButton = styled.button`
   cursor: pointer;
   transition: 0.5s;
   :active {
-    height: 4vh;
-    width: 2.5vw;
+    height: 3.3vh;
+    width: 1.8vw;
   }
 
   @media (max-width: 1400px) {
