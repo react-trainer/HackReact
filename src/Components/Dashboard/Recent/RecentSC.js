@@ -41,6 +41,7 @@ export const HeatMapContainer = styled.div`
   font-size: 30px;
   letter-spacing: 2px;
   margin-top: 10px;
+  text-shadow: 2px 2px #000000;
   @media (max-width: 1400px) {
     height: 70%;
   }
@@ -56,4 +57,34 @@ export const NextLessonContainer = styled.div`
   border-radius: 50%;
   box-shadow: 10px 18px 33px -11px rgba(0, 0, 0, 0.3);
   background-color: rgba(50, 50, 50, 0.5);
+  transition: 0.5s;
+  transform: ${props =>
+    props.showNext ? "translateY(0%)" : "translateY(200%)"};
+`;
+
+export const ShowNextButton = styled.button`
+  position: absolute;
+  top: 36%;
+  right: 18%;
+  height: 4vh;
+  width: 2vw;
+  border-radius: 20%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgb(34, 82, 92);
+  box-shadow: 6px 3px 23px -3px black,
+    6px 3px 23px -3px inset rgba(255, 255, 255, 0.3);
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+  :active {
+    height: 4vh;
+    width: 2.5vw;
+  }
+
+  @media (max-width: 1400px) {
+    top: 42%;
+    right: 18%;
+    height: 5vh;
+    width: 3vw;
+  }
 `;
