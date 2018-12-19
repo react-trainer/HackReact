@@ -10,6 +10,9 @@ const cors = require("cors");
 const authCtrl = require("./controllers/authCtrl");
 const masterRoutes = require("./masterRoutes");
 const AWS = require("aws-sdk");
+const path = require("path");
+
+app.use(express.static(`${__dirname}/../build/`));
 
 AWS.config.update({
   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
@@ -47,5 +50,9 @@ massive(CONNECTION_STRING).then(dbInstance => {
 
 authCtrl(app);
 masterRoutes(app);
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../dist/index.html"));
+});
 
 app.listen(port, () => console.log(`Server now running on port ${port}`));
