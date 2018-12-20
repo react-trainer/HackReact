@@ -1,8 +1,8 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Recent from "../components/Dashboard/Recent/Recent";
-import LessonsDisplayed from "../components/Dashboard/Lessons/LessonsDisplayed/LessonsDisplayed";
-import DrillsDisplayed from "../components/Dashboard/Drills/DrillsDisplayed/DrillsDisplayed";
+import Recent from "../Components/Dashboard/Recent/Recent";
+import LessonsDisplayed from "../Components/Dashboard/Lessons/LessonsDisplayed/LessonsDisplayed";
+import DrillsDisplayed from "../Components/Dashboard/Drills/DrillsDisplayed/DrillsDisplayed";
 
 export default (
   <Switch>

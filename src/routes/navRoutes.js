@@ -1,8 +1,8 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Profile from "../components/User/Profile/Profile";
-import Forum from "../components/User/Forum/Forum";
-import About from "../components/Layout/About/About";
+import Profile from "../Components/User/Profile/Profile";
+import Forum from "../Components/User/Forum/Forum";
+import About from "../Components/Layout/About/About";
 
 export default (
   <Switch>

@@ -1,12 +1,12 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Landing from "../components/Layout/Landing/Landing";
-import About from "../components/Layout/About/About";
-import Core1 from "../components/Dashboard/Lessons/CoreLessons/Core1/Core1";
-import Sandbox from "../components/Dashboard/Drills/Sandbox/Sandbox";
+import Landing from "../Components/Layout/Landing/Landing";
+import About from "../Components/Layout/About/About";
+import Core1 from "../Components/Dashboard/Lessons/CoreLessons/Core1/Core1";
+import Sandbox from "../Components/Dashboard/Drills/Sandbox/Sandbox";
 import Dashboard from "../Components/Dashboard/Dashboard";
-import Profile from "../components/User/Profile/Profile";
-import Forum from "../components/User/Forum/Forum";
+import Profile from "../Components/User/Profile/Profile";
+import Forum from "../Components/User/Forum/Forum";
 
 export default (
   <Switch>
