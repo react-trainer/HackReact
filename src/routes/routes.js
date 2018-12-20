@@ -4,7 +4,7 @@ import Landing from "../components/Layout/Landing/Landing";
 import About from "../components/Layout/About/About";
 import Core1 from "../components/Dashboard/Lessons/CoreLessons/Core1/Core1";
 import Sandbox from "../components/Dashboard/Drills/Sandbox/Sandbox";
-import Dashboard from "../components/Dashboard/Dashboard";
+import Dashboard from "../Components/Dashboard/Dashboard";
 import Profile from "../components/User/Profile/Profile";
 import Forum from "../components/User/Forum/Forum";
 
